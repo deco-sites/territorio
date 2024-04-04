@@ -7,6 +7,10 @@ export default {
   theme: {
     container: { center: true },
     extend: {
+      fontFamily: {
+        title: "Bricolage Grotesque",
+        body: "Libre Franklin",
+      },
       animation: {
         sliding: "sliding 30s linear infinite",
       },
