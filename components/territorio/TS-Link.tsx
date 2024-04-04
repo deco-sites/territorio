@@ -1,6 +1,4 @@
-import TsTypography, {
-  TypographyProps,
-} from "deco-sites/territorio/components/territorio/TS-Typography.tsx";
+import TsTypography, { TypographyProps } from './TS-Typography.tsx';
 
 type LinkProps = TypographyProps & {
   to: string;
@@ -15,7 +13,7 @@ const TsLink = ({
   ...typographyProps
 }: LinkProps) => {
   return (
-    <a href={to} class="w-fit p-0" target={openOnNewTab ? "_blank" : "_self"}>
+    <a href={to} class='w-fit p-0' target={openOnNewTab ? '_blank' : '_self'}>
       <TsTypography {...typographyProps}>{children}</TsTypography>
     </a>
   );
