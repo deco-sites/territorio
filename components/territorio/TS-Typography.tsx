@@ -1,3 +1,4 @@
+import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import {
   ComplementaryColors,
   ThemeColors,
@@ -15,21 +16,6 @@ type TypographyTag =
   | "label"
   | "span";
 
-type TypographySize =
-  | "xs"
-  | "sm"
-  | "base"
-  | "lg"
-  | "xl"
-  | "2xl"
-  | "3xl"
-  | "4xl"
-  | "5xl"
-  | "6xl"
-  | "7xl"
-  | "8xl"
-  | "9xl";
-
 type TypographyType = "title" | "body";
 
 type TypographyWeight =
@@ -46,61 +32,79 @@ type TypographyWeight =
 export type TypographyProps = {
   as?: TypographyTag;
   type?: TypographyType;
-  size?: TypographySize;
+  size?: string;
   color?: keyof ThemeColors | keyof ComplementaryColors;
   weight?: TypographyWeight;
   variant?: TypographyTag;
   truncate?: boolean;
   customClass?: string;
+  shadow?: boolean;
   children: string;
 };
 
 const VARIANT_CLASSES: Record<TypographyTag, string> = {
-  h1: " text-4xl font-bold",
-  h2: " text-3xl font-bold",
-  h3: " text-2xl font-bold",
-  h4: " text-xl font-bold",
-  h5: " text-lg font-bold",
-  h6: " text-base font-bold",
-  caption: " text-xs font-normal",
-  label: " text-sm font-bold uppercase tracking-wider",
-  p: " text-base font-normal leading-normal",
+  h1: "text-4xl font-bold",
+  h2: "text-3xl font-bold",
+  h3: "text-2xl font-bold",
+  h4: "text-xl font-bold",
+  h5: "text-lg font-bold",
+  h6: "text-base font-bold",
+  caption: "text-xs font-normal",
+  label: "text-sm font-bold uppercase tracking-wider",
+  p: "text-base font-normal leading-normal",
   span: "",
 };
 
 const WEIGHT_CLASS: Record<TypographyWeight, string> = {
-  100: " font-thin",
-  200: " font-extralight",
-  300: " font-light",
-  400: " font-normal",
-  500: " font-medium",
-  600: " font-semibold",
-  700: " font-bold",
-  800: " font-extrabold",
-  900: " font-black",
+  100: "font-thin",
+  200: "font-extralight",
+  300: "font-light",
+  400: "font-normal",
+  500: "font-medium",
+  600: "font-semibold",
+  700: "font-bold",
+  800: "font-extrabold",
+  900: "font-black",
 };
 
 const TsTypography = ({
   as,
-  type = "body",
-  size = "base",
-  color = "primary",
-  weight = "400",
+  type,
+  size,
+  color,
+  weight,
   variant,
   truncate,
-  customClass = "",
+  shadow,
+  customClass,
   children,
 }: TypographyProps) => {
-  let classes = type === "body" ? "font-body" : "font-title";
-  classes += VARIANT_CLASSES[variant || "span"];
-  classes += !variant ? ` text-${size}` : "";
-  classes += !variant ? WEIGHT_CLASS[weight] : "";
-  classes += ` text-${color}`;
-  classes += truncate ? " truncate" : "";
+  const mergeClasses = () => {
+    const typeClass = type === "body" ? "font-body" : "font-title";
+    const variantClass = VARIANT_CLASSES[variant || "span"];
+    const weightClass = !variant && weight ? WEIGHT_CLASS[weight] : "";
+    const colorClass = color ? ` text-${color}` : "";
+    const shadowClass = shadow ? " drop-shadow-title" : "";
+    const truncateClass = truncate ? " truncate" : "";
+
+    return clx(
+      typeClass,
+      variantClass,
+      weightClass,
+      colorClass,
+      shadowClass,
+      truncateClass,
+      customClass,
+    );
+  };
 
   const Tag = as || variant || "span";
 
-  return <Tag class={classes + " " + customClass}>{children}</Tag>;
+  return (
+    <Tag class={mergeClasses()} style={{ fontSize: size }}>
+      {children}
+    </Tag>
+  );
 };
 
 export default TsTypography;

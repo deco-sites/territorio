@@ -11,6 +11,9 @@ export default {
         title: "Bricolage Grotesque",
         body: "Libre Franklin",
       },
+      dropShadow: {
+        title: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
       animation: {
         sliding: "sliding 30s linear infinite",
       },
