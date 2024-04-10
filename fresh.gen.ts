@@ -27,6 +27,8 @@ import * as $ShowMore from "./islands/ShowMore.tsx";
 import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
 import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
+import * as $territorio_TS_Dropdown from "./islands/territorio/TS-Dropdown.tsx";
+import * as $territorio_TS_HeaderButton from "./islands/territorio/TS-HeaderButton.tsx";
 import * as $territorio_TSBanner from "./islands/territorio/TSBanner.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -59,6 +61,8 @@ const manifest = {
     "./islands/SliderJS.tsx": $SliderJS,
     "./islands/WishlistButton/vtex.tsx": $WishlistButton_vtex,
     "./islands/WishlistButton/wake.tsx": $WishlistButton_wake,
+    "./islands/territorio/TS-Dropdown.tsx": $territorio_TS_Dropdown,
+    "./islands/territorio/TS-HeaderButton.tsx": $territorio_TS_HeaderButton,
     "./islands/territorio/TSBanner.tsx": $territorio_TSBanner,
   },
   baseUrl: import.meta.url,
