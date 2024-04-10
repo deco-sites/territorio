@@ -40,16 +40,9 @@ export function useTsCarrousel<T>({
   const hoverItem = useSignal<T | undefined>(undefined);
   const currentIndex = useSignal(0);
   const { currentMediaQuery } = useTsMediaQuery();
-  console.log("currentMediaQuery", currentMediaQuery);
   const shouldCycle = shouldCycleParam || autoChangeDelay > 0;
 
   const visibleItemsCount = useMemo(() => {
-    console.log(
-      "currentMediaQuery",
-      currentMediaQuery,
-      typeof visibleItemsCountParam != "number" &&
-        visibleItemsCountParam[currentMediaQuery],
-    );
     return typeof visibleItemsCountParam === "number"
       ? visibleItemsCountParam
       : visibleItemsCountParam[currentMediaQuery];
