@@ -3,6 +3,7 @@ import {
   ComplementaryColors,
   ThemeColors,
 } from "deco-sites/territorio/sections/Theme/Theme.tsx";
+import type { ComponentChildren } from "preact";
 
 type TypographyTag =
   | "h1"
@@ -39,7 +40,7 @@ export type TypographyProps = {
   truncate?: boolean;
   customClass?: string;
   shadow?: boolean;
-  children: string;
+  children: ComponentChildren;
 };
 
 const VARIANT_CLASSES: Record<TypographyTag, string> = {
