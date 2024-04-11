@@ -9,6 +9,10 @@
     font-family: var(--font-family);
   }
 
+  body {
+    background-color: #202020
+  }
+
   mark {
     @apply bg-accent text-accent-content;
   }

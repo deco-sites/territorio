@@ -55,6 +55,7 @@ import * as $$$$$$43 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$44 from "./sections/Social/WhatsApp.tsx";
 import * as $$$$$$46 from "./sections/territorio/TS-Header.tsx";
 import * as $$$$$$47 from "./sections/territorio/TS-Hero.tsx";
+import * as $$$$$$48 from "./sections/territorio/TS-Territorios.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -115,6 +116,7 @@ const manifest = {
     "deco-sites/territorio/sections/Social/WhatsApp.tsx": $$$$$$44,
     "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$46,
     "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$47,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$48,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "apps": {

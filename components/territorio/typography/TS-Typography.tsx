@@ -34,7 +34,11 @@ export type TypographyProps = {
   as?: TypographyTag;
   type?: TypographyType;
   size?: string;
-  color?: keyof ThemeColors | keyof ComplementaryColors;
+  color?:
+    | keyof ThemeColors
+    | keyof ComplementaryColors
+    | 'accent'
+    | 'accent-content';
   weight?: TypographyWeight;
   variant?: TypographyTag;
   truncate?: boolean;
