@@ -1,4 +1,1 @@
-export {
-  default,
-  loader,
-} from "../../components/territorio/header/TS-Header.tsx";
+export { default, loader } from '../../components/header/Header.tsx';
