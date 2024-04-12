@@ -1,18 +1,8 @@
 import Image from 'apps/website/components/Image.tsx';
 import { AppContext } from '../../../apps/site.ts';
-import { ImageType } from '../types.ts';
+import Carousel from '../../../islands/territorio/TS-Territorios-Carousel.tsx';
 import TsTypography from '../typography/TS-Typography.tsx';
-
-type BasicImage = Omit<ImageType, 'url' | 'width' | 'height'>;
-
-/**
- * @title Carousel items
- */
-interface TerritoriosCarouselItem {
-  image: BasicImage;
-  title: string;
-  description: string;
-}
+import { BasicImage, TerritoriosCarouselItem } from './types.ts';
 
 export interface Props {
   image: BasicImage;
@@ -32,7 +22,7 @@ function TsTerritorios({
   carouselItems,
 }: Props) {
   return (
-    <div class='flex justify-center'>
+    <div class='flex justify-center my-5'>
       {/* Mobile */}
       <div class='md:hidden flex flex-col justify-center gap-y-6 px-[44px]'>
         <div class='flex items-end'>
@@ -47,6 +37,7 @@ function TsTerritorios({
             src={image.src}
             alt={image.alt}
             width='70%'
+            height={218}
             class='ml-[-40px] sm:ml-[0]'
           />
         </div>
@@ -54,7 +45,7 @@ function TsTerritorios({
           {descriptionPrimary}{' '}
           <TsTypography weight='600'>{descriptionSecondary}</TsTypography>
         </TsTypography>
-        <div>CU</div>
+        <Carousel items={carouselItems} />
       </div>
       {/* Desktop */}
       <div class='hidden md:flex flex-col max-w-[1200px] w-full justify-center md:pt-6 xl:pt-10 px-8 xl:px-0'>
@@ -80,24 +71,28 @@ function TsTerritorios({
         </div>
         <div class='flex justify-between w-full mt-16'>
           {carouselItems.map((item) => (
-            <div key={item.title} class='max-w-[300px]'>
-              <div class='flex justify-between items-center'>
+            <div key={item.title} class='sm:max-w-[220px] lg:max-w-[300px]'>
+              <div class='flex justify-between items-center mb-3 sm:gap-x-3 lg:gap-x-7'>
                 <Image
                   src={item.image.src}
                   alt={item.image.alt}
-                  width={114}
-                  height={57}
+                  width={'70%'}
+                  height={825}
                 />
                 <TsTypography
                   weight='300'
                   color='accent-content'
-                  class='text-3xl max-w-[160px]'
+                  class='sm:text-2xl lg:text-[34px] max-w-[160px]'
                 >
                   Território{' '}
                   <TsTypography weight='600'>{item.title}</TsTypography>
                 </TsTypography>
               </div>
-              <TsTypography type='body' color='base-100'>
+              <TsTypography
+                type='body'
+                color='base-100'
+                class='md:text-sm lg:text-[16px]'
+              >
                 {item.description}
               </TsTypography>
             </div>
