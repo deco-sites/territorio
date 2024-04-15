@@ -45,6 +45,14 @@
     overflow: hidden;
     height: 100vh;
   }
+
+  html, body {
+    background-color: #202020;
+  }
+
+  .ts-section {
+    @apply md:max-w-[1172px] px-8 md:mx-auto w-full text-white bg-[#202020];
+  }
 }
 
 @layer components {
