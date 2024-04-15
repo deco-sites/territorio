@@ -17,11 +17,11 @@ export interface HeroProps {
 }
 
 const TsHero = ({ images, text }: HeroProps) => {
-  const { visibleItems } = useTsCarrousel<BaseImage>({
+  const { visibleItems, onNext } = useTsCarrousel<BaseImage>({
     items: images,
     visibleItemsCountParam: 1,
     shouldCycle: true,
-    autoChangeDelay: 10000,
+    autoChangeDelay: 5000,
   });
 
   const visibleImage = visibleItems[0];
@@ -37,7 +37,7 @@ const TsHero = ({ images, text }: HeroProps) => {
         <TsTypography
           weight='400'
           color='base-100'
-          class='text-4xl max-w-[200px] sm:text-8xl sm:max-w-[800px] xl:text-9xl xl:max-w-[950px]'
+          class='text-4xl max-w-[200px] sm:text-8xl sm:max-w-[800px] xl:text-9xl xl:max-w-[950px] select-none'
         >
           {text}
         </TsTypography>
