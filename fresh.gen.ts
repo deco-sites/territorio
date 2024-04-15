@@ -30,6 +30,7 @@ import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
 import * as $territorio_TS_Dropdown from "./islands/territorio/TS-Dropdown.tsx";
 import * as $territorio_TS_HeaderButton from "./islands/territorio/TS-HeaderButton.tsx";
 import * as $territorio_TS_Hero from "./islands/territorio/TS-Hero.tsx";
+import * as $territorio_TS_Territorios_Carousel from "./islands/territorio/TS-Territorios-Carousel.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -64,6 +65,8 @@ const manifest = {
     "./islands/territorio/TS-Dropdown.tsx": $territorio_TS_Dropdown,
     "./islands/territorio/TS-HeaderButton.tsx": $territorio_TS_HeaderButton,
     "./islands/territorio/TS-Hero.tsx": $territorio_TS_Hero,
+    "./islands/territorio/TS-Territorios-Carousel.tsx":
+      $territorio_TS_Territorios_Carousel,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
