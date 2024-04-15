@@ -29,7 +29,7 @@ import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
 import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
 import * as $territorio_TS_Dropdown from "./islands/territorio/TS-Dropdown.tsx";
 import * as $territorio_TS_HeaderButton from "./islands/territorio/TS-HeaderButton.tsx";
-import * as $territorio_TSBanner from "./islands/territorio/TSBanner.tsx";
+import * as $territorio_TS_Hero from "./islands/territorio/TS-Hero.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -63,7 +63,7 @@ const manifest = {
     "./islands/WishlistButton/wake.tsx": $WishlistButton_wake,
     "./islands/territorio/TS-Dropdown.tsx": $territorio_TS_Dropdown,
     "./islands/territorio/TS-HeaderButton.tsx": $territorio_TS_HeaderButton,
-    "./islands/territorio/TSBanner.tsx": $territorio_TSBanner,
+    "./islands/territorio/TS-Hero.tsx": $territorio_TS_Hero,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
