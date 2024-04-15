@@ -10,28 +10,43 @@ export interface Course {
   id: number;
   imageSrc: ImageWidget;
   alt: string;
-  url: string;
+  url?: string;
   isActive?: boolean;
 }
 
-const TsCursoCard = ({ course }: { course: Course }) => {
+interface CursoCardProps {
+  course: Course;
+  isMobile: boolean;
+}
+
+const TsCursoCard = ({ course, isMobile }: CursoCardProps) => {
   return (
     <a
       href={course.url}
       disabled={!course?.isActive}
       class={clx(
-        'flex flex-col items-center hover:transition-all',
+        'flex flex-col items-center',
         course?.isActive ? 'hover:scale-110' : 'pointer-events-none'
       )}
     >
       {!course?.isActive && (
         <div class='absolute w-fit rounded-b-md bg-base-300'>
-          <TsTypography type='body' weight='800' class='text-2xl mx-5 my-3'>
+          <TsTypography
+            type='body'
+            weight='800'
+            class='text-lg sm:text-2xl mx-3 sm:mx-5 sm:my-3'
+          >
             BREVE
           </TsTypography>
         </div>
       )}
-      <Image src={course.imageSrc} width={271} height={486} alt={course.alt} />
+      <Image
+        alt={course.alt}
+        src={course.imageSrc}
+        width={isMobile ? 250 : 271}
+        height={isMobile ? 448 : 486}
+        class={clx(isMobile ? 'min-w-[125px]' : '')}
+      />
     </a>
   );
 };

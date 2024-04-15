@@ -1,5 +1,5 @@
-import useTsDimensions from "deco-sites/territorio/hooks/useTsDimensions.tsx";
-import defaultTheme from "npm:tailwindcss@3.4.1/defaultTheme.js";
+import useTsDimensions from 'deco-sites/territorio/hooks/useTsDimensions.tsx';
+import defaultTheme from 'npm:tailwindcss@3.4.1/defaultTheme.js';
 
 const mediaQueries = defaultTheme?.screens || {};
 
@@ -13,10 +13,13 @@ export default function useTsMediaQuery(): {
 
   return {
     mediaQueries,
-    currentMediaQuery: (width
-      ? (Object.entries(mediaQueries).find(
-        ([, queryWidth]) => width <= parseInt(queryWidth.replaceAll(/\D/g, "")),
-      )?.[0] as MediaQueryKey)
-      : "md") ?? "md",
+    currentMediaQuery:
+      (() => {
+        if (width < 640) return 'sm';
+        if (width >= 640 && width < 768) return 'md';
+        if (width >= 768 && width < 1024) return 'lg';
+        if (width >= 1024 && width < 1280) return 'xl';
+        if (width >= 1280) return '2xl';
+      })() || 'xl',
   };
 }

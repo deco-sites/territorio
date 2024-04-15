@@ -1,55 +1,66 @@
-import TsCursoCard from 'deco-sites/territorio/components/territorio/cursos/TS-Curso-Card.tsx';
+import type { MediaQueryKey } from 'deco-sites/territorio/hooks/useTsMediaQuery.tsx';
+import useTsMediaQuery from 'deco-sites/territorio/hooks/useTsMediaQuery.tsx';
 import { AppContext } from '../../../apps/site.ts';
 import Icon from '../../../components/ui/Icon.tsx';
 import { useTsCarrousel } from '../../../hooks/useTsCarrousel.tsx';
 import type { Course } from './TS-Curso-Card.tsx';
+import TsCursoCard from './TS-Curso-Card.tsx';
 
 export interface CursosProps {
   courses: Course[];
 }
 
-const MAX_DISPLAYED_ITEMS = 4;
+const DISPLAYED_ITEMS: Record<MediaQueryKey, number> = {
+  sm: 3,
+  md: 2,
+  lg: 2,
+  xl: 3,
+  '2xl': 4,
+};
 
 const TsCursos = ({ courses }: CursosProps) => {
+  const { currentMediaQuery } = useTsMediaQuery();
+
   const { visibleItems, onNext, onPrevious } = useTsCarrousel({
     items: courses,
-    visibleItemsCountParam: MAX_DISPLAYED_ITEMS,
+    visibleItemsCountParam: DISPLAYED_ITEMS[currentMediaQuery],
   });
 
+  const isMobile = currentMediaQuery === 'sm';
   const firstCourse = courses[0];
   const lastCourse = courses[courses.length - 1];
   const courseOnTheLeft = visibleItems[0];
-  const courseOnTheRight = visibleItems[MAX_DISPLAYED_ITEMS - 1];
+  const courseOnTheRight = visibleItems[DISPLAYED_ITEMS[currentMediaQuery] - 1];
 
   return (
-    <div class='flex justify-center items-center mt-[-150px] relative z-50'>
+    <div class='flex sm:justify-center items-center mt-[-150px] relative z-30 py-10 overflow-x-hidden sm:overflow-x-auto select-none'>
       <button
-        class='mr-2'
+        class='sm:mr-2 h-[calc(100%-80px)]'
         onClick={onPrevious}
         disabled={firstCourse.id === courseOnTheLeft.id}
       >
         <Icon
           class='text-accent-content'
-          size={96}
+          size={isMobile ? 36 : 96}
           id='ChevronLeft'
-          strokeWidth={1}
+          strokeWidth={isMobile ? 5 : 1}
         />
       </button>
-      <div class='flex gap-x-7'>
+      <div class='flex gap-x-3 sm:gap-x-7'>
         {visibleItems.map((course) => (
-          <TsCursoCard course={course} />
+          <TsCursoCard course={course} isMobile={isMobile} />
         ))}
       </div>
       <button
-        class='ml-2'
+        class='sm:ml-2 absolute h-[calc(100%-80px)] right-0 sm:relative'
         onClick={onNext}
         disabled={lastCourse.id === courseOnTheRight.id}
       >
         <Icon
           class='text-accent-content'
-          size={96}
+          size={isMobile ? 36 : 96}
           id='ChevronRight'
-          strokeWidth={1}
+          strokeWidth={isMobile ? 5 : 1}
         />
       </button>
     </div>
