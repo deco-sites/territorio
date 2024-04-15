@@ -130,5 +130,26 @@
 			</clipPath>
 		</defs>
 	</symbol>
+	<symbol id="CustomArrowDown" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g id="seta" clip-path="url(#clip0_1_506)">
+		<path id="Vector" d="M20.1596 7.8135L24.6922 12.3461L12.3461 24.6921L-1.52456e-05 12.3461L4.53254 7.8135C8.83882 12.1198 15.8533 12.1198 20.1596 7.8135Z" fill="#BA7DFE"/>
+		</g>
+		<defs>
+		<clipPath id="clip0_1_506">
+		<rect width="17.46" height="17.46" fill="white" transform="translate(12.3461 24.6921) rotate(-135)"/>
+		</clipPath>
+		</defs>
+	</symbol>
+	<symbol id="CustomArrowUp" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g id="seta" clip-path="url(#clip0_1_508)">
+		<path id="Vector" d="M7.02609 17.46H0.616089L0.616089 0L18.0761 0V6.41C11.9861 6.41 7.02609 11.37 7.02609 17.46Z" fill="#BA7DFE"/>
+		</g>
+		<defs>
+		<clipPath id="clip0_1_508">
+		<rect width="17.46" height="17.46" fill="white" transform="translate(0.616089)"/>
+		</clipPath>
+		</defs>
+	</symbol>
+
 
 </svg>
