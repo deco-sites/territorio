@@ -7,6 +7,9 @@ import TsTypography from '../typography/TS-Typography.tsx';
  * @title Curso
  */
 export interface Course {
+  /**
+   * @description Unique course identifier
+   */
   id: number;
   imageSrc: ImageWidget;
   alt: string;

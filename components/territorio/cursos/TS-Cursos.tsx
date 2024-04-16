@@ -3,15 +3,15 @@ import useTsMediaQuery from 'deco-sites/territorio/hooks/useTsMediaQuery.tsx';
 import { AppContext } from '../../../apps/site.ts';
 import Icon from '../../../components/ui/Icon.tsx';
 import { useTsCarrousel } from '../../../hooks/useTsCarrousel.tsx';
-import type { Course } from './TS-Curso-Card.tsx';
-import TsCursoCard from './TS-Curso-Card.tsx';
+import type { Course } from './TS-CursoCard.tsx';
+import TsCursoCard from './TS-CursoCard.tsx';
 
 export interface CursosProps {
   courses: Course[];
 }
 
 const DISPLAYED_ITEMS: Record<MediaQueryKey, number> = {
-  sm: 3,
+  sm: 2,
   md: 2,
   lg: 2,
   xl: 3,
@@ -35,7 +35,7 @@ const TsCursos = ({ courses }: CursosProps) => {
   return (
     <div class='flex sm:justify-center items-center mt-[-150px] relative z-30 py-10 overflow-x-hidden sm:overflow-x-auto select-none'>
       <button
-        class='sm:mr-2 h-[calc(100%-80px)]'
+        class='mx-2 h-[calc(100%-80px)]'
         onClick={onPrevious}
         disabled={firstCourse.id === courseOnTheLeft.id}
       >
@@ -52,7 +52,7 @@ const TsCursos = ({ courses }: CursosProps) => {
         ))}
       </div>
       <button
-        class='sm:ml-2 absolute h-[calc(100%-80px)] right-0 sm:relative'
+        class='mx-2 h-[calc(100%-80px)]'
         onClick={onNext}
         disabled={lastCourse.id === courseOnTheRight.id}
       >
