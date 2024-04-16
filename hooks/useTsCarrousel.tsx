@@ -1,8 +1,8 @@
-import { useComputed, useSignal } from '@preact/signals';
+import { useComputed, useSignal } from "@preact/signals";
 import useTsMediaQuery, {
   MediaQueryKey,
-} from 'deco-sites/territorio/hooks/useTsMediaQuery.tsx';
-import { useCallback, useEffect, useMemo } from 'preact/hooks';
+} from "deco-sites/territorio/hooks/useTsMediaQuery.tsx";
+import { useCallback, useEffect, useMemo } from "preact/hooks";
 
 type MediaQueries = { [key in MediaQueryKey]: number };
 
@@ -43,7 +43,7 @@ export function useTsCarrousel<T>({
   const shouldCycle = shouldCycleParam || autoChangeDelay > 0;
 
   const visibleItemsCount = useMemo(() => {
-    return typeof visibleItemsCountParam === 'number'
+    return typeof visibleItemsCountParam === "number"
       ? visibleItemsCountParam
       : visibleItemsCountParam[currentMediaQuery];
   }, [visibleItemsCountParam, currentMediaQuery]);
@@ -60,7 +60,7 @@ export function useTsCarrousel<T>({
         currentIndex.value = items.length - 1;
       }
     },
-    [items]
+    [items],
   );
 
   const lastVisibleIndex = useMemo(() => {
@@ -71,14 +71,22 @@ export function useTsCarrousel<T>({
     return items.slice(currentIndex.value, lastVisibleIndex);
   }, [currentIndex.value, items, lastVisibleIndex]);
 
+  const hasNext = useComputed(() => {
+    return currentIndex.value + 1 < items.length;
+  });
+
+  const hasPrevious = useComputed(() => {
+    return currentIndex.value - 1 >= 0;
+  });
+
   const nextItem = useComputed(() => {
-    if (currentIndex.value + 1 < items.length) {
+    if (hasNext.value) {
       return items[currentIndex.value + 1];
     }
   });
 
   const previousItem = useComputed(() => {
-    if (currentIndex.value - 1 >= 0) {
+    if (hasPrevious.value) {
       return items[currentIndex.value - 1];
     }
   });
@@ -116,6 +124,8 @@ export function useTsCarrousel<T>({
     previousItem: previousItem.value,
     hoverItem: hoverItem.value,
     currentIndex: currentIndex.value,
+    hasNext: hasNext.value,
+    hasPrevious: hasPrevious.value,
     onNext,
     onPrevious,
     setHoverItem,
