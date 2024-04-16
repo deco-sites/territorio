@@ -53,6 +53,7 @@ import * as $$$$$$41 from "./sections/Product/ShelfWithImage.tsx";
 import * as $$$$$$42 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$43 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$44 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$51 from "./sections/territorio/TS-Experts.tsx";
 import * as $$$$$$46 from "./sections/territorio/TS-Faq.tsx";
 import * as $$$$$$47 from "./sections/territorio/TS-Header.tsx";
 import * as $$$$$$48 from "./sections/territorio/TS-Hero.tsx";
@@ -63,13 +64,13 @@ import * as $$$$$$52 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
-  "loaders": {
+  loaders: {
     "deco-sites/territorio/loaders/availableIcons.ts": $$$2,
     "deco-sites/territorio/loaders/icons.ts": $$$3,
     "deco-sites/territorio/loaders/Layouts/ProductCard.tsx": $$$0,
     "deco-sites/territorio/loaders/List/Sections.tsx": $$$1,
   },
-  "sections": {
+  sections: {
     "deco-sites/territorio/sections/Animation/Animation.tsx": $$$$$$0,
     "deco-sites/territorio/sections/Cards/IconCardsCarousel.tsx": $$$$$$1,
     "deco-sites/territorio/sections/Cards/IconCardsCarouselWithImage.tsx":
@@ -118,6 +119,7 @@ const manifest = {
     "deco-sites/territorio/sections/Product/Wishlist.tsx": $$$$$$42,
     "deco-sites/territorio/sections/Social/InstagramPosts.tsx": $$$$$$43,
     "deco-sites/territorio/sections/Social/WhatsApp.tsx": $$$$$$44,
+    "deco-sites/territorio/sections/territorio/Ts-Experts.tsx": $$$$$$51,
     "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$46,
     "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$47,
     "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$48,
@@ -127,12 +129,12 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$52,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
-  "apps": {
+  apps: {
     "deco-sites/territorio/apps/decohub.ts": $$$$$$$$$$$0,
     "deco-sites/territorio/apps/site.ts": $$$$$$$$$$$1,
   },
-  "name": "deco-sites/territorio",
-  "baseUrl": import.meta.url,
+  name: "deco-sites/territorio",
+  baseUrl: import.meta.url,
 };
 
 export type Manifest = typeof manifest;
