@@ -56,9 +56,10 @@ import * as $$$$$$44 from "./sections/Social/WhatsApp.tsx";
 import * as $$$$$$46 from "./sections/territorio/TS-Faq.tsx";
 import * as $$$$$$47 from "./sections/territorio/TS-Header.tsx";
 import * as $$$$$$48 from "./sections/territorio/TS-Hero.tsx";
-import * as $$$$$$49 from "./sections/territorio/TS-Territorios.tsx";
-import * as $$$$$$50 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$51 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$49 from "./sections/territorio/TS-Platform.tsx";
+import * as $$$$$$50 from "./sections/territorio/TS-Territorios.tsx";
+import * as $$$$$$51 from "./sections/territorio/TS-Testimonials.tsx";
+import * as $$$$$$52 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -120,9 +121,10 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$46,
     "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$47,
     "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$48,
-    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$49,
-    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$50,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$51,
+    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$49,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$50,
+    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$51,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$52,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "apps": {
