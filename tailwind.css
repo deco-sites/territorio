@@ -53,6 +53,16 @@
   .ts-section {
     @apply md:max-w-[1172px] px-8 md:mx-auto w-full text-white bg-[#202020];
   }
+
+  .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+  }
 }
 
 @layer components {

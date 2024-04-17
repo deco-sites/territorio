@@ -1,28 +1,30 @@
-import { clx } from '../../../sdk/clx.ts';
+import { clx } from "../../../sdk/clx.ts";
 import {
   ComplementaryColors,
   ThemeColors,
-} from '../../../sections/Theme/Theme.tsx';
+} from "../../../sections/Theme/Theme.tsx";
+
+type Color =
+  | keyof ThemeColors
+  | keyof ComplementaryColors
+  | "accent"
+  | "accent-content";
 
 export interface Props {
   items: unknown[];
   currentId: number;
   onItemClick: (index: number) => void;
-  activeColor?:
-    | keyof ThemeColors
-    | keyof ComplementaryColors
-    | 'accent'
-    | 'accent-content';
+  activeColor?: `${Color}` | `#${string}`;
 }
 
 const TsCarouselBar = ({
   items,
   currentId,
   onItemClick,
-  activeColor = 'accent-content',
+  activeColor = "accent-content",
 }: Props) => {
   return (
-    <div class='flex gap-x-3'>
+    <div class="flex gap-x-3">
       {items?.map((_, index) => {
         const isSelected = index === currentId;
 
@@ -33,11 +35,16 @@ const TsCarouselBar = ({
               const target = event.target as HTMLButtonElement;
               onItemClick(Number(target.id));
             }}
-            class={clx(
-              'h-1 w-6',
-              isSelected ? `bg-${activeColor}` : 'bg-base-100'
-            )}
-          ></button>
+            class={clx("h-1 w-6", !isSelected && "bg-base-100")}
+            style={isSelected
+              ? {
+                backgroundColor: activeColor.startsWith("#")
+                  ? activeColor
+                  : `var(--${activeColor})`,
+              }
+              : {}}
+          >
+          </button>
         );
       })}
     </div>
