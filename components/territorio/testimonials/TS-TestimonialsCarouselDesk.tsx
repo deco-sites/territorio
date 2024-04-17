@@ -22,6 +22,7 @@ const TsTestimonialsCarouselDesk = ({ children }: Props) => {
   } = useTsCarrousel({
     items,
     visibleItemsCountParam: 1,
+    shouldCycle: true,
   });
 
   const changedPosition = useSignal(0);
