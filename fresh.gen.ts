@@ -29,6 +29,7 @@ import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
 import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
 import * as $territorio_TS_Carousel_Bar_Island from "./islands/territorio/TS-Carousel-Bar-Island.tsx";
 import * as $territorio_TS_Dropdown from "./islands/territorio/TS-Dropdown.tsx";
+import * as $territorio_TS_Experts from "./islands/territorio/TS-Experts.tsx";
 import * as $territorio_TS_HeaderButton from "./islands/territorio/TS-HeaderButton.tsx";
 import * as $territorio_TS_Hero from "./islands/territorio/TS-Hero.tsx";
 import * as $territorio_TS_Territorios_Carousel from "./islands/territorio/TS-Territorios-Carousel.tsx";
@@ -67,6 +68,7 @@ const manifest = {
     "./islands/territorio/TS-Carousel-Bar-Island.tsx":
       $territorio_TS_Carousel_Bar_Island,
     "./islands/territorio/TS-Dropdown.tsx": $territorio_TS_Dropdown,
+    "./islands/territorio/TS-Experts.tsx": $territorio_TS_Experts,
     "./islands/territorio/TS-HeaderButton.tsx": $territorio_TS_HeaderButton,
     "./islands/territorio/TS-Hero.tsx": $territorio_TS_Hero,
     "./islands/territorio/TS-Territorios-Carousel.tsx":

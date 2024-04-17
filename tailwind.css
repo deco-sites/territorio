@@ -4,6 +4,12 @@
 
 @layer base {
 
+  /* Global default styles */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #202020 transparent;
+  }
+
   /* Allow changing font family via CMS */
   html {
     font-family: var(--font-family);

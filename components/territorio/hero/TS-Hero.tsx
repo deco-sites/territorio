@@ -28,7 +28,7 @@ const TsHero = ({ images, text }: HeroProps) => {
 
   return (
     <div
-      class='flex justify-center bg-base-200 bg-cover bg-no-repeat bg-right xl:bg-left-top items-center h-screen px-8'
+      class='flex justify-center bg-cover bg-no-repeat bg-right xl:bg-left-top items-center h-screen px-8'
       style={{
         backgroundImage: `url("${visibleImage.src}")`,
       }}
