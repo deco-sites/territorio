@@ -6,7 +6,7 @@ import Icon from '../../../components/ui/Icon.tsx';
 import TsExpertCarousel from './TS-Expert-Carousel.tsx';
 import type { BasicImage, Expert } from './types.ts';
 
-export interface ExpertsProps {
+export interface ExpertProps {
   titlePrimary: string;
   titleSecondary: string;
   leftDecorator: BasicImage;
@@ -20,7 +20,7 @@ const TsExperts = ({
   leftDecorator,
   rightDecorator,
   experts,
-}: ExpertsProps) => {
+}: ExpertProps) => {
   const [expert, setExpert] = useState(experts[0]);
   const { image, description, fullName, social } = expert;
   const [firstName, lastName] = fullName.split(' ');
@@ -31,8 +31,9 @@ const TsExperts = ({
         <Image
           src={leftDecorator.src}
           alt={leftDecorator.alt}
-          width={51}
-          class='md:hidden w-[50px] sm:w-[100px]'
+          width={80}
+          height={80}
+          class='md:hidden w-[50px] sm:w-[80px]'
         />
         <TsTypography
           color='base-300'
@@ -45,6 +46,13 @@ const TsExperts = ({
       </div>
       <div class='flex sm:w-full xl:w-auto gap-x-8 my-8 md:my-14'>
         <div class='flex bg-base-300 w-full xl:w-[970px] h-[250px] md:h-[400px] md:ml-24 rounded-b-lg rounded-l-lg'>
+          <Image
+            src={leftDecorator.src}
+            alt={leftDecorator.alt}
+            width={80}
+            height={80}
+            class='hidden lg:inline-block absolute w-[161px] ml-[-100px] mt-[-160px]'
+          />
           <Image
             src={image.src}
             alt={image.alt}
@@ -102,7 +110,7 @@ const TsExperts = ({
   );
 };
 
-export const loader = (props: ExpertsProps, _req: Request, ctx: AppContext) => {
+export const loader = (props: ExpertProps, _req: Request, ctx: AppContext) => {
   return { ...props, device: ctx.device };
 };
 

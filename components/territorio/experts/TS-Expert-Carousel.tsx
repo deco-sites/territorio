@@ -33,17 +33,17 @@ const TsExpertCarousel = ({ experts, updateExpert }: TsExpertCarouselProps) => {
     visibleItemsCountParam: 3,
   });
 
-  const firstCourse = experts[0];
-  const lastCourse = experts[experts.length - 1];
-  const courseOnTheLeft = visibleItems[0];
-  const courseOnTheRight = visibleItems[2];
+  const firstExpert = experts[0];
+  const lastExpert = experts[experts.length - 1];
+  const expertOnTheLeft = visibleItems[0];
+  const expertOnTheRight = visibleItems[2];
 
   return (
     <div class='flex justify-between items-center gap-x-5 sm:gap-x-20'>
       <ArrowButton
         onClick={onPrevious}
         icon='ChevronLeft'
-        disabled={firstCourse.id === courseOnTheLeft.id}
+        disabled={firstExpert.fullName === expertOnTheLeft.fullName}
       />
       <ul class='flex justify-center gap-x-4 sm:gap-x-12'>
         {visibleItems.map((expert) => (
@@ -53,7 +53,6 @@ const TsExpertCarousel = ({ experts, updateExpert }: TsExpertCarouselProps) => {
           >
             <button onClick={() => updateExpert(expert)}>
               <Image
-                id={String(expert.id)}
                 src={expert.thumbnail.src}
                 alt={expert.thumbnail.alt}
                 width={100}
@@ -66,7 +65,7 @@ const TsExpertCarousel = ({ experts, updateExpert }: TsExpertCarouselProps) => {
       <ArrowButton
         onClick={onNext}
         icon='ChevronRight'
-        disabled={lastCourse.id === courseOnTheRight.id}
+        disabled={lastExpert.fullName === expertOnTheRight.fullName}
       />
     </div>
   );

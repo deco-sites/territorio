@@ -15,21 +15,13 @@ export interface SocialItem {
   link: string;
 }
 
-/**
- * @title Paragraph
- */
+/** @titleBy text */
 type Paragraph = {
   text: string;
 };
 
-/**
- * @titleBY fullName
- */
+/** @titleBy fullName */
 export interface Expert {
-  /**
-   * @description Unique expert identifier
-   */
-  id: number;
   fullName: string;
   image: BasicImage;
   thumbnail: BasicImage;
