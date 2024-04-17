@@ -28,14 +28,13 @@ const ArrowButton = ({
 );
 
 const TsExpertCarousel = ({ experts, updateExpert }: TsExpertCarouselProps) => {
-  const { visibleItems, onPrevious, onNext } = useTsCarrousel<Expert>({
-    items: experts,
-    visibleItemsCountParam: 3,
-  });
+  const { visibleItems, onPrevious, onNext, hasPrevious } =
+    useTsCarrousel<Expert>({
+      items: experts,
+      visibleItemsCountParam: 3,
+    });
 
-  const firstExpert = experts[0];
   const lastExpert = experts[experts.length - 1];
-  const expertOnTheLeft = visibleItems[0];
   const expertOnTheRight = visibleItems[2];
 
   return (
@@ -43,7 +42,7 @@ const TsExpertCarousel = ({ experts, updateExpert }: TsExpertCarouselProps) => {
       <ArrowButton
         onClick={onPrevious}
         icon='ChevronLeft'
-        disabled={firstExpert.fullName === expertOnTheLeft.fullName}
+        disabled={!hasPrevious}
       />
       <ul class='flex justify-center gap-x-4 sm:gap-x-12'>
         {visibleItems.map((expert) => (
