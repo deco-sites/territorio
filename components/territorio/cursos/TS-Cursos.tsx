@@ -21,15 +21,13 @@ const DISPLAYED_ITEMS: Record<MediaQueryKey, number> = {
 const TsCursos = ({ courses }: CursosProps) => {
   const { currentMediaQuery } = useTsMediaQuery();
 
-  const { visibleItems, onNext, onPrevious } = useTsCarrousel({
+  const { visibleItems, onNext, onPrevious, hasPrevious } = useTsCarrousel({
     items: courses,
-    visibleItemsCountParam: DISPLAYED_ITEMS[currentMediaQuery],
+    visibleItemsCountParam: DISPLAYED_ITEMS,
   });
 
   const isMobile = currentMediaQuery === 'sm';
-  const firstCourse = courses[0];
   const lastCourse = courses[courses.length - 1];
-  const courseOnTheLeft = visibleItems[0];
   const courseOnTheRight = visibleItems[DISPLAYED_ITEMS[currentMediaQuery] - 1];
 
   return (
@@ -37,7 +35,7 @@ const TsCursos = ({ courses }: CursosProps) => {
       <button
         class='mx-2 h-[calc(100%-80px)]'
         onClick={onPrevious}
-        disabled={firstCourse.id === courseOnTheLeft.id}
+        disabled={!hasPrevious}
       >
         <Icon
           class='text-accent-content'
@@ -54,7 +52,7 @@ const TsCursos = ({ courses }: CursosProps) => {
       <button
         class='mx-2 h-[calc(100%-80px)]'
         onClick={onNext}
-        disabled={lastCourse.id === courseOnTheRight.id}
+        disabled={lastCourse.name === courseOnTheRight.name}
       >
         <Icon
           class='text-accent-content'

@@ -4,13 +4,10 @@ import { clx } from '../../../sdk/clx.ts';
 import TsTypography from '../typography/TS-Typography.tsx';
 
 /**
- * @title Curso
+ * @titleBy name
  */
 export interface Course {
-  /**
-   * @description Unique course identifier
-   */
-  id: number;
+  name: string;
   imageSrc: ImageWidget;
   alt: string;
   url?: string;
