@@ -52,7 +52,7 @@ export default function TsTestimonials({
   const items = itemsProp.map((item) => (
     <div class="flex flex-col md:flex-row justify-center text-black">
       <Image
-        class="w-2/3 md:w-full h-1/2 md:h-[400px] bg-red-500 object-cover z-50 md:z-0 overflow-hidden rounded-lg rounded-tl-none"
+        class="w-2/3 md:w-full h-1/2 md:h-[400px] object-cover z-20 md:z-0 overflow-hidden rounded-lg rounded-tl-none"
         src={item.image}
         width={351}
         height={351}
