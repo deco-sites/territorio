@@ -1,32 +1,32 @@
-import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx"
-import TsTestimonialsCarouselDesk from "../../../islands/territorio/TS-TestimonialsCarouselDesk.tsx"
+import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
+import TsTestimonialsCarouselDesk from "../../../islands/territorio/TS-TestimonialsCarouselDesk.tsx";
 
-import { ImageWidget } from "apps/admin/widgets.ts"
-import Image from "apps/website/components/Image.tsx"
-import TsTestimonialsCarouselMobile from "./TS-TestimonialsCarouselMobile.tsx"
+import { ImageWidget } from "apps/admin/widgets.ts";
+import Image from "apps/website/components/Image.tsx";
+import TsTestimonialsCarouselMobile from "./TS-TestimonialsCarouselMobile.tsx";
 
 /** @title {{{author}}} - testimonial */
 interface Testimonial {
   /** @title Image */
-  image: ImageWidget
+  image: ImageWidget;
   /** @title Testimonial */
-  content: string
+  content: string;
   /** @title Author */
-  author: string
+  author: string;
 }
 
 interface SectionTitle {
   /** @title Main title */
-  main: string
+  main: string;
   /** @title Subtitle */
-  sub: string
+  sub: string;
 }
 
 export interface Props {
   /** @title Section title */
-  title: SectionTitle
+  title: SectionTitle;
   /** @title Testimonials */
-  items: Testimonial[]
+  items: Testimonial[];
 }
 
 export default function TsTestimonials({
@@ -67,13 +67,14 @@ export default function TsTestimonials({
         </TsTypography>
       </div>
     </div>
-  ))
+  ));
 
   return (
     <div class="ts-section px-0 md:px-8 mb-10">
       <div class="inline-block md:flex md:flex-col md:text-center px-8 mb-10 md:mb-0">
         <TsTypography class="text-3xl md:text-6xl text-[#FFD200]" type="title">
-          {title.main}{" "}
+          {title.main}
+          {" "}
         </TsTypography>
         <TsTypography class="text-3xl md:text-6xl" type="title">
           {title.sub}
@@ -86,5 +87,5 @@ export default function TsTestimonials({
         <TsTestimonialsCarouselMobile>{items}</TsTestimonialsCarouselMobile>
       </div>
     </div>
-  )
+  );
 }
