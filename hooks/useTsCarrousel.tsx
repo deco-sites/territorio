@@ -72,11 +72,11 @@ export function useTsCarrousel<T>({
   }, [currentIndex.value, items, lastVisibleIndex]);
 
   const hasNext = useComputed(() => {
-    return currentIndex.value + 1 < items.length;
+    return currentIndex.value + 1 < items.length || shouldCycle;
   });
 
   const hasPrevious = useComputed(() => {
-    return currentIndex.value - 1 >= 0;
+    return currentIndex.value - 1 >= 0 || shouldCycle;
   });
 
   const nextItem = useComputed(() => {
