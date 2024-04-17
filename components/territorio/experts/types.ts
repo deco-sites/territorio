@@ -26,6 +26,10 @@ type Paragraph = {
  * @titleBY fullName
  */
 export interface Expert {
+  /**
+   * @description Unique expert identifier
+   */
+  id: number;
   fullName: string;
   image: BasicImage;
   thumbnail: BasicImage;

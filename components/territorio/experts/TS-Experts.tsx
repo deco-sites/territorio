@@ -3,9 +3,10 @@ import TsTypography from 'deco-sites/territorio/components/territorio/typography
 import { useState } from 'preact/hooks';
 import { AppContext } from '../../../apps/site.ts';
 import Icon from '../../../components/ui/Icon.tsx';
+import TsExpertCarousel from './TS-Expert-Carousel.tsx';
 import type { BasicImage, Expert } from './types.ts';
 
-export interface ExpertProps {
+export interface ExpertsProps {
   titlePrimary: string;
   titleSecondary: string;
   leftDecorator: BasicImage;
@@ -19,10 +20,9 @@ const TsExperts = ({
   leftDecorator,
   rightDecorator,
   experts,
-}: ExpertProps) => {
-  const [expertId, setExpertId] = useState(0);
-
-  const { image, description, fullName, social, thumbnail } = experts[expertId];
+}: ExpertsProps) => {
+  const [expert, setExpert] = useState(experts[0]);
+  const { image, description, fullName, social } = expert;
   const [firstName, lastName] = fullName.split(' ');
 
   return (
@@ -97,11 +97,12 @@ const TsExperts = ({
           class='hidden lg:block h-[68px]'
         />
       </div>
+      <TsExpertCarousel experts={experts} updateExpert={setExpert} />
     </div>
   );
 };
 
-export const loader = (props: ExpertProps, _req: Request, ctx: AppContext) => {
+export const loader = (props: ExpertsProps, _req: Request, ctx: AppContext) => {
   return { ...props, device: ctx.device };
 };
 
