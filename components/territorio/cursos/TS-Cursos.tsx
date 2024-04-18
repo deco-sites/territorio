@@ -31,7 +31,10 @@ const TsCursos = ({ courses }: CursosProps) => {
   const courseOnTheRight = visibleItems[DISPLAYED_ITEMS[currentMediaQuery] - 1];
 
   return (
-    <div class='flex sm:justify-center items-center mt-[-150px] relative z-30 py-10 overflow-x-hidden sm:overflow-x-auto select-none'>
+    <div
+      id='cursos'
+      class='flex sm:justify-center items-center mt-[-150px] relative z-30 py-10 overflow-x-hidden sm:overflow-x-auto select-none'
+    >
       <button
         class='mx-2 h-[calc(100%-80px)]'
         onClick={onPrevious}
