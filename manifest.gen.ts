@@ -53,14 +53,15 @@ import * as $$$$$$41 from "./sections/Product/ShelfWithImage.tsx";
 import * as $$$$$$42 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$43 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$44 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$46 from "./sections/territorio/TS-Experts.tsx";
-import * as $$$$$$47 from "./sections/territorio/TS-Faq.tsx";
-import * as $$$$$$48 from "./sections/territorio/TS-Header.tsx";
-import * as $$$$$$49 from "./sections/territorio/TS-Hero.tsx";
-import * as $$$$$$50 from "./sections/territorio/TS-Platform.tsx";
-import * as $$$$$$51 from "./sections/territorio/TS-Territorios.tsx";
-import * as $$$$$$52 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$53 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$46 from "./sections/territorio/TS-Cursos.tsx";
+import * as $$$$$$47 from "./sections/territorio/TS-Experts.tsx";
+import * as $$$$$$48 from "./sections/territorio/TS-Faq.tsx";
+import * as $$$$$$49 from "./sections/territorio/TS-Header.tsx";
+import * as $$$$$$50 from "./sections/territorio/TS-Hero.tsx";
+import * as $$$$$$51 from "./sections/territorio/TS-Platform.tsx";
+import * as $$$$$$52 from "./sections/territorio/TS-Territorios.tsx";
+import * as $$$$$$53 from "./sections/territorio/TS-Testimonials.tsx";
+import * as $$$$$$54 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -119,14 +120,15 @@ const manifest = {
     "deco-sites/territorio/sections/Product/Wishlist.tsx": $$$$$$42,
     "deco-sites/territorio/sections/Social/InstagramPosts.tsx": $$$$$$43,
     "deco-sites/territorio/sections/Social/WhatsApp.tsx": $$$$$$44,
-    "deco-sites/territorio/sections/territorio/TS-Experts.tsx": $$$$$$46,
-    "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$47,
-    "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$48,
-    "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$49,
-    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$50,
-    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$51,
-    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$52,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$53,
+    "deco-sites/territorio/sections/territorio/TS-Cursos.tsx": $$$$$$46,
+    "deco-sites/territorio/sections/territorio/TS-Experts.tsx": $$$$$$47,
+    "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$48,
+    "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$49,
+    "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$50,
+    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$51,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$52,
+    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$53,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$54,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "apps": {
