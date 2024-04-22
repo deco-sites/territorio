@@ -1,8 +1,8 @@
-import { useComputed, useSignal } from "@preact/signals";
+import { useComputed, useSignal } from '@preact/signals';
 import useTsMediaQuery, {
   MediaQueryKey,
-} from "deco-sites/territorio/hooks/useTsMediaQuery.tsx";
-import { useCallback, useEffect, useMemo } from "preact/hooks";
+} from 'deco-sites/territorio/hooks/useTsMediaQuery.tsx';
+import { useCallback, useEffect, useMemo } from 'preact/hooks';
 
 type MediaQueries = { [key in MediaQueryKey]: number };
 
@@ -29,6 +29,10 @@ type Params<T> = {
    * this overrides `shouldCycle` property to true.
    */
   autoChangeDelay?: number;
+  /**
+   * A callback function to be called everytime a next or previous action is triggered
+   */
+  onChangeCallback?: () => void;
 };
 
 export function useTsCarrousel<T>({
@@ -36,6 +40,7 @@ export function useTsCarrousel<T>({
   visibleItemsCountParam,
   shouldCycle: shouldCycleParam = false,
   autoChangeDelay = 0,
+  onChangeCallback,
 }: Params<T>) {
   const hoverItem = useSignal<T | undefined>(undefined);
   const currentIndex = useSignal(0);
@@ -43,7 +48,7 @@ export function useTsCarrousel<T>({
   const shouldCycle = shouldCycleParam || autoChangeDelay > 0;
 
   const visibleItemsCount = useMemo(() => {
-    return typeof visibleItemsCountParam === "number"
+    return typeof visibleItemsCountParam === 'number'
       ? visibleItemsCountParam
       : visibleItemsCountParam[currentMediaQuery];
   }, [visibleItemsCountParam, currentMediaQuery]);
@@ -60,7 +65,7 @@ export function useTsCarrousel<T>({
         currentIndex.value = items.length - 1;
       }
     },
-    [items],
+    [items]
   );
 
   const lastVisibleIndex = useMemo(() => {
@@ -92,19 +97,25 @@ export function useTsCarrousel<T>({
   });
 
   const onNext = useCallback(() => {
-    if (nextItem.value && lastVisibleIndex < items.length) {
-      setCurrentIndex(currentIndex.value + 1);
-    } else if (shouldCycle) {
-      setCurrentIndex(0);
-    }
+    onChangeCallback?.();
+    setTimeout(() => {
+      if (nextItem.value && lastVisibleIndex < items.length) {
+        setCurrentIndex(currentIndex.value + 1);
+      } else if (shouldCycle) {
+        setCurrentIndex(0);
+      }
+    }, 100);
   }, [currentIndex, nextItem, shouldCycle]);
 
   const onPrevious = useCallback(() => {
-    if (previousItem.value) {
-      setCurrentIndex(currentIndex.value - 1);
-    } else if (shouldCycle) {
-      setCurrentIndex(items.length - 1);
-    }
+    onChangeCallback?.();
+    setTimeout(() => {
+      if (previousItem.value) {
+        setCurrentIndex(currentIndex.value - 1);
+      } else if (shouldCycle) {
+        setCurrentIndex(items.length - 1);
+      }
+    }, 100);
   }, [currentIndex, previousItem, shouldCycle]);
 
   useEffect(() => {
