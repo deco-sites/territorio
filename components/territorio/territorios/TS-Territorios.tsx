@@ -1,7 +1,8 @@
 import Image from 'apps/website/components/Image.tsx';
 import { AppContext } from '../../../apps/site.ts';
-import Carousel from '../../../islands/territorio/TS-Territorios-Carousel.tsx';
+import TsCarouselBarIsland from '../../../islands/territorio/TS-Carousel-Bar-Island.tsx';
 import TsTypography from '../typography/TS-Typography.tsx';
+import TsTerritoriosCarouselContent from './TS-TerritoriosCarouselContent.tsx';
 import { BasicImage, TerritoriosCarouselItem } from './types.ts';
 
 export interface Props {
@@ -22,30 +23,42 @@ function TsTerritorios({
   carouselItems,
 }: Props) {
   return (
-    <div id='territorios' class='flex justify-center my-5'>
+    <div id='territorios' class='flex justify-center w-full my-5'>
       {/* Mobile */}
-      <div class='md:hidden flex flex-col justify-center gap-y-6 px-[44px]'>
-        <div class='flex items-end'>
+      <div class='md:hidden flex flex-col items-center gap-y-8'>
+        <div class='flex flex-col items-start gap-y-5'>
+          <div class='flex items-end'>
+            <TsTypography
+              color='accent-content'
+              class='text-3xl sm:text-5xl min-w-[155px] max-w-[155px] mb-[-8px]'
+            >
+              {titlePrimary}{' '}
+              <TsTypography color='base-100'>{titleSecondary}</TsTypography>
+            </TsTypography>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={181}
+              height={218}
+              class='ml-[-40px] sm:ml-[0]'
+            />
+          </div>
           <TsTypography
-            color='accent-content'
-            class='text-3xl sm:text-5xl min-w-[155px] max-w-[155px] mb-[-8px]'
+            type='body'
+            color='base-100'
+            class='text-sm sm:text-lg max-w-[272px] sm:max-w-[350px]'
           >
-            {titlePrimary}{' '}
-            <TsTypography color='base-100'>{titleSecondary}</TsTypography>
+            {descriptionPrimary}{' '}
+            <TsTypography weight='600'>{descriptionSecondary}</TsTypography>
           </TsTypography>
-          <Image
-            src={image.src}
-            alt={image.alt}
-            width='70%'
-            height={218}
-            class='ml-[-40px] sm:ml-[0]'
-          />
         </div>
-        <TsTypography type='body' color='base-100' class='text-sm sm:text-lg'>
-          {descriptionPrimary}{' '}
-          <TsTypography weight='600'>{descriptionSecondary}</TsTypography>
-        </TsTypography>
-        <Carousel items={carouselItems} />
+        <TsCarouselBarIsland
+          containerClassName='flex flex-col gap-8 items-center'
+          class='flex overflow-x-auto snap-x snap-mandatory scrollbar-hide'
+          autoChangeDelay={5000}
+        >
+          <TsTerritoriosCarouselContent items={carouselItems} />
+        </TsCarouselBarIsland>
       </div>
       {/* Desktop */}
       <div class='hidden md:flex flex-col max-w-[1200px] w-full justify-center md:pt-6 xl:pt-10 px-8 xl:px-0'>
@@ -76,8 +89,8 @@ function TsTerritorios({
                 <Image
                   src={item.image.src}
                   alt={item.image.alt}
-                  width={'70%'}
-                  height={825}
+                  width={101}
+                  height={63}
                 />
                 <TsTypography
                   weight='300'

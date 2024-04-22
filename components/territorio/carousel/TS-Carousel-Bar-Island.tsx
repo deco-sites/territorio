@@ -1,18 +1,18 @@
-import { ComponentChildren, toChildArray, VNode } from "preact";
+import { ComponentChildren, JSX, VNode, toChildArray } from 'preact';
 
-import { useSignal } from "@preact/signals";
-import useTsDimensions from "deco-sites/territorio/hooks/useTsDimensions.tsx";
-import { useEffect, useRef } from "preact/hooks";
-import { debounce } from "std/async/debounce.ts";
-import type { Props as TsCarouselBarProps } from "./TS-Carousel-Bar.tsx";
-import TsCarouselBar from "./TS-Carousel-Bar.tsx";
+import { useSignal } from '@preact/signals';
+import useTsDimensions from 'deco-sites/territorio/hooks/useTsDimensions.tsx';
+import { useEffect, useRef } from 'preact/hooks';
+import { debounce } from 'std/async/debounce.ts';
+import type { Props as TsCarouselBarProps } from './TS-Carousel-Bar.tsx';
+import TsCarouselBar from './TS-Carousel-Bar.tsx';
 
-type PickProps = Pick<TsCarouselBarProps, "activeColor">;
+type PickProps = Pick<TsCarouselBarProps, 'activeColor'>;
 
 export interface Props extends PickProps {
   children: ComponentChildren;
-  class?: string;
-  containerClassName?: string;
+  class?: string | JSX.SignalLike<string | undefined>;
+  containerClassName?: string | JSX.SignalLike<string | undefined>;
   autoChangeDelay?: number;
 }
 
@@ -39,7 +39,7 @@ const TsCarouselBarIsland = ({
         currentIndex.value = index;
         carouselRef.current?.scrollTo({
           left: width * index,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       }, autoChangeDelay);
       return () => clearInterval(interval);
@@ -65,7 +65,7 @@ const TsCarouselBarIsland = ({
           currentIndex.value = index;
           carouselRef.current?.scrollTo({
             left: width * index,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         }}
       />
