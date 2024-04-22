@@ -54,7 +54,7 @@ function TsTerritorios({
         </div>
         <TsCarouselBarIsland
           containerClassName='flex flex-col gap-8 items-center'
-          class='flex overflow-x-auto snap-x snap-mandatory scrollbar-hide'
+          class='flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-[100vw]'
           autoChangeDelay={5000}
         >
           <TsTerritoriosCarouselContent items={carouselItems} />

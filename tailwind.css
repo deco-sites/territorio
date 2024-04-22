@@ -19,6 +19,10 @@
     background-color: #202020
   }
 
+  #territorios {
+    overflow-x: hidden
+  }
+
   mark {
     @apply bg-accent text-accent-content;
   }
