@@ -2,6 +2,7 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$$$$$$$0 from "./actions/RdStation.ts";
 import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
@@ -58,11 +59,12 @@ import * as $$$$$$47 from "./sections/territorio/TS-Experts.tsx";
 import * as $$$$$$48 from "./sections/territorio/TS-Faq.tsx";
 import * as $$$$$$49 from "./sections/territorio/TS-Header.tsx";
 import * as $$$$$$50 from "./sections/territorio/TS-Hero.tsx";
-import * as $$$$$$51 from "./sections/territorio/TS-Platform.tsx";
-import * as $$$$$$52 from "./sections/territorio/TS-Proposito.tsx";
-import * as $$$$$$53 from "./sections/territorio/TS-Territorios.tsx";
-import * as $$$$$$54 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$55 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$51 from "./sections/territorio/TS-Newsletter.tsx";
+import * as $$$$$$52 from "./sections/territorio/TS-Platform.tsx";
+import * as $$$$$$53 from "./sections/territorio/TS-Proposito.tsx";
+import * as $$$$$$54 from "./sections/territorio/TS-Territorios.tsx";
+import * as $$$$$$55 from "./sections/territorio/TS-Testimonials.tsx";
+import * as $$$$$$56 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -126,12 +128,16 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$48,
     "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$49,
     "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$50,
-    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$51,
-    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$52,
-    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$53,
-    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$54,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$55,
+    "deco-sites/territorio/sections/territorio/TS-Newsletter.tsx": $$$$$$51,
+    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$52,
+    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$53,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$54,
+    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$55,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$56,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
+  },
+  "actions": {
+    "deco-sites/territorio/actions/RdStation.ts": $$$$$$$$$0,
   },
   "apps": {
     "deco-sites/territorio/apps/decohub.ts": $$$$$$$$$$$0,
