@@ -26,7 +26,7 @@ const TsExperts = ({
   const [firstName, lastName] = fullName.split(' ');
 
   return (
-    <div id='experts' class='flex flex-col items-center my-10 md:my-32 mx-8'>
+    <div id='experts' class='flex flex-col items-center my-10 md:my-32 px-8'>
       <div class='flex gap-x-3 justify-center items-center'>
         <Image
           src={leftDecorator.src}
