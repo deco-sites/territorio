@@ -1,17 +1,17 @@
-import { ImageType } from '../types.ts';
+import { ImageType } from "../types.ts";
 
-export type BasicImage = Omit<ImageType, 'url' | 'width' | 'height'>;
+export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 
 export interface SocialItem {
   label:
-    | 'Discord'
-    | 'Facebook'
-    | 'Instagram'
-    | 'Linkedin'
-    | 'Tiktok'
-    | 'Twitter'
-    | 'Youtube'
-    | 'WhatsApp';
+    | "Discord"
+    | "Facebook"
+    | "Instagram"
+    | "Linkedin"
+    | "Tiktok"
+    | "Twitter"
+    | "Youtube"
+    | "WhatsApp";
   link: string;
 }
 

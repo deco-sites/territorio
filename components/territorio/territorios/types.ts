@@ -1,6 +1,6 @@
-import { ImageType } from '../types.ts';
+import { ImageType } from "../types.ts";
 
-export type BasicImage = Omit<ImageType, 'url' | 'width' | 'height'>;
+export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 
 /**
  * @title Carousel items
