@@ -21,8 +21,8 @@ const TsExperts = ({
   rightDecorator,
   experts,
 }: ExpertProps) => {
-  const [expert, setExpert] = useState(experts[0]);
-  const { image, description, fullName, social } = expert;
+  const [expertId, setExpertId] = useState(0);
+  const { image, description, fullName, social } = experts[expertId];
   const [firstName, lastName] = fullName.split(' ');
 
   return (
@@ -57,6 +57,7 @@ const TsExperts = ({
             src={image.src}
             alt={image.alt}
             width={423}
+            height={502}
             class='self-end h-fit ml-[-90px] max-w-[240px] sm:max-w-[263px] lg:max-w-[423px]'
           />
           <div class='flex flex-col md:flex-row justify-between w-full mt-4 md:mt-12 mx-2 md:mx-8'>
@@ -102,10 +103,11 @@ const TsExperts = ({
           src={rightDecorator.src}
           alt={rightDecorator.alt}
           width={68}
+          height={68}
           class='hidden lg:block h-[68px]'
         />
       </div>
-      <TsExpertCarousel experts={experts} updateExpert={setExpert} />
+      <TsExpertCarousel experts={experts} updateExpertId={setExpertId} />
     </div>
   );
 };

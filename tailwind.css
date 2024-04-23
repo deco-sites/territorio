@@ -15,7 +15,7 @@
     font-family: var(--font-family);
   }
 
-  #territorios {
+  #territorios, #experts {
     overflow-x: hidden
   }
 

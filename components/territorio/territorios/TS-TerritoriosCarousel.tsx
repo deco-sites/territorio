@@ -1,5 +1,5 @@
 import Image from 'apps/website/components/Image.tsx';
-import TsCarouselBarIsland from '../../../islands/territorio/TS-Carousel-Bar-Island.tsx';
+import TsCarouselBarIsland from '../../../islands/territorio/TS-Carousel.tsx';
 import TsTypography from '../typography/TS-Typography.tsx';
 import { TerritoriosCarouselItem } from './types.ts';
 
