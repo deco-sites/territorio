@@ -8,8 +8,13 @@ import TsTypography from "../typography/TS-Typography.tsx";
 export interface Props {
   title?: string;
   description?: string;
+  /** @description Placeholder for email input */
   placeholder?: string;
   buttonText?: string;
+  privacyPolicyPreviousText?: string;
+  /** @format url */
+  privacyPolicyUrl?: string;
+  privacyPolicyLinkText?: string;
 }
 
 const EMAIL_REGEX =
@@ -21,6 +26,9 @@ export default function TsNewsletter({
     "Conheça as novidades em territórios, experts, formações e conteúdos qualificados para a sua evolução profissional e pessoal.",
   placeholder = "Digite seu e-mail",
   buttonText = "Inscrever",
+  privacyPolicyUrl = "",
+  privacyPolicyPreviousText = "Ao se inscrever, você está aceitando nossa",
+  privacyPolicyLinkText = "Política de Privacidade",
 }: Props) {
   const loading = useSignal(false);
   const feedbackMsg = useSignal<string | null>(null);
@@ -109,10 +117,11 @@ export default function TsNewsletter({
         )}
 
         <TsTypography as="p" class="mt-9 text-center text-lg">
-          Ao se inscrever, você está aceitando nossa{" "}
-          <TsLink to="" class="underline">
-            Política de Privacidade.
+          {privacyPolicyPreviousText}{" "}
+          <TsLink to={privacyPolicyUrl} class="underline">
+            {privacyPolicyLinkText}
           </TsLink>
+          .
         </TsTypography>
       </div>
     </div>
