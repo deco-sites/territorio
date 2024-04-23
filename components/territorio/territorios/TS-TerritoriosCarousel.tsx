@@ -1,14 +1,20 @@
 import Image from 'apps/website/components/Image.tsx';
+import TsCarouselBarIsland from '../../../islands/territorio/TS-Carousel-Bar-Island.tsx';
 import TsTypography from '../typography/TS-Typography.tsx';
 import { TerritoriosCarouselItem } from './types.ts';
 
 export interface Props {
   items: TerritoriosCarouselItem[];
+  delay?: number;
 }
 
-const TsTerritoriosCarouselContent = ({ items }: Props) => {
+const TsTerritoriosCarousel = ({ items, delay = 5000 }: Props) => {
   return (
-    <>
+    <TsCarouselBarIsland
+      containerClassName='flex flex-col gap-8 items-center'
+      class='flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-[100vw]'
+      autoChangeDelay={delay}
+    >
       {Object.entries(items).map(([_, item]) => (
         <div class='text-center min-w-full flex flex-col gap-1'>
           <div class='flex flex-col items-center gap-y-5'>
@@ -45,8 +51,8 @@ const TsTerritoriosCarouselContent = ({ items }: Props) => {
           </div>
         </div>
       ))}
-    </>
+    </TsCarouselBarIsland>
   );
 };
 
-export default TsTerritoriosCarouselContent;
+export default TsTerritoriosCarousel;

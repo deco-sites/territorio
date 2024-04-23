@@ -1,8 +1,7 @@
 import Image from 'apps/website/components/Image.tsx';
 import { AppContext } from '../../../apps/site.ts';
-import TsCarouselBarIsland from '../../../islands/territorio/TS-Carousel-Bar-Island.tsx';
 import TsTypography from '../typography/TS-Typography.tsx';
-import TsTerritoriosCarouselContent from './TS-TerritoriosCarouselContent.tsx';
+import TsTerritoriosCarousel from './TS-TerritoriosCarousel.tsx';
 import { BasicImage, TerritoriosCarouselItem } from './types.ts';
 
 export interface Props {
@@ -52,13 +51,7 @@ function TsTerritorios({
             <TsTypography weight='600'>{descriptionSecondary}</TsTypography>
           </TsTypography>
         </div>
-        <TsCarouselBarIsland
-          containerClassName='flex flex-col gap-8 items-center'
-          class='flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-[100vw]'
-          autoChangeDelay={5000}
-        >
-          <TsTerritoriosCarouselContent items={carouselItems} />
-        </TsCarouselBarIsland>
+        <TsTerritoriosCarousel items={carouselItems} />
       </div>
       {/* Desktop */}
       <div class='hidden md:flex flex-col max-w-[1200px] w-full justify-center md:pt-6 xl:pt-10 px-8 xl:px-0'>
