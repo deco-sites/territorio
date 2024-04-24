@@ -1,14 +1,5 @@
+import { Color } from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
 import { clx } from "../../../sdk/clx.ts";
-import {
-  ComplementaryColors,
-  ThemeColors,
-} from "../../../sections/Theme/Theme.tsx";
-
-type Color =
-  | keyof ThemeColors
-  | keyof ComplementaryColors
-  | "accent"
-  | "accent-content";
 
 export interface Props {
   items: unknown[];

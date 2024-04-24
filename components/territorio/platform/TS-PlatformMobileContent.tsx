@@ -1,4 +1,5 @@
 import Image from "apps/website/components/Image.tsx";
+import { getColorFromVar } from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
 import TsCarouselBarIsland from "../../../islands/territorio/TS-Carousel.tsx";
 import TsPlatformCardContent from "./TS-PlatformCardContent.tsx";
 import type { ContentProps } from "./types.ts";
@@ -21,7 +22,7 @@ export default function TsPlatformMobileContent({
           <g clip-path="url(#clip0_92_96)">
             <path
               d="M27 9.9149L27 -3.21972e-07L0 0L3.21972e-07 27L9.9149 27C9.9149 17.5774 17.5831 9.9149 27 9.9149Z"
-              fill="#28FF64"
+              fill={getColorFromVar("secondary-content")}
             />
           </g>
           <defs>
@@ -48,7 +49,7 @@ export default function TsPlatformMobileContent({
           <g clip-path="url(#clip0_92_98)">
             <path
               d="M16.4523 -8.62409e-07L26 0L26 27L0 27L8.39064e-07 17.0851C9.07357 17.0851 16.4523 9.41689 16.4523 -8.62409e-07Z"
-              fill="#28FF64"
+              fill={getColorFromVar("secondary-content")}
             />
           </g>
           <defs>
@@ -66,7 +67,7 @@ export default function TsPlatformMobileContent({
       <TsCarouselBarIsland
         class="flex max-w-full gap-[10vw] overflow-x-auto px-8 snap-x snap-mandatory scrollbar-hide"
         containerClassName="flex flex-col gap-8 items-center"
-        activeColor="#28FF64"
+        activeColor="secondary-content"
         autoChangeDelay={5000}
       >
         {Object.entries(content).map(([key, value]) => (

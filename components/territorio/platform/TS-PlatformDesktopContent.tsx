@@ -1,4 +1,5 @@
 import Image from "apps/website/components/Image.tsx";
+import { getColorFromVar } from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
 import TsPlatformCardContent from "./TS-PlatformCardContent.tsx";
 import type { ContentProps } from "./types.ts";
 
@@ -7,7 +8,7 @@ export default function TsPlatformDesktopContent({
   image,
 }: ContentProps) {
   return (
-    <div class="my-10 hidden px-8 md:flex flex-col gap-10 relative">
+    <div class="my-12 hidden px-8 md:flex flex-col gap-10 relative">
       <div class="flex justify-between">
         <TsPlatformCardContent content={content.section1} />
         <TsPlatformCardContent content={content.section2} />
@@ -25,7 +26,7 @@ export default function TsPlatformDesktopContent({
         <TsPlatformCardContent content={content.section4} />
         <TsPlatformCardContent content={content.section5} />
       </div>
-      <div class="absolute w-[90%] flex top-[20%] -translate-y-[20%] left-[40%] lg:left-[52%] -translate-x-[40%] lg:-translate-x-[50%]">
+      <div class="absolute flex max-w-[950px] w-[80vw] top-[18%] left-[9%] lg:top-[13%] lg:left-[12%] pr-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="73"
@@ -37,7 +38,7 @@ export default function TsPlatformDesktopContent({
           <g clip-path="url(#clip0_1_586)">
             <path
               d="M73 26.807L73 -8.70516e-07L0 0L8.70516e-07 73L26.807 73C26.807 47.5242 47.5395 26.807 73 26.807Z"
-              fill="#28FF64"
+              fill={getColorFromVar("secondary-content")}
             />
           </g>
           <defs>
@@ -51,7 +52,7 @@ export default function TsPlatformDesktopContent({
             </clipPath>
           </defs>
         </svg>
-        <Image src={image} width={754} height={570} class=" w-2/3" />
+        <Image src={image} width={754} height={570} class="w-2/3" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="76"
@@ -63,7 +64,7 @@ export default function TsPlatformDesktopContent({
           <g clip-path="url(#clip0_1_584)">
             <path
               d="M-6.22551e-05 27.9086L-6.10352e-05 -3.32207e-06L75.9999 0L75.9999 76L48.0913 76C48.0913 49.4773 26.5067 27.9086 -6.22551e-05 27.9086Z"
-              fill="#28FF64"
+              fill={getColorFromVar("secondary-content")}
             />
           </g>
           <defs>

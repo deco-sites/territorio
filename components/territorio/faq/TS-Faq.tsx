@@ -69,7 +69,7 @@ export default function TSFaq({
         <TsLink
           to={ctaSupportDescription.href}
           openOnNewTab
-          class="underline text-[#BA7DFE]"
+          class="underline text-accent-content"
         >
           {ctaSupportDescription.ctaPart}
         </TsLink>{" "}

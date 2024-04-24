@@ -19,7 +19,7 @@ export default function TsPlatformCardContent({
       )}
     >
       <TsTypography
-        class="text-[#28FF64] text-xl md:text-3xl"
+        class="text-secondary-content text-xl md:text-3xl"
         weight="600"
         type="body"
       >

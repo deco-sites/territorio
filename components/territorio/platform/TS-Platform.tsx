@@ -46,7 +46,10 @@ export default function TsPlatform({
   return (
     <div class="ts-section p-0 mb-20">
       <div class="inline-block text-center px-8 mb-10 md:mb-0">
-        <TsTypography class="text-3xl md:text-6xl text-[#28FF64]" type="title">
+        <TsTypography
+          class="text-3xl md:text-6xl text-secondary-content"
+          type="title"
+        >
           {title.main}
           {" "}
         </TsTypography>

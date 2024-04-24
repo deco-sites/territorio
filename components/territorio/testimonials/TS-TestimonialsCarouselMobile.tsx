@@ -12,7 +12,7 @@ const TsTestimonialsCarouselMobile = ({ children }: Props) => {
     <TsCarouselBarIsland
       class="flex max-w-full gap-[10vw] overflow-x-auto px-8 snap-x snap-mandatory scrollbar-hide"
       containerClassName="flex flex-col gap-8 items-center"
-      activeColor="#FFD200"
+      activeColor="base-300"
       autoChangeDelay={5000}
     >
       {items.map((item, index) => (
