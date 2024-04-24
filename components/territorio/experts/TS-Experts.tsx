@@ -68,7 +68,10 @@ const TsExperts = ({
               >
                 {firstName} <TsTypography weight="600">{lastName}</TsTypography>
               </TsTypography>
-              <div class="flex flex-col gap-y-3 overflow-y-auto max-h-[120px] md:max-h-[240px] pr-4 xl:pr-8">
+              <div
+                id="scroll"
+                class="flex flex-col gap-y-3 overflow-y-auto max-h-[120px] md:max-h-[240px] pr-4 xl:pr-8"
+              >
                 {description.map(({ text }) => (
                   <TsTypography
                     key={text}
