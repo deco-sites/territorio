@@ -1,10 +1,11 @@
 import commerce, { Props as CommerceProps } from "apps/commerce/mod.ts";
+import { color as linx } from "apps/linx/mod.ts";
+import { color as nuvemshop } from "apps/nuvemshop/mod.ts";
 import { color as shopify } from "apps/shopify/mod.ts";
 import { color as vnda } from "apps/vnda/mod.ts";
 import { color as vtex } from "apps/vtex/mod.ts";
 import { color as wake } from "apps/wake/mod.ts";
-import { color as linx } from "apps/linx/mod.ts";
-import { color as nuvemshop } from "apps/nuvemshop/mod.ts";
+import { Secret } from "apps/website/loaders/secret.ts";
 import { Section } from "deco/blocks/section.ts";
 import type { App as A, AppContext as AC } from "deco/mod.ts";
 import { rgb24 } from "std/fmt/colors.ts";
@@ -18,6 +19,7 @@ export type Props = {
    */
   platform: Platform;
   theme?: Section;
+  rdStationToken: Secret;
 } & CommerceProps;
 
 export type Platform =
@@ -57,9 +59,10 @@ const color = (platform: string) => {
 
 let firstRun = true;
 
-export default function Site(
-  { theme, ...state }: Props,
-): A<Manifest, Props, [ReturnType<typeof commerce>]> {
+export default function Site({
+  theme,
+  ...state
+}: Props): A<Manifest, Props, [ReturnType<typeof commerce>]> {
   _platform = state.platform || state.commerce?.platform || "custom";
 
   // Prevent console.logging twice
@@ -67,7 +70,10 @@ export default function Site(
     firstRun = false;
     console.info(
       ` 🐁 ${rgb24("Storefront", color("deco"))} | ${
-        rgb24(_platform, color(_platform))
+        rgb24(
+          _platform,
+          color(_platform),
+        )
       } \n`,
     );
   }
