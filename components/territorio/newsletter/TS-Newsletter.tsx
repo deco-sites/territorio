@@ -79,8 +79,8 @@ export default function TsNewsletter({
   };
 
   return (
-    <div class="w-full px-8">
-      <div class="ts-section my-10 p-8 rounded-xl border border-[#BA7DFE]">
+    <div class="w-full px-8 mb-16">
+      <div class="ts-section my-10 p-8 rounded-xl border border-accent-content">
         <div class="flex flex-col gap-8">
           <TsTypography class="text-4xl">{title}</TsTypography>
           <TsTypography type="body" class="text-xl">
@@ -88,9 +88,12 @@ export default function TsNewsletter({
           </TsTypography>
         </div>
 
-        <form class="w-full flex gap-4 mt-7" onSubmit={handleSubmit}>
+        <form
+          class="w-full flex flex-col md:flex-row gap-4 mt-7"
+          onSubmit={handleSubmit}
+        >
           <input
-            class="rounded-xl py-2 px-8 border border-[#BA7DFE] text-2xl w-full !leading-normal placeholder:font-body placeholder:text-[#23282D] text-[#23282D]"
+            class="rounded-xl py-2 px-8 border border-accent-content text-2xl w-full !leading-normal placeholder:font-body placeholder:text-[#23282D] text-[#23282D]"
             name="email"
             placeholder={placeholder}
             onChange={(e) => {
@@ -99,7 +102,7 @@ export default function TsNewsletter({
           />
           <TsButton
             variant="primary"
-            class="py-2 rounded-xl px-8 text-2xl !leading-normal"
+            class="text-center py-2 rounded-xl px-8 text-2xl !leading-normal"
             type="submit"
             loading={loading.value}
           >

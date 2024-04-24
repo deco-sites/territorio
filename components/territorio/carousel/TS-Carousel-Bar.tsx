@@ -1,14 +1,8 @@
-import { clx } from "../../../sdk/clx.ts";
 import {
-  ComplementaryColors,
-  ThemeColors,
-} from "../../../sections/Theme/Theme.tsx";
-
-type Color =
-  | keyof ThemeColors
-  | keyof ComplementaryColors
-  | "accent"
-  | "accent-content";
+  Color,
+  getColorFromVar,
+} from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
+import { clx } from "../../../sdk/clx.ts";
 
 export interface Props {
   items: unknown[];
@@ -40,7 +34,7 @@ const TsCarouselBar = ({
               ? {
                 backgroundColor: activeColor.startsWith("#")
                   ? activeColor
-                  : `var(--${activeColor})`,
+                  : getColorFromVar(activeColor as Color),
               }
               : {}}
           >

@@ -1,4 +1,5 @@
 import Image from "apps/website/components/Image.tsx";
+import { getColorFromVar } from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
 import TsPlatformCardContent from "./TS-PlatformCardContent.tsx";
 import type { ContentProps } from "./types.ts";
 
@@ -37,7 +38,7 @@ export default function TsPlatformDesktopContent({
           <g clip-path="url(#clip0_1_586)">
             <path
               d="M73 26.807L73 -8.70516e-07L0 0L8.70516e-07 73L26.807 73C26.807 47.5242 47.5395 26.807 73 26.807Z"
-              fill="#28FF64"
+              fill={getColorFromVar("secondary-content")}
             />
           </g>
           <defs>
@@ -63,7 +64,7 @@ export default function TsPlatformDesktopContent({
           <g clip-path="url(#clip0_1_584)">
             <path
               d="M-6.22551e-05 27.9086L-6.10352e-05 -3.32207e-06L75.9999 0L75.9999 76L48.0913 76C48.0913 49.4773 26.5067 27.9086 -6.22551e-05 27.9086Z"
-              fill="#28FF64"
+              fill={getColorFromVar("secondary-content")}
             />
           </g>
           <defs>

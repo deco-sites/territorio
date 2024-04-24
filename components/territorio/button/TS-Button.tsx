@@ -38,7 +38,7 @@ const Button = ({
     {loading
       ? <span class="loading loading-spinner" />
       : (
-        <div class="flex gap-x-3 items-center">
+        <div class="flex gap-x-3 items-center justify-center">
           {!!icon && (
             <Image
               src={icon.src}

@@ -1,5 +1,6 @@
 import { useSignal, useSignalEffect } from "@preact/signals";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
+import { getColorFromVar } from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
 import { ComponentChildren, toChildArray, VNode } from "preact";
 import { useTsCarrousel } from "../../../hooks/useTsCarrousel.tsx";
 import TsCarouselBar from "../carousel/TS-Carousel-Bar.tsx";
@@ -59,7 +60,10 @@ const TsTestimonialsCarouselDesk = ({ children }: Props) => {
             viewBox="0 0 33 107"
             fill="none"
           >
-            <path d="M31.975 1L1 53.7598L31.975 106.52" stroke="#FFD200" />
+            <path
+              d="M31.975 1L1 53.7598L31.975 106.52"
+              stroke={getColorFromVar("base-300")}
+            />
           </svg>
         </button>
         <div
@@ -91,7 +95,7 @@ const TsTestimonialsCarouselDesk = ({ children }: Props) => {
           >
             <path
               d="M0.852051 1L31.8221 53.7598L0.852051 106.52"
-              stroke="#FFD200"
+              stroke={getColorFromVar("base-300")}
             />
           </svg>
         </button>
@@ -100,7 +104,7 @@ const TsTestimonialsCarouselDesk = ({ children }: Props) => {
         items={items}
         currentId={currentIndex}
         onItemClick={setCurrentIndex}
-        activeColor="#FFD200"
+        activeColor="base-300"
       />
     </div>
   );
