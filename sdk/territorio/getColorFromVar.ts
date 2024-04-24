@@ -1,13 +1,13 @@
 import {
   ComplementaryColors,
   ThemeColors,
-} from "../../sections/Theme/Theme.tsx"
+} from "../../sections/Theme/Theme.tsx";
 
 export type Color =
   | keyof ThemeColors
   | keyof ComplementaryColors
   | "accent"
-  | "accent-content"
+  | "accent-content";
 
 export const ColorMapping: Record<Color, string> = {
   "accent-content": "var(--ac)",
@@ -32,7 +32,7 @@ export const ColorMapping: Record<Color, string> = {
   success: "var(--su)",
   tertiary: "var(--t)",
   warning: "var(--w)",
-}
+};
 
 /**
  * A function that retrieves the color mapping for a given color.
@@ -41,7 +41,7 @@ export const ColorMapping: Record<Color, string> = {
  * @return {any} The color mapping for the specified color.
  */
 export function getColorVar(color: Color) {
-  return ColorMapping[color]
+  return ColorMapping[color];
 }
 
 /**
@@ -52,5 +52,5 @@ export function getColorVar(color: Color) {
  * @return {string} - The CSS color value in the Oklch color space.
  */
 export function getColorFromVar(color: Color, opacity: number | string = 1) {
-  return `oklch(${getColorVar(color)} / ${opacity})`
+  return `oklch(${getColorVar(color)} / ${opacity})`;
 }

@@ -91,19 +91,19 @@ export default function TsNewsletter({
   return (
     <div class="w-full px-8 mb-16">
       <div class="ts-section my-10 p-8 rounded-xl border border-accent-content">
-        <div class="flex flex-col gap-8">
-          <TsTypography class="text-4xl">{title}</TsTypography>
-          <TsTypography type="body" class="text-xl">
+        <div class="flex flex-col gap-3 md:gap-8">
+          <TsTypography class="text-2xl md:text-4xl">{title}</TsTypography>
+          <TsTypography type="body" class="text-sm md:text-xl">
             {description}
           </TsTypography>
         </div>
 
         <form
-          class="w-full flex flex-col md:flex-row gap-4 mt-7"
+          class="w-full flex flex-col md:flex-row gap-2 md:gap-4 mt-6 md:mt-7"
           onSubmit={handleSubmit}
         >
           <input
-            class="rounded-xl py-2 px-8 border border-accent-content text-2xl w-full !leading-normal placeholder:font-body placeholder:text-[#23282D] text-[#23282D]"
+            class="rounded-md md:rounded-xl py-2 px-8 border border-accent-content text-sm md:text-2xl w-full !leading-normal placeholder:font-body placeholder:text-[#23282D] text-[#23282D]"
             name="email"
             placeholder={placeholder}
             onChange={(e) => {
@@ -112,7 +112,7 @@ export default function TsNewsletter({
           />
           <TsButton
             variant="primary"
-            class="text-center py-2 rounded-xl px-8 text-2xl !leading-normal"
+            class="text-center py-2 rounded-md md:rounded-xl px-8 text-sm md:text-2xl !leading-normal"
             type="submit"
             loading={loading.value}
           >
@@ -123,13 +123,16 @@ export default function TsNewsletter({
           <TsTypography
             as="p"
             data-error={isError.value}
-            class="mt-2 data-[error=false]:text-green-700 data-[error=true]:text-red-600 text-center"
+            class="text-sm md:text-xl mt-2 data-[error=false]:text-green-700 data-[error=true]:text-red-600 text-center"
           >
             {feedbackMsg.value}
           </TsTypography>
         )}
 
-        <TsTypography as="p" class="mt-9 text-center text-lg">
+        <TsTypography
+          as="p"
+          class="mt-6 md:mt-9 text-center text-[0.75rem] md:text-lg"
+        >
           {privacyPolicyPreviousText}{" "}
           <TsLink to={privacyPolicyUrl} class="underline">
             {privacyPolicyLinkText}
