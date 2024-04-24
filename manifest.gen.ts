@@ -64,7 +64,8 @@ import * as $$$$$$52 from "./sections/territorio/TS-Platform.tsx";
 import * as $$$$$$53 from "./sections/territorio/TS-Proposito.tsx";
 import * as $$$$$$54 from "./sections/territorio/TS-Territorios.tsx";
 import * as $$$$$$55 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$56 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$56 from "./sections/territorio/TS-Zendesk.tsx";
+import * as $$$$$$57 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -133,7 +134,8 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$53,
     "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$54,
     "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$55,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$56,
+    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$56,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$57,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "actions": {
