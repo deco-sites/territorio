@@ -1,4 +1,4 @@
-import type { ImageWidget } from 'apps/admin/widgets.ts';
+import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface ImageType {
   src: ImageWidget;

@@ -1,17 +1,17 @@
-import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx"
-import Icon from "deco-sites/territorio/components/ui/Icon.tsx"
+import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
+import Icon from "deco-sites/territorio/components/ui/Icon.tsx";
 
 export interface Props {
-  children: Child[]
+  children: Child[];
   /** @ignore */
-  name: string
+  name: string;
 }
 
 /** @title {{{title}}} */
 interface Child {
-  title: string
+  title: string;
   /** @format textarea */
-  subtitle: string
+  subtitle: string;
 }
 
 export default function TSAccordion({ children, name }: Props) {
@@ -52,8 +52,8 @@ export default function TSAccordion({ children, name }: Props) {
               </TsTypography>
             </div>
           </div>
-        )
+        );
       })}
     </>
-  )
+  );
 }
