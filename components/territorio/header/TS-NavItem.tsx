@@ -11,7 +11,7 @@ function TsNavItem({ item }: { item: SiteNavigationElementLeaf }) {
         type="body"
         color="base-100"
         weight="500"
-        class="text-[16px] xl:text-[20px]"
+        class="text-[16px] xl:text-[20px] hover:underline"
       >
         {name as string}
       </TsLink>
