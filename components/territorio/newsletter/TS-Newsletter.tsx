@@ -15,6 +15,12 @@ export interface Props {
   /** @format url */
   privacyPolicyUrl?: string;
   privacyPolicyLinkText?: string;
+  /** @description Message displayed when email is successfully subscribed */
+  onSuccessMessage?: string;
+  /** @description Message displayed when email is not subscribed because a server error */
+  onErrorMessage?: string;
+  /** @description Message displayed when email is not valid */
+  onEmailInvalidMessage?: string;
 }
 
 const EMAIL_REGEX =
@@ -29,6 +35,10 @@ export default function TsNewsletter({
   privacyPolicyUrl = "",
   privacyPolicyPreviousText = "Ao se inscrever, você está aceitando nossa",
   privacyPolicyLinkText = "Política de Privacidade",
+  onSuccessMessage = "E-mail inscrito com sucesso!",
+  onErrorMessage =
+    "Erro ao cadastrar e-mail. Tente novamente ou contate o suporte.",
+  onEmailInvalidMessage = "E-mail inválido",
 }: Props) {
   const loading = useSignal(false);
   const feedbackMsg = useSignal<string | null>(null);
@@ -45,7 +55,7 @@ export default function TsNewsletter({
 
     if (!valid) {
       isError.value = true;
-      feedbackMsg.value = "E-mail inválido";
+      feedbackMsg.value = onEmailInvalidMessage;
     }
 
     return valid;
@@ -69,9 +79,9 @@ export default function TsNewsletter({
 
       await invoke["deco-sites/territorio"].actions.RdStation({ email });
 
-      feedbackMsg.value = "E-mail cadastrado com sucesso";
+      feedbackMsg.value = onSuccessMessage;
     } catch {
-      feedbackMsg.value = "Ocorreu um erro ao se cadastrar. Tente novamente";
+      feedbackMsg.value = onErrorMessage;
     } finally {
       submitted.value = false;
       loading.value = false;
@@ -79,18 +89,21 @@ export default function TsNewsletter({
   };
 
   return (
-    <div class="w-full px-8">
-      <div class="ts-section my-10 p-8 rounded-xl border border-[#BA7DFE]">
-        <div class="flex flex-col gap-8">
-          <TsTypography class="text-4xl">{title}</TsTypography>
-          <TsTypography type="body" class="text-xl">
+    <div class="w-full px-8 mb-16">
+      <div class="ts-section my-10 p-8 rounded-xl border border-accent-content">
+        <div class="flex flex-col gap-3 md:gap-8">
+          <TsTypography class="text-2xl md:text-4xl">{title}</TsTypography>
+          <TsTypography type="body" class="text-sm md:text-xl">
             {description}
           </TsTypography>
         </div>
 
-        <form class="w-full flex gap-4 mt-7" onSubmit={handleSubmit}>
+        <form
+          class="w-full flex flex-col md:flex-row gap-2 md:gap-4 mt-6 md:mt-7"
+          onSubmit={handleSubmit}
+        >
           <input
-            class="rounded-xl py-2 px-8 border border-[#BA7DFE] text-2xl w-full !leading-normal placeholder:font-body placeholder:text-[#23282D] text-[#23282D]"
+            class="rounded-md md:rounded-xl py-2 px-8 border border-accent-content text-sm md:text-2xl w-full !leading-normal placeholder:font-body placeholder:text-[#23282D] text-[#23282D]"
             name="email"
             placeholder={placeholder}
             onChange={(e) => {
@@ -99,7 +112,7 @@ export default function TsNewsletter({
           />
           <TsButton
             variant="primary"
-            class="py-2 rounded-xl px-8 text-2xl !leading-normal"
+            class="text-center py-2 rounded-md md:rounded-xl px-8 text-sm md:text-2xl !leading-normal"
             type="submit"
             loading={loading.value}
           >
@@ -110,13 +123,16 @@ export default function TsNewsletter({
           <TsTypography
             as="p"
             data-error={isError.value}
-            class="mt-2 data-[error=false]:text-green-700 data-[error=true]:text-red-600 text-center"
+            class="text-sm md:text-xl mt-2 data-[error=false]:text-green-700 data-[error=true]:text-red-600 text-center"
           >
             {feedbackMsg.value}
           </TsTypography>
         )}
 
-        <TsTypography as="p" class="mt-9 text-center text-lg">
+        <TsTypography
+          as="p"
+          class="mt-6 md:mt-9 text-center text-[0.75rem] md:text-lg"
+        >
           {privacyPolicyPreviousText}{" "}
           <TsLink to={privacyPolicyUrl} class="underline">
             {privacyPolicyLinkText}

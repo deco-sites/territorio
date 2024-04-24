@@ -70,9 +70,9 @@ export default function TsTestimonials({
   ));
 
   return (
-    <div class="ts-section px-0 md:px-8 mb-10">
+    <div class="ts-section px-0 md:px-8 mb-10 mt-8">
       <div class="inline-block md:flex md:flex-col md:text-center px-8 mb-10 md:mb-0">
-        <TsTypography class="text-3xl md:text-6xl text-[#FFD200]" type="title">
+        <TsTypography class="text-3xl md:text-6xl text-base-300" type="title">
           {title.main}
           {" "}
         </TsTypography>

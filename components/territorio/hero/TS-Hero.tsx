@@ -37,7 +37,7 @@ const TsHero = ({ images, text }: HeroProps) => {
         <TsTypography
           weight="400"
           color="base-100"
-          class="text-4xl max-w-[200px] sm:text-8xl sm:max-w-[800px] xl:text-9xl xl:max-w-[950px] select-none"
+          class="text-4xl max-w-[200px] sm:text-8xl sm:max-w-[800px] xl:text-[6.25rem] xl:max-w-[950px] select-none"
         >
           {text}
         </TsTypography>

@@ -34,7 +34,7 @@ export default function TSSocial({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`${item.label} Logo`}
-                    class="flex gap-2 items-center"
+                    class="flex gap-2 items-center hover:underline"
                   >
                     <span class="md:hidden">
                       <Icon size={10} id={item.label} />

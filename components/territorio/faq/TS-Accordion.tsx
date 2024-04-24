@@ -19,7 +19,7 @@ export default function TSAccordion({ children, name }: Props) {
     <>
       {children.map(({ title, subtitle }, index) => {
         return (
-          <div className="collapse text-white border-t border-[#BA7DFE] rounded-none relative">
+          <div className="collapse text-white border-t border-accent-content rounded-none relative">
             <input
               className="peer"
               type="radio"

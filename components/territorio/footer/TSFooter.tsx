@@ -76,7 +76,7 @@ function Footer({
   return (
     <footer class={clx("w-full flex flex-col pb-10 md:pb-44 gap-10 font-body")}>
       <div class="mx-auto ts-section">
-        <hr class="mx-4 md:mx-0 mb-10 md:mb-36 border-[#BA7DFE]" />
+        <hr class="mx-4 md:mx-0 mb-10 md:mb-36 border-accent-content" />
         <div class="flex flex-row justify-around md:justify-between flex-wrap gap-8">
           <div class="hidden md:block">
             <TSLogo logo={logo?.desktop} width={194} height={47} />
