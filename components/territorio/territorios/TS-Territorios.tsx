@@ -22,7 +22,10 @@ function TsTerritorios({
   carouselItems,
 }: Props) {
   return (
-    <div id="territorios" class="flex justify-center w-full my-5">
+    <div
+      id="territorios"
+      class="flex justify-center w-full my-5 overflow-x-hidden"
+    >
       {/* Mobile */}
       <div class="md:hidden flex flex-col items-center gap-y-8">
         <div class="flex flex-col items-start gap-y-5">

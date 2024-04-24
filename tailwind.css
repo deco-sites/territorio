@@ -9,10 +9,6 @@
     font-family: var(--font-family);
   }
 
-  #territorios, #experts {
-    overflow-x: hidden
-  }
-
   mark {
     @apply bg-accent text-accent-content;
   }
