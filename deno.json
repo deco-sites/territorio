@@ -41,12 +41,8 @@
     "**/_fresh/*"
   ],
   "fmt": {
-    "include": [
-      "hooks",
-      "deno.json",
-      "section/territorio",
-      "islands/territorio",
-      "components/territorio"
+    "exclude": [
+      ".deco"
     ]
   },
   "lint": {
@@ -56,12 +52,8 @@
         "recommended"
       ]
     },
-    "include": [
-      "hooks",
-      "deno.json",
-      "section/territorio",
-      "islands/territorio",
-      "components/territorio"
+    "exclude": [
+      ".deco"
     ]
   },
   "nodeModulesDir": true,
