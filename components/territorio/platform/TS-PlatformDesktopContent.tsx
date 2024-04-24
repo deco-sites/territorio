@@ -7,7 +7,7 @@ export default function TsPlatformDesktopContent({
   image,
 }: ContentProps) {
   return (
-    <div class="my-10 hidden px-8 md:flex flex-col gap-10 relative">
+    <div class="my-12 hidden px-8 md:flex flex-col gap-10 relative">
       <div class="flex justify-between">
         <TsPlatformCardContent content={content.section1} />
         <TsPlatformCardContent content={content.section2} />
@@ -25,7 +25,7 @@ export default function TsPlatformDesktopContent({
         <TsPlatformCardContent content={content.section4} />
         <TsPlatformCardContent content={content.section5} />
       </div>
-      <div class="absolute w-[90%] flex top-[20%] -translate-y-[20%] left-[40%] lg:left-[52%] -translate-x-[40%] lg:-translate-x-[50%]">
+      <div class="absolute flex max-w-[950px] w-[80vw] top-[18%] left-[9%] lg:top-[13%] lg:left-[12%] pr-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="73"
@@ -51,7 +51,7 @@ export default function TsPlatformDesktopContent({
             </clipPath>
           </defs>
         </svg>
-        <Image src={image} width={754} height={570} class=" w-2/3" />
+        <Image src={image} width={754} height={570} class="w-2/3" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="76"
