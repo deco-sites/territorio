@@ -69,7 +69,7 @@ const TsHero = ({ images, text }: HeroProps) => {
           {text}
         </TsTypography>
       </div>
-      <div class='w-full h-[118px] sm:h-[198px] xl:h-[278px] absolute bottom-0 bg-gradient-to-t from-base-200 via-base-200 to-transparent' />
+      <div class='w-full h-[160px] absolute bottom-0 bg-gradient-to-t from-base-200 via-base-200 to-transparent' />
     </div>
   );
 };
