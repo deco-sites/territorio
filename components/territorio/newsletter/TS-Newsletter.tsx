@@ -15,6 +15,12 @@ export interface Props {
   /** @format url */
   privacyPolicyUrl?: string;
   privacyPolicyLinkText?: string;
+  /** @description Message displayed when email is successfully subscribed */
+  onSuccessMessage?: string;
+  /** @description Message displayed when email is not subscribed because a server error */
+  onErrorMessage?: string;
+  /** @description Message displayed when email is not valid */
+  onEmailInvalidMessage?: string;
 }
 
 const EMAIL_REGEX =
@@ -29,6 +35,10 @@ export default function TsNewsletter({
   privacyPolicyUrl = "",
   privacyPolicyPreviousText = "Ao se inscrever, você está aceitando nossa",
   privacyPolicyLinkText = "Política de Privacidade",
+  onSuccessMessage = "E-mail inscrito com sucesso!",
+  onErrorMessage =
+    "Erro ao cadastrar e-mail. Tente novamente ou contate o suporte.",
+  onEmailInvalidMessage = "E-mail inválido",
 }: Props) {
   const loading = useSignal(false);
   const feedbackMsg = useSignal<string | null>(null);
@@ -45,7 +55,7 @@ export default function TsNewsletter({
 
     if (!valid) {
       isError.value = true;
-      feedbackMsg.value = "E-mail inválido";
+      feedbackMsg.value = onEmailInvalidMessage;
     }
 
     return valid;
@@ -69,9 +79,9 @@ export default function TsNewsletter({
 
       await invoke["deco-sites/territorio"].actions.RdStation({ email });
 
-      feedbackMsg.value = "E-mail cadastrado com sucesso";
+      feedbackMsg.value = onSuccessMessage;
     } catch {
-      feedbackMsg.value = "Ocorreu um erro ao se cadastrar. Tente novamente";
+      feedbackMsg.value = onErrorMessage;
     } finally {
       submitted.value = false;
       loading.value = false;
