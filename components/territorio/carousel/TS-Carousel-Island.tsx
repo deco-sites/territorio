@@ -1,14 +1,14 @@
-import { ComponentChildren, JSX, VNode, toChildArray } from 'preact';
-import { ForwardedRef, Ref, forwardRef } from 'preact/compat';
+import { ComponentChildren, JSX, toChildArray, VNode } from "preact";
+import { ForwardedRef, forwardRef, Ref } from "preact/compat";
 
-import { useSignal } from '@preact/signals';
-import useTsDimensions from 'deco-sites/territorio/hooks/useTsDimensions.tsx';
-import { useEffect, useRef } from 'preact/hooks';
-import { debounce } from 'std/async/debounce.ts';
-import type { Props as TsCarouselBarProps } from './TS-Carousel-Bar.tsx';
-import TsCarouselBar from './TS-Carousel-Bar.tsx';
+import { useSignal } from "@preact/signals";
+import useTsDimensions from "deco-sites/territorio/hooks/useTsDimensions.tsx";
+import { useEffect, useRef } from "preact/hooks";
+import { debounce } from "std/async/debounce.ts";
+import type { Props as TsCarouselBarProps } from "./TS-Carousel-Bar.tsx";
+import TsCarouselBar from "./TS-Carousel-Bar.tsx";
 
-type PickProps = Pick<TsCarouselBarProps, 'activeColor'>;
+type PickProps = Pick<TsCarouselBarProps, "activeColor">;
 
 export interface Props extends PickProps {
   children: ComponentChildren;
@@ -28,12 +28,12 @@ const TsCarouselIsland = forwardRef(
       autoChangeDelay = 0,
       showBar = true,
     }: Props,
-    ref: ForwardedRef<HTMLDivElement>
+    ref: ForwardedRef<HTMLDivElement>,
   ) => {
     const items = toChildArray((children as VNode)?.props?.children ?? []);
     const currentIndex = useSignal(0);
-    const carouselRef =
-      (ref as Ref<HTMLDivElement>) || useRef<HTMLDivElement>(null);
+    const carouselRef = (ref as Ref<HTMLDivElement>) ||
+      useRef<HTMLDivElement>(null);
     const { width } = useTsDimensions();
 
     const setIndexFromScroll = debounce((scrollLeft: number) => {
@@ -47,7 +47,7 @@ const TsCarouselIsland = forwardRef(
           currentIndex.value = index;
           carouselRef.current?.scrollTo({
             left: width * index,
-            behavior: 'smooth',
+            behavior: "smooth",
           });
         }, autoChangeDelay);
         return () => clearInterval(interval);
@@ -74,14 +74,14 @@ const TsCarouselIsland = forwardRef(
               currentIndex.value = index;
               carouselRef.current?.scrollTo({
                 left: width * index,
-                behavior: 'smooth',
+                behavior: "smooth",
               });
             }}
           />
         )}
       </div>
     );
-  }
+  },
 );
 
 export default TsCarouselIsland;

@@ -1,8 +1,8 @@
-import { useComputed, useSignal } from '@preact/signals';
+import { useComputed, useSignal } from "@preact/signals";
 import useTsMediaQuery, {
   MediaQueryKey,
-} from 'deco-sites/territorio/hooks/useTsMediaQuery.tsx';
-import { useCallback, useEffect, useMemo } from 'preact/hooks';
+} from "deco-sites/territorio/hooks/useTsMediaQuery.tsx";
+import { useCallback, useEffect, useMemo } from "preact/hooks";
 
 type MediaQueries = { [key in MediaQueryKey]: number };
 
@@ -48,7 +48,7 @@ export function useTsCarrousel<T>({
   const shouldCycle = shouldCycleParam || autoChangeDelay > 0;
 
   const visibleItemsCount = useMemo(() => {
-    return typeof visibleItemsCountParam === 'number'
+    return typeof visibleItemsCountParam === "number"
       ? visibleItemsCountParam
       : visibleItemsCountParam[currentMediaQuery];
   }, [visibleItemsCountParam, currentMediaQuery]);
@@ -65,7 +65,7 @@ export function useTsCarrousel<T>({
         currentIndex.value = items.length - 1;
       }
     },
-    [items]
+    [items],
   );
 
   const lastVisibleIndex = useMemo(() => {
