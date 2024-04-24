@@ -33,6 +33,7 @@ import * as $territorio_TS_Dropdown from "./islands/territorio/TS-Dropdown.tsx";
 import * as $territorio_TS_Experts from "./islands/territorio/TS-Experts.tsx";
 import * as $territorio_TS_HeaderButton from "./islands/territorio/TS-HeaderButton.tsx";
 import * as $territorio_TS_Hero from "./islands/territorio/TS-Hero.tsx";
+import * as $territorio_TS_Newsletter from "./islands/territorio/TS-Newsletter.tsx";
 import * as $territorio_TS_TestimonialsCarouselDesk from "./islands/territorio/TS-TestimonialsCarouselDesk.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -71,6 +72,7 @@ const manifest = {
     "./islands/territorio/TS-Experts.tsx": $territorio_TS_Experts,
     "./islands/territorio/TS-HeaderButton.tsx": $territorio_TS_HeaderButton,
     "./islands/territorio/TS-Hero.tsx": $territorio_TS_Hero,
+    "./islands/territorio/TS-Newsletter.tsx": $territorio_TS_Newsletter,
     "./islands/territorio/TS-TestimonialsCarouselDesk.tsx":
       $territorio_TS_TestimonialsCarouselDesk,
   },
