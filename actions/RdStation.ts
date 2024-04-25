@@ -27,12 +27,29 @@ export default async function RdStationLoader(
     }),
   };
 
-  const urlWithToken = `${url}?api_key=${rdStationToken.get()}`;
+  const token = rdStationToken.get();
+
+  if (!token) {
+    console.error("RDStation registration error (no token)", token);
+    throw new Error(
+      "Failed to create RdStation event because of missing token",
+    );
+  }
+
+  const urlWithToken = `${url}?api_key=${token}`;
   const response = await fetch(urlWithToken, options);
   const result = await response.json();
 
   if (!result.event_uuid) {
-    console.error("RDStation registration error:", result);
+    console.error(
+      `RDStation registration error (with token: ${
+        token.slice(
+          0,
+          3,
+        )
+      }...${token.slice(-3, token.length)})`,
+      result,
+    );
     throw new Error("Failed to create RdStation event");
   }
 }
