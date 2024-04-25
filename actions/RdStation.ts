@@ -32,6 +32,7 @@ export default async function RdStationLoader(
   const result = await response.json();
 
   if (!result.event_uuid) {
+    console.error("RDStation registration error:", result);
     throw new Error("Failed to create RdStation event");
   }
 }
