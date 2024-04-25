@@ -64,6 +64,7 @@ export default function TsNewsletter({
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     submitted.value = true;
+    isError.value = false;
 
     try {
       loading.value = true;
@@ -81,6 +82,7 @@ export default function TsNewsletter({
 
       feedbackMsg.value = onSuccessMessage;
     } catch {
+      isError.value = true;
       feedbackMsg.value = onErrorMessage;
     } finally {
       submitted.value = false;
