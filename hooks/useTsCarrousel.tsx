@@ -29,6 +29,10 @@ type Params<T> = {
    * this overrides `shouldCycle` property to true.
    */
   autoChangeDelay?: number;
+  /**
+   * A callback function to be called everytime a next or previous action is triggered
+   */
+  onChangeCallback?: () => void;
 };
 
 export function useTsCarrousel<T>({
@@ -36,6 +40,7 @@ export function useTsCarrousel<T>({
   visibleItemsCountParam,
   shouldCycle: shouldCycleParam = false,
   autoChangeDelay = 0,
+  onChangeCallback,
 }: Params<T>) {
   const hoverItem = useSignal<T | undefined>(undefined);
   const currentIndex = useSignal(0);
@@ -92,19 +97,25 @@ export function useTsCarrousel<T>({
   });
 
   const onNext = useCallback(() => {
-    if (nextItem.value && lastVisibleIndex < items.length) {
-      setCurrentIndex(currentIndex.value + 1);
-    } else if (shouldCycle) {
-      setCurrentIndex(0);
-    }
+    onChangeCallback?.();
+    setTimeout(() => {
+      if (nextItem.value && lastVisibleIndex < items.length) {
+        setCurrentIndex(currentIndex.value + 1);
+      } else if (shouldCycle) {
+        setCurrentIndex(0);
+      }
+    }, 100);
   }, [currentIndex, nextItem, shouldCycle]);
 
   const onPrevious = useCallback(() => {
-    if (previousItem.value) {
-      setCurrentIndex(currentIndex.value - 1);
-    } else if (shouldCycle) {
-      setCurrentIndex(items.length - 1);
-    }
+    onChangeCallback?.();
+    setTimeout(() => {
+      if (previousItem.value) {
+        setCurrentIndex(currentIndex.value - 1);
+      } else if (shouldCycle) {
+        setCurrentIndex(items.length - 1);
+      }
+    }, 100);
   }, [currentIndex, previousItem, shouldCycle]);
 
   useEffect(() => {

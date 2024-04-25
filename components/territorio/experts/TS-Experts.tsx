@@ -21,12 +21,15 @@ const TsExperts = ({
   rightDecorator,
   experts,
 }: ExpertProps) => {
-  const [expert, setExpert] = useState(experts[0]);
-  const { image, description, fullName, social } = expert;
+  const [expertId, setExpertId] = useState(0);
+  const { image, description, fullName, social } = experts[expertId];
   const [firstName, lastName] = fullName.split(" ");
 
   return (
-    <div id="experts" class="flex flex-col items-center my-10 md:my-32 mx-8">
+    <div
+      id="experts"
+      class="flex flex-col items-center my-10 md:my-32 px-8 overflow-x-hidden"
+    >
       <div class="flex gap-x-3 justify-center items-center">
         <Image
           src={leftDecorator.src}
@@ -57,6 +60,7 @@ const TsExperts = ({
             src={image.src}
             alt={image.alt}
             width={423}
+            height={502}
             class="self-end h-fit ml-[-90px] max-w-[240px] sm:max-w-[263px] lg:max-w-[423px]"
           />
           <div class="flex flex-col md:flex-row justify-between w-full mt-4 md:mt-12 mx-2 md:mx-8">
@@ -67,7 +71,10 @@ const TsExperts = ({
               >
                 {firstName} <TsTypography weight="600">{lastName}</TsTypography>
               </TsTypography>
-              <div class="flex flex-col gap-y-3 overflow-y-auto max-h-[120px] md:max-h-[240px] pr-4 xl:pr-8">
+              <div
+                id="scroll"
+                class="flex flex-col gap-y-3 overflow-y-auto max-h-[120px] md:max-h-[240px] pr-4 xl:pr-8"
+              >
                 {description.map(({ text }) => (
                   <TsTypography
                     key={text}
@@ -102,10 +109,11 @@ const TsExperts = ({
           src={rightDecorator.src}
           alt={rightDecorator.alt}
           width={68}
+          height={68}
           class="hidden lg:block h-[68px]"
         />
       </div>
-      <TsExpertCarousel experts={experts} updateExpert={setExpert} />
+      <TsExpertCarousel experts={experts} updateExpertId={setExpertId} />
     </div>
   );
 };

@@ -1,7 +1,4 @@
-import {
-  Color,
-  getColorFromVar,
-} from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
+import { Color } from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
 import { clx } from "../../../sdk/clx.ts";
 
 export interface Props {
@@ -21,6 +18,7 @@ const TsCarouselBar = ({
     <div class="flex gap-x-3">
       {items?.map((_, index) => {
         const isSelected = index === currentId;
+        const hasCustomColor = activeColor.startsWith("#");
 
         return (
           <button
@@ -29,12 +27,14 @@ const TsCarouselBar = ({
               const target = event.target as HTMLButtonElement;
               onItemClick(Number(target.id));
             }}
-            class={clx("h-1 w-6", !isSelected && "bg-base-100")}
-            style={isSelected
+            class={clx(
+              "h-1 w-6",
+              !isSelected && "bg-base-100",
+              isSelected && !hasCustomColor && `bg-${activeColor}`,
+            )}
+            style={isSelected && hasCustomColor
               ? {
-                backgroundColor: activeColor.startsWith("#")
-                  ? activeColor
-                  : getColorFromVar(activeColor as Color),
+                backgroundColor: activeColor,
               }
               : {}}
           >

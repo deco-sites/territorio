@@ -4,19 +4,9 @@
 
 @layer base {
 
-  /* Global default styles */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #202020 transparent;
-  }
-
   /* Allow changing font family via CMS */
   html {
     font-family: var(--font-family);
-  }
-
-  body {
-    background-color: #202020
   }
 
   mark {
@@ -58,6 +48,11 @@
 
   .ts-section {
     @apply md:max-w-[1172px] px-8 md:mx-auto w-full text-white bg-[#202020];
+  }
+
+  #scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #202020 transparent;
   }
 
   .scrollbar-hide::-webkit-scrollbar {
