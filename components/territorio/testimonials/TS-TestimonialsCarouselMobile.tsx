@@ -1,5 +1,5 @@
 import { ComponentChildren, toChildArray, VNode } from "preact";
-import TsCarouselBarIsland from "../../../islands/territorio/TS-Carousel-Bar-Island.tsx";
+import TsCarouselBarIsland from "../../../islands/territorio/TS-Carousel.tsx";
 
 export interface Props {
   children: ComponentChildren;

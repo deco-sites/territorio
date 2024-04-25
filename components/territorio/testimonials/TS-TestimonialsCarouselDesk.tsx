@@ -11,6 +11,8 @@ export interface Props {
 
 const TsTestimonialsCarouselDesk = ({ children }: Props) => {
   const items = toChildArray((children as VNode)?.props?.children ?? []);
+  const changedPosition = useSignal(0);
+  const shouldShow = useSignal(true);
 
   const {
     visibleItems,
@@ -24,10 +26,10 @@ const TsTestimonialsCarouselDesk = ({ children }: Props) => {
     items,
     visibleItemsCountParam: 1,
     shouldCycle: true,
+    onChangeCallback: () => {
+      changedPosition.value = 1;
+    },
   });
-
-  const changedPosition = useSignal(0);
-  const shouldShow = useSignal(true);
 
   useSignalEffect(() => {
     if (changedPosition.value !== 0) {
@@ -44,15 +46,7 @@ const TsTestimonialsCarouselDesk = ({ children }: Props) => {
   return (
     <div class="flex flex-col items-center gap-8 py-16">
       <div class={clx("flex gap-8 ")}>
-        <button
-          onClick={() => {
-            changedPosition.value = -1;
-            setTimeout(() => {
-              onPrevious();
-            }, 100);
-          }}
-          disabled={!hasPrevious}
-        >
+        <button onClick={onPrevious} disabled={!hasPrevious}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="33"
@@ -77,15 +71,7 @@ const TsTestimonialsCarouselDesk = ({ children }: Props) => {
         >
           {visibleItems}
         </div>
-        <button
-          onClick={() => {
-            changedPosition.value = 1;
-            setTimeout(() => {
-              onNext();
-            }, 100);
-          }}
-          disabled={!hasNext}
-        >
+        <button onClick={onNext} disabled={!hasNext}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="33"

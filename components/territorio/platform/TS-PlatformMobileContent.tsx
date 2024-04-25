@@ -1,6 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import { getColorFromVar } from "deco-sites/territorio/sdk/territorio/getColorFromVar.ts";
-import TsCarouselBarIsland from "../../../islands/territorio/TS-Carousel-Bar-Island.tsx";
+import TsCarouselBarIsland from "../../../islands/territorio/TS-Carousel.tsx";
 import TsPlatformCardContent from "./TS-PlatformCardContent.tsx";
 import type { ContentProps } from "./types.ts";
 
