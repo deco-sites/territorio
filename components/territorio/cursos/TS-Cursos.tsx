@@ -29,7 +29,7 @@ const FIRST_SHOWN_INDEX = 0;
 const MAX_SHOWN = 4;
 
 const ITEMS_WIDTH: Record<MediaQueryKey, number> = {
-  xs: 84,
+  xs: 0,
   sm: 137,
   md: 164,
   lg: 195,
@@ -87,12 +87,13 @@ const TsCursos = ({ courses }: CursosProps) => {
       <TsCarouselIsland
         ref={carouselRef}
         showBar={false}
-        class="overflow-x-auto snap-x snap-mandatory scrollbar-hide"
+        class="overflow-x-auto snap-x snap-mandatory scrollbar-hide w-screen sm:w-full"
       >
         <>
           <ul
             class={clx(
-              "flex gap-x-3",
+              "flex ",
+              "pl-8 gap-x-[0.875rem]",
               "sm:px-1 sm:py-2 sm:max-w-[544px]",
               "md:py-4 md:px-2 md:gap-x-4 md:max-w-[664px]",
               "lg:py-6 lg:gap-x-5 lg:max-w-[776px]",
@@ -101,7 +102,7 @@ const TsCursos = ({ courses }: CursosProps) => {
             )}
           >
             {courses.map((course) => (
-              <li>
+              <li class="last:pr-8 md:last:pr-0">
                 <a
                   href={course.url}
                   disabled={!course?.isActive}
@@ -129,8 +130,8 @@ const TsCursos = ({ courses }: CursosProps) => {
                     width={271}
                     height={486}
                     class={clx(
-                      "min-w-[125px] md:max-w-[150px] lg:max-w-[175px] xl:max-w-[225px] 2xl:max-w-[271px]",
-                      !course?.isActive ? "sm:-mt-7 2xl:-mt-8" : "",
+                      "max-w-[125px] md:max-w-[150px] lg:max-w-[175px] xl:max-w-[225px] 2xl:max-w-[271px]",
+                      !course?.isActive ? "-mt-7 2xl:-mt-8" : "",
                     )}
                   />
                 </a>
