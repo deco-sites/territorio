@@ -64,6 +64,68 @@
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
   }
+
+  .ts-policy-page {
+    --base-text-color: #ffffff;
+    --base-background-color: #16191b;
+
+    color: var(--base-text-color);
+    background: var(--base-background-color);
+    font-family: 'Libre Franklin', ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    display: flex;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
+      margin: 1rem 0;
+    }
+
+    h1 {
+      @apply text-[3rem];
+    }
+
+    h2 {
+      @apply text-[2rem];
+    }
+
+    main {
+      width: min(80ch, 100% - 4rem);
+      margin-inline: auto;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid #ffffff;
+      border-collapse: collapse;
+    }
+
+    table {
+      display: block;
+      max-width: fit-content;
+      max-width: -moz-fit-content;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    td:first-child {
+      font-weight: bold;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 @layer components {

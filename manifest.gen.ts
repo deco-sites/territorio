@@ -62,11 +62,12 @@ import * as $$$$$$50 from "./sections/territorio/TS-Header.tsx";
 import * as $$$$$$51 from "./sections/territorio/TS-Hero.tsx";
 import * as $$$$$$52 from "./sections/territorio/TS-Newsletter.tsx";
 import * as $$$$$$53 from "./sections/territorio/TS-Platform.tsx";
-import * as $$$$$$54 from "./sections/territorio/TS-Proposito.tsx";
-import * as $$$$$$55 from "./sections/territorio/TS-Territorios.tsx";
-import * as $$$$$$56 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$57 from "./sections/territorio/TS-Zendesk.tsx";
-import * as $$$$$$58 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$54 from "./sections/territorio/TS-Policy.tsx";
+import * as $$$$$$55 from "./sections/territorio/TS-Proposito.tsx";
+import * as $$$$$$56 from "./sections/territorio/TS-Territorios.tsx";
+import * as $$$$$$57 from "./sections/territorio/TS-Testimonials.tsx";
+import * as $$$$$$58 from "./sections/territorio/TS-Zendesk.tsx";
+import * as $$$$$$59 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -133,11 +134,12 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$51,
     "deco-sites/territorio/sections/territorio/TS-Newsletter.tsx": $$$$$$52,
     "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$53,
-    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$54,
-    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$55,
-    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$56,
-    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$57,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$58,
+    "deco-sites/territorio/sections/territorio/TS-Policy.tsx": $$$$$$54,
+    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$55,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$56,
+    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$57,
+    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$58,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$59,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "actions": {
