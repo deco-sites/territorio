@@ -1,6 +1,12 @@
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import TsButton, { ButtonProps } from "../button/TS-Button.tsx";
 
+/** @titleBy text */
+export type CTAButton = {
+  text: string;
+  url: string;
+};
+
 interface ActionButtonProps extends ButtonProps {
   url: string;
   linkContainerClass?: string;
