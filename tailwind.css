@@ -11,7 +11,7 @@
     font-size: 16px;
 
     &:has(.ts-responsive) {
-      @apply sm:text-[10px] lg:text-[12px] 2xl:text-[16px];
+      @apply text-[9px] sm:text-[10px] lg:text-[12px] 2xl:text-[16px];
     }
   }
 
