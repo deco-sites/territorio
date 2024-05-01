@@ -23,13 +23,16 @@ const TsCursoDominar = ({
     <div class="flex justify-center ts-responsive">
       <div
         class={clx(
-          "flex flex-col my-[7%] gap-y-16", //common
-          "", //mobile
-          "sm:max-w-[60rem]", //small
+          "flex flex-col my-[7%] gap-y-16 w-screen", //common
+          "px-20", //mobile
+          "sm:px-0 sm:max-w-[60rem]", //small
           "md:max-w-[65rem] lg:max-w-[75rem]", //larger
         )}
       >
-        <TsTypography color="base-100" class="text-[5rem]">
+        <TsTypography
+          color="base-100"
+          class="text-6xl max-w-[24rem] sm:max-w-none sm:text-[5rem]"
+        >
           {titlePrimary}{" "}
           <TsTypography color="accent-content" weight="600">
             {titleSecondary}
