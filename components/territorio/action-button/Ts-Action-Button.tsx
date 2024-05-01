@@ -1,3 +1,4 @@
+import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import TsButton, { ButtonProps } from "../button/TS-Button.tsx";
 
 interface ActionButtonProps extends ButtonProps {
@@ -7,13 +8,17 @@ interface ActionButtonProps extends ButtonProps {
 const TsActionButton = ({
   url,
   children,
+  class: _class,
   ...buttonProps
 }: ActionButtonProps) => (
   <a href={url}>
     <TsButton
       variant="action"
       {...buttonProps}
-      class="py-4 px-8 uppercase font-semibold hover:scale-110 transition-all"
+      class={clx(
+        "py-5 px-8 uppercase font-semibold hover:scale-110 transition-all tracking-wide",
+        _class as string,
+      )}
     >
       {children}
     </TsButton>
