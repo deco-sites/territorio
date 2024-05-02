@@ -11,7 +11,7 @@
     font-size: 16px;
 
     &:has(.ts-responsive) {
-      @apply text-[9px] sm:text-[10px] lg:text-[12px] 2xl:text-[16px];
+      @apply text-[9px] sm:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px];
     }
   }
 
@@ -49,11 +49,14 @@
   }
 
   html, body {
-    background-color: #202020 !important;
+    background-color: #202020 !important; /* fallback */
+    background-color: oklch(var(--n) / 1) !important;
   }
 
   .ts-section {
-    @apply md:max-w-[1172px] px-8 md:mx-auto w-full text-white bg-[#202020];
+    @apply md:max-w-[73.25rem] px-[3.2rem] md:px-8 md:mx-auto w-full text-white;
+    background-color: #202020; /* fallback */
+    background-color: oklch(var(--n) / 1);
   }
 
   #scroll {
