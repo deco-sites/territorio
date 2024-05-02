@@ -7,6 +7,12 @@
   /* Allow changing font family via CMS */
   html {
     font-family: var(--font-family);
+
+    font-size: 16px;
+
+    &:has(.ts-responsive) {
+      @apply text-[9px] sm:text-[10px] lg:text-[12px] 2xl:text-[16px];
+    }
   }
 
   mark {

@@ -13,3 +13,5 @@ export interface ButtonType {
   url: string;
   icon: ImageType;
 }
+
+export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
