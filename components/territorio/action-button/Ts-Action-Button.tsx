@@ -3,15 +3,17 @@ import TsButton, { ButtonProps } from "../button/TS-Button.tsx";
 
 interface ActionButtonProps extends ButtonProps {
   url: string;
+  linkContainerClass?: string;
 }
 
 const TsActionButton = ({
   url,
   children,
   class: _class,
+  linkContainerClass,
   ...buttonProps
 }: ActionButtonProps) => (
-  <a href={url}>
+  <a href={url} class={linkContainerClass}>
     <TsButton
       variant="action"
       {...buttonProps}

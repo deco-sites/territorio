@@ -28,7 +28,7 @@ export default function TsVideo({
         >
         </div>
       )}
-      <div class="flex flex-col md:flex-row gap-10">
+      <div class="flex flex-col sm:flex-row gap-10 md:mt-10">
         <TsTypography
           class="w-full text-[2.6rem] md:text-[3.375rem] leading-[1.1]"
           weight="500"
@@ -45,7 +45,10 @@ export default function TsVideo({
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
-      <TsActionButton class="block mx-auto my-8 md:my-12" url={ctaUrl}>
+      <TsActionButton
+        linkContainerClass="block mx-auto my-8 md:my-12"
+        url={ctaUrl}
+      >
         Fazer minha inscrição
       </TsActionButton>
     </div>
