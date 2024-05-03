@@ -1,29 +1,22 @@
 import { HTMLWidget } from "apps/admin/widgets.ts";
-import TsCursoAccordion from "deco-sites/territorio/components/territorio/curso/dominar/TS-Curso-Accordion.tsx";
-import TsRichText from "deco-sites/territorio/components/territorio/rich-text/TS-Rich-Text.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import TsActionButton, {
   CTAButton,
 } from "../../action-button/Ts-Action-Button.tsx";
+import TsRichText from "../../rich-text/TS-Rich-Text.tsx";
 import TsTypography from "../../typography/TS-Typography.tsx";
-
-/** @title {{{title}}} */
-export interface Question {
-  title: string;
-  /** @format textarea */
-  description: string;
-}
+import TsCursoAccordion, { Modules } from "./TS-Curso-Accordion.tsx";
 
 export interface TsCursoDominarProps {
   titlePrimary: string;
   titleSecondary: string;
   description: HTMLWidget;
+  modules: Modules;
   ctaButton: CTAButton;
-  questions: Question[];
 }
 
 const TsCursoDominar = ({
-  questions,
+  modules,
   ctaButton,
   description,
   titlePrimary,
@@ -40,8 +33,9 @@ const TsCursoDominar = ({
         )}
       >
         <TsTypography
+          variant="h1"
           color="base-100"
-          class="text-6xl max-w-[24rem] sm:max-w-none sm:text-[5rem]"
+          class="text-6xl max-w-[24rem] sm:max-w-[30rem] sm:text-[5rem]"
         >
           {titlePrimary}{" "}
           <TsTypography color="accent-content" weight="600">
@@ -53,8 +47,8 @@ const TsCursoDominar = ({
         </TsRichText>
         <TsCursoAccordion
           name="test"
-          items={questions}
-          containerClass="sm:w-[1171px]"
+          modules={modules}
+          containerClass="sm:w-[75rem]"
         />
         <div class="self-center">
           <TsActionButton
