@@ -1,22 +1,18 @@
 import type { HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import TsActionButton from "deco-sites/territorio/components/territorio/action-button/Ts-Action-Button.tsx";
-import TsRichText from "deco-sites/territorio/components/territorio/rich-text/TS-Rich-Text.tsx";
-import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
+import TsActionButton, {
+  CTAButton,
+} from "../../action-button/Ts-Action-Button.tsx";
+import TsRichText from "../../rich-text/TS-Rich-Text.tsx";
 import { BasicImage } from "../../types.ts";
+import TsTypography from "../../typography/TS-Typography.tsx";
 
 /** @titleBy text */
 type Statistic = {
   /** @description Rich text field */
   text: HTMLWidget;
   source: HTMLWidget;
-};
-
-/** @titleBy text */
-type CTAButton = {
-  text: string;
-  url: string;
 };
 
 export interface TsCursoHeroProps {
