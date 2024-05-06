@@ -201,6 +201,14 @@ export const CustomArrowUp = `<svg id="CustomArrowUp" viewBox="0 0 19 18" fill="
 		</defs>
 	</svg>`
 
+export const More = `<svg id="More" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M5.22994 13.3687V0.642679H7.84711V13.3687H5.22994ZM0.191882 8.23248V5.77888H12.8852V8.23248H0.191882Z" fill="#BA7DFE"/>
+	</svg>`
+
+export const Less = `<svg id="Less" viewBox="0 0 15 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M0.0795832 3.67192V0.923889H14.6703V3.67192H0.0795832Z" fill="#BA7DFE"/>
+	</svg>`
+
 export const AvailableIcons = {
   ChevronLeft,
   ChevronRight,
@@ -267,4 +275,6 @@ export const AvailableIcons = {
   Youtube,
   CustomArrowDown,
   CustomArrowUp,
+  More,
+  Less,
 }

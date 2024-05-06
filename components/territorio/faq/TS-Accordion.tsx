@@ -1,59 +1,114 @@
 import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
-import Icon from "deco-sites/territorio/components/ui/Icon.tsx";
+import Icon, {
+  AvailableIcons,
+} from "deco-sites/territorio/components/ui/Icon.tsx";
+import { clx } from "deco-sites/territorio/sdk/clx.ts";
+import { JSX } from "preact";
 
 export interface Props {
-  children: Child[];
+  children: AccordionChild | AccordionChild[];
   /** @ignore */
   name: string;
+  radio?: boolean;
+  defaultCheckedFirst?: boolean;
+  icon?: {
+    expand: AvailableIcons;
+    collapse: AvailableIcons;
+  };
+  iconPosition?: "top" | "bottom";
 }
 
 /** @title {{{title}}} */
-interface Child {
-  title: string;
+interface AccordionChild {
+  title: string | JSX.Element;
   /** @format textarea */
-  subtitle: string;
+  subtitle: string | JSX.Element;
+  class?: string;
+  withBorder?: boolean;
 }
 
-export default function TSAccordion({ children, name }: Props) {
+export default function TSAccordion({
+  children: childrenProp,
+  name,
+  radio = true,
+  defaultCheckedFirst = true,
+  icon = {
+    expand: "CustomArrowDown",
+    collapse: "CustomArrowUp",
+  },
+  iconPosition = "top",
+}: Props) {
+  const children = Array.isArray(childrenProp) ? childrenProp : [childrenProp];
+
   return (
     <>
-      {children.map(({ title, subtitle }, index) => {
-        return (
-          <div className="collapse text-white border-t border-accent-content rounded-none relative">
-            <input
-              className="peer"
-              type="radio"
-              name={name}
-              defaultChecked={index === 0}
-            />
-            <div className="collapse-title">
-              <TsTypography variant="h4" class="hidden md:block" type="body">
-                {title}
-              </TsTypography>
-              <TsTypography variant="p" class="text-sm md:hidden" type="body">
-                {title}
-              </TsTypography>
-            </div>
-            <div className="absolute top-0 md:top-4 right-4 md:right-8 peer-checked:block peer-[:not(:checked)]:hidden">
-              <Icon id="CustomArrowUp" class="invisible md:visible" size={18} />
-              <Icon id="CustomArrowUp" class="md:invisible" size={9} />
-            </div>
-            <div className="absolute top-0 md:top-4 right-4 md:right-8 peer-checked:hidden peer-[:not(:checked)]:block">
-              <Icon
-                id="CustomArrowDown"
-                class="invisible md:visible"
-                size={20}
+      {children.map(
+        ({ title, subtitle, class: className, withBorder = true }, index) => {
+          return (
+            <div
+              className={clx(
+                "collapse text-white rounded-none relative",
+                withBorder && "border-t border-accent-content",
+                className,
+              )}
+            >
+              <input
+                className="peer"
+                type={radio ? "radio" : "checkbox"}
+                name={name}
+                defaultChecked={defaultCheckedFirst && index === 0}
               />
-              <Icon id="CustomArrowDown" class="md:invisible" size={10} />
+              <div className="relative collapse-title group">
+                <TsTypography variant="h4" class="hidden md:block" type="body">
+                  {title}
+                </TsTypography>
+                <TsTypography variant="p" class="text-sm md:hidden" type="body">
+                  {title}
+                </TsTypography>
+                <div
+                  className={clx(
+                    "absolute right-4 md:right-8 peer-checked:group-[]:block peer-[:not(:checked)]:group-[]:hidden",
+                    iconPosition === "bottom"
+                      ? "bottom-0 md:bottom-4"
+                      : "top-0 md:top-4",
+                  )}
+                >
+                  <Icon
+                    id={icon.collapse}
+                    class="invisible md:visible"
+                    size={18}
+                  />
+                  <Icon id={icon.collapse} class="md:invisible" size={9} />
+                </div>
+                <div
+                  className={clx(
+                    "absolute right-4 md:right-8 peer-checked:group-[]:hidden peer-[:not(:checked)]:group-[]:block",
+                    iconPosition === "bottom"
+                      ? "bottom-0 md:bottom-4"
+                      : "top-0 md:top-4",
+                  )}
+                >
+                  <Icon
+                    id={icon.expand}
+                    class="invisible md:visible"
+                    size={20}
+                  />
+                  <Icon id={icon.expand} class="md:invisible" size={10} />
+                </div>
+              </div>
+              <div className="collapse-content">
+                <TsTypography
+                  class="text-sm md:text-lg"
+                  weight="400"
+                  type="body"
+                >
+                  {subtitle}
+                </TsTypography>
+              </div>
             </div>
-            <div className="collapse-content">
-              <TsTypography class="text-sm md:text-lg" weight="400" type="body">
-                {subtitle}
-              </TsTypography>
-            </div>
-          </div>
-        );
-      })}
+          );
+        },
+      )}
     </>
   );
 }
