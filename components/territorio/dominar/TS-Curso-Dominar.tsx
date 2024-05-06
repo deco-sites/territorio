@@ -2,9 +2,9 @@ import { HTMLWidget } from "apps/admin/widgets.ts";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import TsActionButton, {
   CTAButton,
-} from "../../action-button/Ts-Action-Button.tsx";
-import TsRichText from "../../rich-text/TS-Rich-Text.tsx";
-import TsTypography from "../../typography/TS-Typography.tsx";
+} from "../action-button/Ts-Action-Button.tsx";
+import TsRichText from "../rich-text/TS-Rich-Text.tsx";
+import TsTypography from "../typography/TS-Typography.tsx";
 import TsCursoAccordion, { Modules } from "./TS-Curso-Accordion.tsx";
 
 export interface TsCursoDominarProps {
@@ -28,7 +28,7 @@ const TsCursoDominar = ({
         class={clx(
           "flex flex-col my-[7%] gap-y-16", //common
           "mx-20", //mobile
-          "sm:px-0 sm:max-w-[60rem]", //small
+          "sm:px-0 sm:max-w-[60rem] sm:mx-0", //small
           "md:max-w-[65rem] lg:max-w-[75rem]", //larger
         )}
       >
@@ -45,11 +45,7 @@ const TsCursoDominar = ({
         <TsRichText class="text-base-100 font-body text-2xl">
           {description}
         </TsRichText>
-        <TsCursoAccordion
-          name="test"
-          modules={modules}
-          containerClass="sm:w-[75rem]"
-        />
+        <TsCursoAccordion name="test" modules={modules} />
         <div class="self-center">
           <TsActionButton
             url={ctaButton.url}

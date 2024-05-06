@@ -1,8 +1,8 @@
 import Image from "apps/website/components/Image.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import { JSX } from "preact";
-import { BasicImage } from "../../types.ts";
-import TsTypography from "../../typography/TS-Typography.tsx";
+import { BasicImage } from "../types.ts";
+import TsTypography from "../typography/TS-Typography.tsx";
 
 export interface Modules {
   decorator: BasicImage;
@@ -63,16 +63,16 @@ export default function TsCursoAccordion({
                   alt={image.alt}
                   width={456}
                   height={634}
-                  class="object-cover self-start"
+                  class="object-cover self-start w-[32rem] md:w-[28.5rem]"
                 />
-                <div class="flex flex-col mt-20 mb-14">
-                  <div class="flex flex-col text-[2.625rem] leading-none pl-20">
+                <div class="flex flex-col mt-20">
+                  <div class="flex flex-col text-[2.625rem] leading-none sm:pl-16 md:pl-20">
                     <Image
                       src={decorator.src}
                       alt={decorator.alt}
                       width={40}
                       height={40}
-                      class="absolute -ml-10 -mt-10"
+                      class="absolute -ml-10 -mt-10 w-[2.5rem]"
                     />
                     <TsTypography type="body" weight="100">
                       {title}
@@ -85,14 +85,14 @@ export default function TsCursoAccordion({
                     {classes.map((item) => (
                       <li
                         key={item.title}
-                        class="flex flex-col text-xl text-base-100 pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0"
+                        class="flex flex-col text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0"
                       >
                         <Image
                           src={classIcon.src}
                           alt={classIcon.alt}
                           width={22}
                           height={22}
-                          class="absolute -ml-8 mt-1"
+                          class="absolute -ml-8 mt-1 w-[1.375rem]"
                         />
                         <TsTypography weight="600">{item.title}</TsTypography>
                         <TsTypography>{item.subtitle}</TsTypography>

@@ -1,1 +1,1 @@
-export { default } from "../../components/territorio/curso/dominar/TS-Curso-Dominar.tsx";
+export { default } from "../../components/territorio/dominar/TS-Curso-Dominar.tsx";
