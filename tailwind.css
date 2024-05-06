@@ -76,7 +76,8 @@
 
   .ts-policy-page {
     --base-text-color: #ffffff;
-    --base-background-color: #16191b;
+    --base-background-color: #202020;
+    --base-background-color: oklch(var(--n) / 1);
 
     color: var(--base-text-color);
     background: var(--base-background-color);
