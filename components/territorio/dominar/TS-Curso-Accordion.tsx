@@ -32,6 +32,140 @@ export interface TsCursoAccordionProps {
   containerClass?: string | JSX.SignalLike<string | undefined>;
 }
 
+interface Variant extends CursoAccordionItem {
+  name: TsCursoAccordionProps["name"];
+  decorator: TsCursoAccordionProps["modules"]["decorator"];
+  classIcon: TsCursoAccordionProps["modules"]["classIcon"];
+}
+
+const Desktop = ({
+  title,
+  subtitle,
+  image,
+  classes,
+  name,
+  classIcon,
+  decorator,
+}: Variant) => {
+  return (
+    <li
+      key={title}
+      class="hidden sm:collapse text-white border rounded-none border-base-100"
+    >
+      <input class="peer" type="radio" name={name} />
+      <div class="collapse-title flex p-0 peer-checked:h-full peer-[:not(:checked)]:h-[14.25rem]">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={456}
+          height={634}
+          class="object-cover self-start w-[32rem] md:w-[28.5rem]"
+        />
+        <div class="flex flex-col mt-20">
+          <div class="flex flex-col text-[2.625rem] leading-none sm:pl-16 md:pl-20">
+            <Image
+              src={decorator.src}
+              alt={decorator.alt}
+              width={40}
+              height={40}
+              class="absolute -ml-10 -mt-10 w-[2.5rem]"
+            />
+            <TsTypography type="body" weight="100">
+              {title}
+            </TsTypography>
+            <TsTypography type="body" weight="600">
+              {subtitle}
+            </TsTypography>
+          </div>
+          <ul class="flex flex-col gap-y-5 mt-[3.75rem]">
+            {classes.map((item) => (
+              <li
+                key={item.title}
+                class="flex flex-col text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0"
+              >
+                <Image
+                  src={classIcon.src}
+                  alt={classIcon.alt}
+                  width={22}
+                  height={22}
+                  class="absolute -ml-8 mt-1 w-[1.375rem]"
+                />
+                <TsTypography weight="600">{item.title}</TsTypography>
+                <TsTypography>{item.subtitle}</TsTypography>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </li>
+  );
+};
+
+const Mobile = ({
+  title,
+  subtitle,
+  image,
+  classes,
+  name,
+  classIcon,
+  decorator,
+}: Variant) => {
+  return (
+    <li
+      key={title}
+      class="collapse sm:hidden text-white rounded-[10px] bg-[#23282D] min-w-[32rem]"
+    >
+      <input class="peer" type="radio" name={name} />
+      <div class="collapse-title flex peer-checked:h-full pr-5">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={185}
+          height={185}
+          class="min-w-[11.625rem] min-h-[11.625rem] max-w-[11.625rem] max-h-[11.625rem]"
+        />
+        <div class="flex flex-col ml-4 gap-y-5">
+          <div class="flex items-center gap-x-2">
+            <Image
+              src={decorator.src}
+              alt={decorator.alt}
+              width={19}
+              height={19}
+              class=""
+            />
+            <TsTypography type="body" weight="100" class="text-4xl">
+              {title}
+            </TsTypography>
+          </div>
+          <TsTypography type="body" weight="600" class="text-4xl">
+            {subtitle}
+          </TsTypography>
+        </div>
+      </div>
+      <ul class="flex flex-col gap-y-5 peer-checked:mt-2 collapse-content">
+        {classes.map((item) => (
+          <li
+            key={item.title}
+            class="flex text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0"
+          >
+            <Image
+              src={classIcon.src}
+              alt={classIcon.alt}
+              width={22}
+              height={22}
+              class="mt-1 w-[1.375rem] h-[1.375rem]"
+            />
+            <div class="flex flex-col ml-2 text-2xl">
+              <TsTypography weight="600">{item.title}</TsTypography>
+              <TsTypography>{item.subtitle}</TsTypography>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </li>
+  );
+};
+
 export default function TsCursoAccordion({
   modules: { items, decorator, classIcon },
   name,
@@ -45,63 +179,22 @@ export default function TsCursoAccordion({
           containerClass as string,
         )}
       >
-        {items.map(({ title, subtitle, image, classes }, index) => {
+        {items.map((item) => {
           return (
-            <li
-              key={title}
-              class="collapse text-white border rounded-none border-base-100"
-            >
-              <input
-                class="peer"
-                type="radio"
+            <>
+              <Mobile
+                {...item}
                 name={name}
-                defaultChecked={index === 0}
+                decorator={decorator}
+                classIcon={classIcon}
               />
-              <div class="collapse-title flex p-0 peer-checked:h-full peer-[:not(:checked)]:h-[14.25rem]">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={456}
-                  height={634}
-                  class="object-cover self-start w-[32rem] md:w-[28.5rem]"
-                />
-                <div class="flex flex-col mt-20">
-                  <div class="flex flex-col text-[2.625rem] leading-none sm:pl-16 md:pl-20">
-                    <Image
-                      src={decorator.src}
-                      alt={decorator.alt}
-                      width={40}
-                      height={40}
-                      class="absolute -ml-10 -mt-10 w-[2.5rem]"
-                    />
-                    <TsTypography type="body" weight="100">
-                      {title}
-                    </TsTypography>
-                    <TsTypography type="body" weight="600">
-                      {subtitle}
-                    </TsTypography>
-                  </div>
-                  <ul class="flex flex-col gap-y-5 mt-[3.75rem]">
-                    {classes.map((item) => (
-                      <li
-                        key={item.title}
-                        class="flex flex-col text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0"
-                      >
-                        <Image
-                          src={classIcon.src}
-                          alt={classIcon.alt}
-                          width={22}
-                          height={22}
-                          class="absolute -ml-8 mt-1 w-[1.375rem]"
-                        />
-                        <TsTypography weight="600">{item.title}</TsTypography>
-                        <TsTypography>{item.subtitle}</TsTypography>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </li>
+              <Desktop
+                {...item}
+                name={name}
+                decorator={decorator}
+                classIcon={classIcon}
+              />
+            </>
           );
         })}
       </ul>
