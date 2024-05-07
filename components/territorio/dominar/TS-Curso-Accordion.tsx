@@ -51,7 +51,7 @@ const Desktop = ({
 }: Variant) => {
   return (
     <li class="hidden sm:collapse text-white border rounded-none border-base-100">
-      <input class="peer" type="radio" name={name} />
+      <input class="peer" type="checkbox" name={name} />
       <div class="collapse-title flex p-0 peer-checked:h-full peer-[:not(:checked)]:h-[14.25rem]">
         <Image
           src={desktopImage.src}
@@ -108,7 +108,7 @@ const Mobile = ({
 }: Variant) => {
   return (
     <li class="collapse sm:hidden text-white rounded-[10px] bg-[#23282D] min-w-[32rem]">
-      <input class="peer" type="radio" name={name} />
+      <input class="peer" type="checkbox" name={name} />
       <div class="collapse-title flex pr-5">
         <Image
           src={mobileImage.src}
