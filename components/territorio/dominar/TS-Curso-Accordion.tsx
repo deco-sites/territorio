@@ -50,10 +50,7 @@ const Desktop = ({
   decorator,
 }: Variant) => {
   return (
-    <li
-      key={title}
-      class="hidden sm:collapse text-white border rounded-none border-base-100"
-    >
+    <li class="hidden sm:collapse text-white border rounded-none border-base-100">
       <input class="peer" type="radio" name={name} />
       <div class="collapse-title flex p-0 peer-checked:h-full peer-[:not(:checked)]:h-[14.25rem]">
         <Image
@@ -81,10 +78,7 @@ const Desktop = ({
           </div>
           <ul class="flex flex-col gap-y-5 mt-[3.75rem]">
             {classes.map((item) => (
-              <li
-                key={item.title}
-                class="flex flex-col text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0"
-              >
+              <li class="flex flex-col text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0">
                 <Image
                   src={classIcon.src}
                   alt={classIcon.alt}
@@ -113,10 +107,7 @@ const Mobile = ({
   decorator,
 }: Variant) => {
   return (
-    <li
-      key={title}
-      class="collapse sm:hidden text-white rounded-[10px] bg-[#23282D] min-w-[32rem]"
-    >
+    <li class="collapse sm:hidden text-white rounded-[10px] bg-[#23282D] min-w-[32rem]">
       <input class="peer" type="radio" name={name} />
       <div class="collapse-title flex pr-5">
         <Image
@@ -146,10 +137,7 @@ const Mobile = ({
       </div>
       <ul class="flex flex-col gap-y-5 peer-checked:mt-2 collapse-content">
         {classes.map((item) => (
-          <li
-            key={item.title}
-            class="flex text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0"
-          >
+          <li class="flex text-xl text-base-100 sm:pl-16 md:pl-20 border-t-[1px] pt-5 first:pt-0 border-base-100 first:border-0">
             <Image
               src={classIcon.src}
               alt={classIcon.alt}
