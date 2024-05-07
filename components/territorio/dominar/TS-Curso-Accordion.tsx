@@ -1,6 +1,7 @@
 import Image from "apps/website/components/Image.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import { JSX } from "preact";
+import Icon from "../../../components/ui/Icon.tsx";
 import { BasicImage } from "../types.ts";
 import TsTypography from "../typography/TS-Typography.tsx";
 
@@ -116,7 +117,7 @@ const Mobile = ({
       class="collapse sm:hidden text-white rounded-[10px] bg-[#23282D] min-w-[32rem]"
     >
       <input class="peer" type="radio" name={name} />
-      <div class="collapse-title flex peer-checked:h-full pr-5">
+      <div class="collapse-title flex pr-5">
         <Image
           src={image.src}
           alt={image.alt}
@@ -162,6 +163,12 @@ const Mobile = ({
           </li>
         ))}
       </ul>
+      <span class="absolute right-0 bottom-0 peer-checked:hidden">
+        <Icon size={16} id="More" strokeWidth={1} />
+      </span>
+      <span class="absolute right-0 bottom-0 peer-[:not(:checked)]:hidden">
+        <Icon size={16} id="Less" strokeWidth={1} />
+      </span>
     </li>
   );
 };
