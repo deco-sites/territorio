@@ -42,10 +42,10 @@ const TsCursoDominar = ({
             {titleSecondary}
           </TsTypography>
         </TsTypography>
-        <TsRichText class="text-base-100 font-body text-2xl">
+        <TsRichText class="text-base-100 font-body text-[1.6rem] sm:text-2xl">
           {description}
         </TsRichText>
-        <TsCursoAccordion name="test" modules={modules} />
+        <TsCursoAccordion name="accordion-item" modules={modules} />
         <div class="self-center">
           <TsActionButton
             url={ctaButton.url}
