@@ -22,7 +22,8 @@ export interface CursoAccordionItem {
   title: string;
   /** @format textarea */
   subtitle: string;
-  image: BasicImage;
+  mobileImage: BasicImage;
+  desktopImage: BasicImage;
   classes: AccordionItemClass[];
 }
 
@@ -42,7 +43,7 @@ interface Variant extends CursoAccordionItem {
 const Desktop = ({
   title,
   subtitle,
-  image,
+  desktopImage,
   classes,
   name,
   classIcon,
@@ -56,8 +57,8 @@ const Desktop = ({
       <input class="peer" type="radio" name={name} />
       <div class="collapse-title flex p-0 peer-checked:h-full peer-[:not(:checked)]:h-[14.25rem]">
         <Image
-          src={image.src}
-          alt={image.alt}
+          src={desktopImage.src}
+          alt={desktopImage.alt}
           width={456}
           height={634}
           class="object-cover self-start w-[32rem] md:w-[28.5rem]"
@@ -105,7 +106,7 @@ const Desktop = ({
 const Mobile = ({
   title,
   subtitle,
-  image,
+  mobileImage,
   classes,
   name,
   classIcon,
@@ -119,10 +120,10 @@ const Mobile = ({
       <input class="peer" type="radio" name={name} />
       <div class="collapse-title flex pr-5">
         <Image
-          src={image.src}
-          alt={image.alt}
-          width={185}
-          height={185}
+          src={mobileImage.src}
+          alt={mobileImage.alt}
+          width={105}
+          height={105}
           class="min-w-[11.625rem] min-h-[11.625rem] max-w-[11.625rem] max-h-[11.625rem]"
         />
         <div class="flex flex-col ml-4 gap-y-5">
@@ -163,10 +164,10 @@ const Mobile = ({
           </li>
         ))}
       </ul>
-      <span class="absolute right-0 bottom-0 peer-checked:hidden">
+      <span class="absolute right-3 bottom-3 peer-checked:hidden">
         <Icon size={16} id="More" strokeWidth={1} />
       </span>
-      <span class="absolute right-0 bottom-0 peer-[:not(:checked)]:hidden">
+      <span class="absolute right-3 bottom-3 peer-[:not(:checked)]:hidden">
         <Icon size={16} id="Less" strokeWidth={1} />
       </span>
     </li>
