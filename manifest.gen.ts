@@ -56,24 +56,25 @@ import * as $$$$$$43 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$44 from "./sections/Social/WhatsApp.tsx";
 import * as $$$$$$46 from "./sections/territorio/TS-CookieConsent.tsx";
 import * as $$$$$$47 from "./sections/territorio/TS-CourseAccess.tsx";
-import * as $$$$$$48 from "./sections/territorio/TS-CursoDominar.tsx";
-import * as $$$$$$49 from "./sections/territorio/TS-CursoHero.tsx";
-import * as $$$$$$50 from "./sections/territorio/TS-Cursos.tsx";
-import * as $$$$$$51 from "./sections/territorio/TS-ExpertQuotes.tsx";
-import * as $$$$$$52 from "./sections/territorio/TS-Experts.tsx";
-import * as $$$$$$53 from "./sections/territorio/TS-Faq.tsx";
-import * as $$$$$$54 from "./sections/territorio/TS-Header.tsx";
-import * as $$$$$$55 from "./sections/territorio/TS-Hero.tsx";
-import * as $$$$$$56 from "./sections/territorio/TS-Newsletter.tsx";
-import * as $$$$$$57 from "./sections/territorio/TS-Platform.tsx";
-import * as $$$$$$58 from "./sections/territorio/TS-Policy.tsx";
-import * as $$$$$$59 from "./sections/territorio/TS-Proposito.tsx";
-import * as $$$$$$60 from "./sections/territorio/TS-Territorios.tsx";
-import * as $$$$$$61 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$62 from "./sections/territorio/TS-Video.tsx";
-import * as $$$$$$63 from "./sections/territorio/TS-WhyLearnWithExpert.tsx";
-import * as $$$$$$64 from "./sections/territorio/TS-Zendesk.tsx";
-import * as $$$$$$65 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$48 from "./sections/territorio/TS-CourseFit.tsx";
+import * as $$$$$$49 from "./sections/territorio/TS-CursoDominar.tsx";
+import * as $$$$$$50 from "./sections/territorio/TS-CursoHero.tsx";
+import * as $$$$$$51 from "./sections/territorio/TS-Cursos.tsx";
+import * as $$$$$$52 from "./sections/territorio/TS-ExpertQuotes.tsx";
+import * as $$$$$$53 from "./sections/territorio/TS-Experts.tsx";
+import * as $$$$$$54 from "./sections/territorio/TS-Faq.tsx";
+import * as $$$$$$55 from "./sections/territorio/TS-Header.tsx";
+import * as $$$$$$56 from "./sections/territorio/TS-Hero.tsx";
+import * as $$$$$$57 from "./sections/territorio/TS-Newsletter.tsx";
+import * as $$$$$$58 from "./sections/territorio/TS-Platform.tsx";
+import * as $$$$$$59 from "./sections/territorio/TS-Policy.tsx";
+import * as $$$$$$60 from "./sections/territorio/TS-Proposito.tsx";
+import * as $$$$$$61 from "./sections/territorio/TS-Territorios.tsx";
+import * as $$$$$$62 from "./sections/territorio/TS-Testimonials.tsx";
+import * as $$$$$$63 from "./sections/territorio/TS-Video.tsx";
+import * as $$$$$$64 from "./sections/territorio/TS-WhyLearnWithExpert.tsx";
+import * as $$$$$$65 from "./sections/territorio/TS-Zendesk.tsx";
+import * as $$$$$$66 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -134,25 +135,26 @@ const manifest = {
     "deco-sites/territorio/sections/Social/WhatsApp.tsx": $$$$$$44,
     "deco-sites/territorio/sections/territorio/TS-CookieConsent.tsx": $$$$$$46,
     "deco-sites/territorio/sections/territorio/TS-CourseAccess.tsx": $$$$$$47,
-    "deco-sites/territorio/sections/territorio/TS-CursoDominar.tsx": $$$$$$48,
-    "deco-sites/territorio/sections/territorio/TS-CursoHero.tsx": $$$$$$49,
-    "deco-sites/territorio/sections/territorio/TS-Cursos.tsx": $$$$$$50,
-    "deco-sites/territorio/sections/territorio/TS-ExpertQuotes.tsx": $$$$$$51,
-    "deco-sites/territorio/sections/territorio/TS-Experts.tsx": $$$$$$52,
-    "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$53,
-    "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$54,
-    "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$55,
-    "deco-sites/territorio/sections/territorio/TS-Newsletter.tsx": $$$$$$56,
-    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$57,
-    "deco-sites/territorio/sections/territorio/TS-Policy.tsx": $$$$$$58,
-    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$59,
-    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$60,
-    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$61,
-    "deco-sites/territorio/sections/territorio/TS-Video.tsx": $$$$$$62,
+    "deco-sites/territorio/sections/territorio/TS-CourseFit.tsx": $$$$$$48,
+    "deco-sites/territorio/sections/territorio/TS-CursoDominar.tsx": $$$$$$49,
+    "deco-sites/territorio/sections/territorio/TS-CursoHero.tsx": $$$$$$50,
+    "deco-sites/territorio/sections/territorio/TS-Cursos.tsx": $$$$$$51,
+    "deco-sites/territorio/sections/territorio/TS-ExpertQuotes.tsx": $$$$$$52,
+    "deco-sites/territorio/sections/territorio/TS-Experts.tsx": $$$$$$53,
+    "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$54,
+    "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$55,
+    "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$56,
+    "deco-sites/territorio/sections/territorio/TS-Newsletter.tsx": $$$$$$57,
+    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$58,
+    "deco-sites/territorio/sections/territorio/TS-Policy.tsx": $$$$$$59,
+    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$60,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$61,
+    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$62,
+    "deco-sites/territorio/sections/territorio/TS-Video.tsx": $$$$$$63,
     "deco-sites/territorio/sections/territorio/TS-WhyLearnWithExpert.tsx":
-      $$$$$$63,
-    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$64,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$65,
+      $$$$$$64,
+    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$65,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$66,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "actions": {
