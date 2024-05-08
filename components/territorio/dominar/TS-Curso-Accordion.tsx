@@ -50,7 +50,7 @@ const Desktop = ({
   decorator,
 }: Variant) => {
   return (
-    <li class="hidden sm:collapse text-white border rounded-none border-base-100">
+    <li class="hidden sm:collapse text-white border !rounded-none border-base-100">
       <input class="peer" type="checkbox" name={name} />
       <div class="collapse-title flex p-0 peer-checked:h-full peer-[:not(:checked)]:h-[14.25rem]">
         <Image
