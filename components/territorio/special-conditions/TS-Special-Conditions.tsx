@@ -1,16 +1,9 @@
 import TsImageLink from "deco-sites/territorio/components/territorio/image-link/TS-Image-Link.tsx";
-import { BasicImage } from "deco-sites/territorio/components/territorio/types.ts";
-
-interface Banner {
-  url: string;
-  openOnNewTab: boolean;
-  mobileImage: BasicImage;
-  desktopImage: BasicImage;
-}
+import { ImageBanner } from "deco-sites/territorio/components/territorio/types.ts";
 
 export interface TsSpecialConditionsProps {
-  topBanner: Banner;
-  bottomBanner: Banner;
+  topBanner: ImageBanner;
+  bottomBanner: ImageBanner;
 }
 
 function TsSpecialConditions({
