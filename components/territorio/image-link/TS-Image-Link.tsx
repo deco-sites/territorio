@@ -6,7 +6,7 @@ export interface TsImageLinkProps extends ImageProps {
   to: string;
   openOnNewTab: boolean;
   containerClass?: string | JSX.SignalLike<string | undefined>;
-  hover: boolean;
+  hover?: boolean;
 }
 
 function TsImageLink({
@@ -21,8 +21,8 @@ function TsImageLink({
       href={to}
       target={openOnNewTab ? "_blank" : "_self"}
       class={clx(
-        "w-fit h-fit p-0",
-        hover ? "hover:scale-110" : "",
+        "transition-all w-fit h-fit p-0",
+        hover ? "hover:scale-105" : "",
         containerClass as string,
       )}
     >

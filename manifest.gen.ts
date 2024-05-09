@@ -69,12 +69,13 @@ import * as $$$$$$57 from "./sections/territorio/TS-Newsletter.tsx";
 import * as $$$$$$58 from "./sections/territorio/TS-Platform.tsx";
 import * as $$$$$$59 from "./sections/territorio/TS-Policy.tsx";
 import * as $$$$$$60 from "./sections/territorio/TS-Proposito.tsx";
-import * as $$$$$$61 from "./sections/territorio/TS-Territorios.tsx";
-import * as $$$$$$62 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$63 from "./sections/territorio/TS-Video.tsx";
-import * as $$$$$$64 from "./sections/territorio/TS-WhyLearnWithExpert.tsx";
-import * as $$$$$$65 from "./sections/territorio/TS-Zendesk.tsx";
-import * as $$$$$$66 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$61 from "./sections/territorio/TS-SpecialConditions.tsx";
+import * as $$$$$$62 from "./sections/territorio/TS-Territorios.tsx";
+import * as $$$$$$63 from "./sections/territorio/TS-Testimonials.tsx";
+import * as $$$$$$64 from "./sections/territorio/TS-Video.tsx";
+import * as $$$$$$65 from "./sections/territorio/TS-WhyLearnWithExpert.tsx";
+import * as $$$$$$66 from "./sections/territorio/TS-Zendesk.tsx";
+import * as $$$$$$67 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -148,13 +149,15 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$58,
     "deco-sites/territorio/sections/territorio/TS-Policy.tsx": $$$$$$59,
     "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$60,
-    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$61,
-    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$62,
-    "deco-sites/territorio/sections/territorio/TS-Video.tsx": $$$$$$63,
+    "deco-sites/territorio/sections/territorio/TS-SpecialConditions.tsx":
+      $$$$$$61,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$62,
+    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$63,
+    "deco-sites/territorio/sections/territorio/TS-Video.tsx": $$$$$$64,
     "deco-sites/territorio/sections/territorio/TS-WhyLearnWithExpert.tsx":
-      $$$$$$64,
-    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$65,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$66,
+      $$$$$$65,
+    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$66,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$67,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "actions": {
