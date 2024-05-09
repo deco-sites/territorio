@@ -15,3 +15,10 @@ export interface ButtonType {
 }
 
 export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
+
+export interface ImageBanner {
+  url: string;
+  openOnNewTab: boolean;
+  mobileImage: BasicImage;
+  desktopImage: BasicImage;
+}
