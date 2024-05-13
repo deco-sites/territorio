@@ -1,8 +1,12 @@
-import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
-import TsTestimonialsCarouselDesk from "../../../islands/territorio/TS-TestimonialsCarouselDesk.tsx";
-
+import type { HTMLWidget } from "apps/admin/widgets.ts";
 import { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import TsActionButton, {
+  CTAButton,
+} from "deco-sites/territorio/components/territorio/action-button/Ts-Action-Button.tsx";
+import TsRichText from "deco-sites/territorio/components/territorio/rich-text/TS-Rich-Text.tsx";
+import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
+import TsTestimonialsCarouselDesk from "../../../islands/territorio/TS-TestimonialsCarouselDesk.tsx";
 import TsTestimonialsCarouselMobile from "./TS-TestimonialsCarouselMobile.tsx";
 
 /** @title {{{author}}} - testimonial */
@@ -17,9 +21,9 @@ interface Testimonial {
 
 interface SectionTitle {
   /** @title Main title */
-  main: string;
+  main: HTMLWidget;
   /** @title Subtitle */
-  sub: string;
+  sub: HTMLWidget;
 }
 
 export interface Props {
@@ -27,6 +31,8 @@ export interface Props {
   title: SectionTitle;
   /** @title Testimonials */
   items: Testimonial[];
+  /** @title CTA Button */
+  ctaButton?: CTAButton;
 }
 
 export default function TsTestimonials({
@@ -48,6 +54,7 @@ export default function TsTestimonials({
       author: "Jane Doe - Médica.",
     },
   ],
+  ctaButton,
 }: Props) {
   const items = itemsProp.map((item) => (
     <div class="flex flex-col md:flex-row justify-center text-black">
@@ -69,16 +76,13 @@ export default function TsTestimonials({
     </div>
   ));
 
+  const hasButton = !!ctaButton;
+
   return (
-    <div class="ts-section px-0 md:px-8 mb-10 mt-8">
+    <div class="flex flex-col items-center ts-section ts-responsive px-0 md:px-8 py-[10%] sm:py-[7%]">
       <div class="inline-block md:flex md:flex-col md:text-center px-8 mb-10 md:mb-0">
-        <TsTypography class="text-3xl md:text-6xl text-base-300" type="title">
-          {title.main}
-          {" "}
-        </TsTypography>
-        <TsTypography class="text-3xl md:text-6xl" type="title">
-          {title.sub}
-        </TsTypography>
+        <TsRichText class="text-3xl md:text-6xl mb-2">{title.main}</TsRichText>
+        <TsRichText class="text-xl md:text-4xl">{title.sub}</TsRichText>
       </div>
       <div class="hidden md:block">
         <TsTestimonialsCarouselDesk>{items}</TsTestimonialsCarouselDesk>
@@ -86,6 +90,14 @@ export default function TsTestimonials({
       <div class="md:hidden">
         <TsTestimonialsCarouselMobile>{items}</TsTestimonialsCarouselMobile>
       </div>
+      {hasButton && (
+        <TsActionButton
+          url={ctaButton.url}
+          class="text-2xl sm:text-xl lg:text-2xl mt-28"
+        >
+          {ctaButton.text}
+        </TsActionButton>
+      )}
     </div>
   );
 }
