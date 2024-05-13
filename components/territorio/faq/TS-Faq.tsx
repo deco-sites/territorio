@@ -28,18 +28,16 @@ export interface Props {
 export default function TSFaq({
   questions,
   title = "Perguntas frequentes",
-  ctaSupportDescription = {
-    text: "Continua com dúvidas? Clique aqui e acesse nossa página de suporte.",
-    ctaPart: "Suporte",
-    href: "/support",
-  },
+  ctaSupportDescription,
 }: Props) {
   const titleWords = title.split(" ");
-  const ctaParts = ctaSupportDescription.text.split(
-    ctaSupportDescription.ctaPart,
+  const ctaParts = ctaSupportDescription?.text.split(
+    ctaSupportDescription?.ctaPart,
   );
+
+  const hasSupportDescription = !!ctaSupportDescription;
   return (
-    <div className="ts-section">
+    <div className="ts-section ts-responsive py-[10%] sm:py-[7%]">
       <TsTypography as="p" class="text-3xl md:text-6xl mb-8 md:mb-20">
         {titleWords.map((word, index) => {
           const isLast = index === titleWords.length - 1;
@@ -61,20 +59,22 @@ export default function TSFaq({
           }))}
         </Accordion>
       )}
-      <TsTypography
-        as="p"
-        class="text-center text-xl md:text-3xl mt-14 mb-14 md:mt-32 md:mb-36"
-      >
-        {ctaParts[0]}{" "}
-        <TsLink
-          to={ctaSupportDescription.href}
-          openOnNewTab
-          class="underline text-accent-content"
+      {hasSupportDescription && (
+        <TsTypography
+          as="p"
+          class="text-center text-xl md:text-3xl mt-14 mb-14 md:mt-32 md:mb-36"
         >
-          {ctaSupportDescription.ctaPart}
-        </TsLink>{" "}
-        {ctaParts[1]}
-      </TsTypography>
+          {ctaParts?.[0]}{" "}
+          <TsLink
+            to={ctaSupportDescription.href}
+            openOnNewTab
+            class="underline text-accent-content"
+          >
+            {ctaSupportDescription.ctaPart}
+          </TsLink>{" "}
+          {ctaParts?.[1]}
+        </TsTypography>
+      )}
     </div>
   );
 }
