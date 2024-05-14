@@ -59,9 +59,9 @@ const TsExperts = ({
           <Image
             src={image.src}
             alt={image.alt}
-            width={423}
+            width={353}
             height={502}
-            class="self-end h-fit ml-[-90px] max-w-[240px] sm:max-w-[263px] lg:max-w-[423px]"
+            class="self-end h-fit ml-[-90px] max-w-[240px] sm:max-w-[263px] lg:max-w-[423px] max-h-[285px] sm:max-h-[312px] lg:max-h-[502px]"
           />
           <div class="flex flex-col md:flex-row justify-between w-full mt-4 md:mt-12 mx-2 md:mx-8">
             <div class="flex flex-col gap-y-3 md:gap-y-7">

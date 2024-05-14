@@ -28,7 +28,7 @@ function TsSpecialConditions({
         src={topBanner.mobileImage.src}
         alt={topBanner.mobileImage.alt}
         width={269}
-        height={208}
+        height={207}
         containerClass="sm:hidden w-full"
         class="w-full"
       />
@@ -38,7 +38,7 @@ function TsSpecialConditions({
         src={bottomBanner.desktopImage.src}
         alt={bottomBanner.desktopImage.alt}
         width={1172}
-        height={443}
+        height={989}
         containerClass="hidden sm:block w-full"
         class="w-[73.25rem]"
       />
