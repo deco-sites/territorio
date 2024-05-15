@@ -67,18 +67,19 @@ import * as $$$$$$55 from "./sections/territorio/TS-ExtraBonus.tsx";
 import * as $$$$$$56 from "./sections/territorio/TS-Faq.tsx";
 import * as $$$$$$57 from "./sections/territorio/TS-Header.tsx";
 import * as $$$$$$58 from "./sections/territorio/TS-Hero.tsx";
-import * as $$$$$$59 from "./sections/territorio/TS-Newsletter.tsx";
-import * as $$$$$$60 from "./sections/territorio/TS-Platform.tsx";
-import * as $$$$$$61 from "./sections/territorio/TS-Policy.tsx";
-import * as $$$$$$62 from "./sections/territorio/TS-Proposito.tsx";
-import * as $$$$$$63 from "./sections/territorio/TS-SpecialConditions.tsx";
-import * as $$$$$$64 from "./sections/territorio/TS-Territorios.tsx";
-import * as $$$$$$65 from "./sections/territorio/TS-Testimonials.tsx";
-import * as $$$$$$66 from "./sections/territorio/TS-Video.tsx";
-import * as $$$$$$67 from "./sections/territorio/TS-Warranty.tsx";
-import * as $$$$$$68 from "./sections/territorio/TS-WhyLearnWithExpert.tsx";
-import * as $$$$$$69 from "./sections/territorio/TS-Zendesk.tsx";
-import * as $$$$$$70 from "./sections/territorio/TSFooter.tsx";
+import * as $$$$$$59 from "./sections/territorio/TS-LearnAlso.tsx";
+import * as $$$$$$60 from "./sections/territorio/TS-Newsletter.tsx";
+import * as $$$$$$61 from "./sections/territorio/TS-Platform.tsx";
+import * as $$$$$$62 from "./sections/territorio/TS-Policy.tsx";
+import * as $$$$$$63 from "./sections/territorio/TS-Proposito.tsx";
+import * as $$$$$$64 from "./sections/territorio/TS-SpecialConditions.tsx";
+import * as $$$$$$65 from "./sections/territorio/TS-Territorios.tsx";
+import * as $$$$$$66 from "./sections/territorio/TS-Testimonials.tsx";
+import * as $$$$$$67 from "./sections/territorio/TS-Video.tsx";
+import * as $$$$$$68 from "./sections/territorio/TS-Warranty.tsx";
+import * as $$$$$$69 from "./sections/territorio/TS-WhyLearnWithExpert.tsx";
+import * as $$$$$$70 from "./sections/territorio/TS-Zendesk.tsx";
+import * as $$$$$$71 from "./sections/territorio/TSFooter.tsx";
 import * as $$$$$$45 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
@@ -150,20 +151,21 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TS-Faq.tsx": $$$$$$56,
     "deco-sites/territorio/sections/territorio/TS-Header.tsx": $$$$$$57,
     "deco-sites/territorio/sections/territorio/TS-Hero.tsx": $$$$$$58,
-    "deco-sites/territorio/sections/territorio/TS-Newsletter.tsx": $$$$$$59,
-    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$60,
-    "deco-sites/territorio/sections/territorio/TS-Policy.tsx": $$$$$$61,
-    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$62,
+    "deco-sites/territorio/sections/territorio/TS-LearnAlso.tsx": $$$$$$59,
+    "deco-sites/territorio/sections/territorio/TS-Newsletter.tsx": $$$$$$60,
+    "deco-sites/territorio/sections/territorio/TS-Platform.tsx": $$$$$$61,
+    "deco-sites/territorio/sections/territorio/TS-Policy.tsx": $$$$$$62,
+    "deco-sites/territorio/sections/territorio/TS-Proposito.tsx": $$$$$$63,
     "deco-sites/territorio/sections/territorio/TS-SpecialConditions.tsx":
-      $$$$$$63,
-    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$64,
-    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$65,
-    "deco-sites/territorio/sections/territorio/TS-Video.tsx": $$$$$$66,
-    "deco-sites/territorio/sections/territorio/TS-Warranty.tsx": $$$$$$67,
+      $$$$$$64,
+    "deco-sites/territorio/sections/territorio/TS-Territorios.tsx": $$$$$$65,
+    "deco-sites/territorio/sections/territorio/TS-Testimonials.tsx": $$$$$$66,
+    "deco-sites/territorio/sections/territorio/TS-Video.tsx": $$$$$$67,
+    "deco-sites/territorio/sections/territorio/TS-Warranty.tsx": $$$$$$68,
     "deco-sites/territorio/sections/territorio/TS-WhyLearnWithExpert.tsx":
-      $$$$$$68,
-    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$69,
-    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$70,
+      $$$$$$69,
+    "deco-sites/territorio/sections/territorio/TS-Zendesk.tsx": $$$$$$70,
+    "deco-sites/territorio/sections/territorio/TSFooter.tsx": $$$$$$71,
     "deco-sites/territorio/sections/Theme/Theme.tsx": $$$$$$45,
   },
   "actions": {
