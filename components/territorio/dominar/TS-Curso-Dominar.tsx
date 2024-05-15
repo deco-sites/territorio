@@ -23,7 +23,12 @@ const TsCursoDominar = ({
   titleSecondary,
 }: TsCursoDominarProps) => {
   return (
-    <div class="flex justify-center ts-responsive">
+    <div
+      class={clx(
+        "flex justify-center ts-responsive",
+        "md:bg-gradient-to-t md:from-base-200 md:via-base-200 md:via-75% md:to-transparent", // parallax gradient end
+      )}
+    >
       <div
         class={clx(
           "flex flex-col my-[7%] gap-y-16", //common

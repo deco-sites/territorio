@@ -20,7 +20,7 @@ export default function TsVideo({
   ctaUrl = "#",
 }: Props) {
   return (
-    <div class="ts-section ts-responsive py-8 flex flex-col gap-[3.2rem] md:gap-8">
+    <div class="ts-section ts-responsive py-[10%] sm:py-[7%] flex flex-col gap-[3.2rem] md:gap-8 bg-transparent">
       {!!video && (
         <div
           class="flex w-full aspect-video [&_iframe]:w-full [&_iframe]:h-full"
@@ -28,7 +28,7 @@ export default function TsVideo({
         >
         </div>
       )}
-      <div class="flex flex-col sm:flex-row gap-10 md:mt-10">
+      <div class="flex flex-col sm:flex-row gap-10 md:mt-10 px-4 py-6 sm:backdrop-blur-2xl sm:bg-white sm:bg-opacity-[0.02] sm:rounded-2xl">
         <TsTypography
           class="w-full text-[2.6rem] md:text-[3.375rem] leading-[1.1]"
           weight="500"
