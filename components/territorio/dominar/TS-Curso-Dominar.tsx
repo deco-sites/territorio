@@ -26,7 +26,7 @@ const TsCursoDominar = ({
     <div
       class={clx(
         "flex justify-center ts-responsive",
-        "md:bg-gradient-to-t md:from-base-200 md:via-base-200 md:via-75% md:to-transparent", // parallax gradient end
+        "sm:bg-gradient-to-t sm:from-base-200 sm:via-base-200 sm:via-75% sm:to-transparent", // parallax gradient end
       )}
     >
       <div

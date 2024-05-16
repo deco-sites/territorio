@@ -11,11 +11,11 @@ function TsParallaxWrapper({ image, sections }: TsParallaxWrapperProps) {
     <>
       <div
         style={{ backgroundImage: `url("${image.src}")` }}
-        class="hidden md:block md:bg-fixed md:bg-center md:bg-no-repeat md:bg-cover md:min-h-screen"
+        class="hidden sm:block sm:bg-fixed sm:bg-center sm:bg-no-repeat sm:bg-cover sm:min-h-screen"
       >
         {sections.map((section) => <section.Component {...section.props} />)}
       </div>
-      <div class="md:hidden">
+      <div class="sm:hidden">
         {sections.map((section) => <section.Component {...section.props} />)}
       </div>
     </>

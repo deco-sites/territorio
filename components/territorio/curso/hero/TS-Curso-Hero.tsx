@@ -38,7 +38,12 @@ const TsCursoHero = ({
   listItems,
 }: TsCursoHeroProps) => {
   return (
-    <div class="ts-responsive md:bg-gradient-to-b md:from-base-200 md:via-base-200 md:via-90% md:to-transparent">
+    <div
+      class={clx(
+        "ts-responsive",
+        "sm:bg-gradient-to-b sm:from-base-200 sm:via-base-200 sm:via-90% sm:to-transparent", // parallax gradient starts
+      )}
+    >
       <div
         style={{
           backgroundImage: `url("${background.src}")`,
