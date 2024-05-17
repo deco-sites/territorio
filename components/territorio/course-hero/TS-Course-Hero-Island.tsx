@@ -1,12 +1,14 @@
 import type { HTMLWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import useTsMediaQuery from "deco-sites/territorio/hooks/useTsMediaQuery.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
+import { AppContext } from "../../../apps/site.ts";
 import TsActionButton, {
   CTAButton,
-} from "../../action-button/Ts-Action-Button.tsx";
-import TsRichText from "../../rich-text/TS-Rich-Text.tsx";
-import { BasicImage } from "../../types.ts";
-import TsTypography from "../../typography/TS-Typography.tsx";
+} from "../action-button/Ts-Action-Button.tsx";
+import TsRichText from "../rich-text/TS-Rich-Text.tsx";
+import { BasicImage } from "../types.ts";
+import TsTypography from "../typography/TS-Typography.tsx";
 
 /** @titleBy text */
 type Statistic = {
@@ -15,8 +17,11 @@ type Statistic = {
   source: HTMLWidget;
 };
 
-export interface TsCursoHeroProps {
-  background: BasicImage;
+export interface TsCourseHeroProps {
+  backgroundDesktop: BasicImage;
+  backgroundDesktopSmall: BasicImage;
+  backgroundMobile: BasicImage;
+  logo: BasicImage;
   decorator: BasicImage;
   titlePrimary: string;
   titleSecondary: string;
@@ -27,8 +32,11 @@ export interface TsCursoHeroProps {
   listItems: HTMLWidget[];
 }
 
-const TsCursoHero = ({
-  background,
+const TsCourseHero = ({
+  backgroundDesktop,
+  backgroundDesktopSmall,
+  backgroundMobile,
+  logo,
   decorator,
   titlePrimary,
   titleSecondary,
@@ -36,7 +44,20 @@ const TsCursoHero = ({
   subTitle,
   statistics,
   listItems,
-}: TsCursoHeroProps) => {
+}: TsCourseHeroProps) => {
+  const { currentMediaQuery } = useTsMediaQuery();
+  let backgroundImage: BasicImage;
+  switch (currentMediaQuery) {
+    case "sm":
+      backgroundImage = backgroundDesktopSmall;
+      break;
+    case "xs":
+      backgroundImage = backgroundMobile;
+      break;
+    default:
+      backgroundImage = backgroundDesktop;
+  }
+
   return (
     <div
       class={clx(
@@ -45,23 +66,37 @@ const TsCursoHero = ({
       )}
     >
       <div
+        alt={backgroundImage.alt}
         style={{
-          backgroundImage: `url("${background.src}")`,
+          backgroundImage: `url("${backgroundImage.src}")`,
         }}
-        class="flex justify-center bg-left-top bg-contain bg-no-repeat"
+        class={clx(
+          "flex justify-center bg-contain bg-no-repeat", //common
+          "bg-top", //mobile
+          "sm:bg-left-top", //desktop
+        )}
       >
         <div
           class={clx(
-            "gap-24 my-[7%]", //common
-            "flex flex-col mx-20", //mobile
+            "gap-24 my-[7%] mx-20", //common
+            "flex flex-col", //mobile
             "sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:mx-auto sm:max-w-[60rem]", //small
             "md:max-w-[65rem] lg:max-w-[75rem]", //larger
           )}
         >
-          <div />
-          <div class="flex flex-col sm:self-end sm:ml-10">
+          <div>
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={200}
+              height={48}
+              class="w-[12.5rem] h-[3rem] absolute md:-mt-12"
+            />
+          </div>
+          <div class="flex flex-col mt-[75%] sm:mt-0 sm:px-0 sm:self-end sm:ml-10">
             <Image
               src={decorator.src}
+              alt={decorator.alt}
               width={66}
               height={66}
               class={clx(
@@ -85,7 +120,7 @@ const TsCursoHero = ({
             </div>
             <TsActionButton
               url={ctaButton.url}
-              class="text-2xl sm:text-xl lg:text-2xl"
+              class="text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl"
             >
               {ctaButton.text}
             </TsActionButton>
@@ -121,4 +156,12 @@ const TsCursoHero = ({
   );
 };
 
-export default TsCursoHero;
+export const loader = (
+  props: TsCourseHeroProps,
+  _req: Request,
+  ctx: AppContext,
+) => {
+  return { ...props, device: ctx.device };
+};
+
+export default TsCourseHero;

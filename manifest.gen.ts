@@ -58,8 +58,8 @@ import * as $$$$$$46 from "./sections/territorio/TS-CookieConsent.tsx";
 import * as $$$$$$47 from "./sections/territorio/TS-CourseAccess.tsx";
 import * as $$$$$$48 from "./sections/territorio/TS-CourseFit.tsx";
 import * as $$$$$$49 from "./sections/territorio/TS-CourseFooter.tsx";
-import * as $$$$$$50 from "./sections/territorio/TS-CursoDominar.tsx";
-import * as $$$$$$51 from "./sections/territorio/TS-CursoHero.tsx";
+import * as $$$$$$50 from "./sections/territorio/TS-CourseHero.tsx";
+import * as $$$$$$51 from "./sections/territorio/TS-CursoDominar.tsx";
 import * as $$$$$$52 from "./sections/territorio/TS-Cursos.tsx";
 import * as $$$$$$53 from "./sections/territorio/TS-ExpertQuotes.tsx";
 import * as $$$$$$54 from "./sections/territorio/TS-Experts.tsx";
@@ -143,8 +143,8 @@ const manifest = {
     "deco-sites/territorio/sections/territorio/TS-CourseAccess.tsx": $$$$$$47,
     "deco-sites/territorio/sections/territorio/TS-CourseFit.tsx": $$$$$$48,
     "deco-sites/territorio/sections/territorio/TS-CourseFooter.tsx": $$$$$$49,
-    "deco-sites/territorio/sections/territorio/TS-CursoDominar.tsx": $$$$$$50,
-    "deco-sites/territorio/sections/territorio/TS-CursoHero.tsx": $$$$$$51,
+    "deco-sites/territorio/sections/territorio/TS-CourseHero.tsx": $$$$$$50,
+    "deco-sites/territorio/sections/territorio/TS-CursoDominar.tsx": $$$$$$51,
     "deco-sites/territorio/sections/territorio/TS-Cursos.tsx": $$$$$$52,
     "deco-sites/territorio/sections/territorio/TS-ExpertQuotes.tsx": $$$$$$53,
     "deco-sites/territorio/sections/territorio/TS-Experts.tsx": $$$$$$54,
