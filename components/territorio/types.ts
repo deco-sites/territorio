@@ -14,6 +14,7 @@ export interface ButtonType {
   icon: ImageType;
 }
 
+/** @titleBy alt */
 export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 
 export interface ImageBanner {
