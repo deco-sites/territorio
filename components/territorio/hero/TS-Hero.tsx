@@ -1,29 +1,42 @@
 import { useSignal, useSignalEffect } from "@preact/signals";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import { BasicImage } from "deco-sites/territorio/components/territorio/types.ts";
+import useTsMediaQuery from "deco-sites/territorio/hooks/useTsMediaQuery.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import { AppContext } from "../../../apps/site.ts";
 import { useTsCarrousel } from "../../../hooks/useTsCarrousel.tsx";
 import TsTypography from "../../territorio/typography/TS-Typography.tsx";
 
-/**
- * @title Basic image
- */
-interface BaseImage {
-  src: ImageWidget;
-  alt: string;
-}
-
 export interface HeroProps {
-  images: BaseImage[];
+  largeImages: BasicImage[];
+  smallImages: BasicImage[];
+  mobileImages: BasicImage[];
   text: string;
 }
 
-const TsHero = ({ images, text }: HeroProps) => {
+const TsHero = ({
+  mobileImages,
+  smallImages,
+  largeImages,
+  text,
+}: HeroProps) => {
   const changedPosition = useSignal(0);
   const shouldShow = useSignal(true);
 
-  const { visibleItems, onNext } = useTsCarrousel<BaseImage>({
-    items: images,
+  const { currentMediaQuery } = useTsMediaQuery();
+  let backgroundImages: BasicImage[];
+  switch (currentMediaQuery) {
+    case "sm":
+      backgroundImages = smallImages;
+      break;
+    case "xs":
+      backgroundImages = mobileImages;
+      break;
+    default:
+      backgroundImages = largeImages;
+  }
+
+  const { visibleItems, onNext } = useTsCarrousel<BasicImage>({
+    items: backgroundImages,
     visibleItemsCountParam: 1,
     shouldCycle: true,
     autoChangeDelay: 5000,
@@ -52,7 +65,7 @@ const TsHero = ({ images, text }: HeroProps) => {
         backgroundImage: `url("${visibleImage.src}")`,
       }}
       class={clx(
-        "flex justify-center bg-cover bg-no-repeat bg-right xl:bg-left-top items-center h-screen px-8",
+        "flex justify-center bg-cover bg-no-repeat bg-right-top items-center h-screen px-8",
         "transition-all ease-in-out duration-200 transform opacity-0",
         changedPosition.value === -1 && "translate-x-10",
         changedPosition.value === 1 && "-translate-x-10",
