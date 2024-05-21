@@ -43,6 +43,7 @@ const TsTerritoriosCarousel = ({ items, delay = 5000 }: Props) => {
                   type="body"
                   color="base-100"
                   class="text-sm sm:text-lg"
+                  highlightExperts
                 >
                   {item.description}
                 </TsTypography>

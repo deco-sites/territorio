@@ -80,6 +80,7 @@ const TsExperts = ({
                     key={text}
                     type="body"
                     class="md:max-w-[440px] text-xs sm:text-sm md:text-lg xl:text-xl break-normal"
+                    highlightExperts
                   >
                     {text}
                   </TsTypography>

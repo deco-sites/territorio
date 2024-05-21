@@ -101,6 +101,7 @@ function TsTerritorios({
                 type="body"
                 color="base-100"
                 class="md:text-sm lg:text-[16px]"
+                highlightExperts
               >
                 {item.description}
               </TsTypography>

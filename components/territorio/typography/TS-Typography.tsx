@@ -34,6 +34,8 @@ export type TypographyProps = {
   as?: TypographyTag;
   type?: TypographyType;
   size?: string;
+  highlightExperts?: boolean;
+  highlightTerms?: string[];
   color?:
     | keyof ThemeColors
     | keyof ComplementaryColors
@@ -60,6 +62,13 @@ const VARIANT_CLASSES: Record<TypographyTag, string> = {
   span: "",
 };
 
+const EXPERTS_NAMES = [
+  "Gabriel Chalita", 
+  "Gabriel Chalita", 
+  "Ludhmila Hajjar", 
+  "Ludhmila Hajjar"
+];
+
 const WEIGHT_CLASS: Record<TypographyWeight, string> = {
   100: "font-thin",
   200: "font-extralight",
@@ -76,6 +85,8 @@ const TsTypography = ({
   as,
   type,
   size,
+  highlightExperts = false,
+  highlightTerms,
   color,
   weight,
   variant,
@@ -85,6 +96,13 @@ const TsTypography = ({
   children,
   ...rest
 }: TypographyProps) => {
+  const highlightNames = (text: string, names: string[]) => {
+    const parts = text.split(new RegExp(`(${names.join('|')})`, 'gi'));
+    return parts.map((part, index) =>
+      names.includes(part) ? <b key={index}>{part}</b> : part
+    );
+  };
+
   const mergeClasses = () => {
     const typeClass = type === "body" ? "font-body" : "font-title";
     const variantClass = VARIANT_CLASSES[variant || "span"];
@@ -108,7 +126,10 @@ const TsTypography = ({
 
   return (
     <Tag class={mergeClasses()} style={{ fontSize: size }} {...rest}>
-      {children}
+      {highlightExperts ? highlightNames(children, EXPERTS_NAMES) :
+        highlightTerms ? highlightNames(children, highlightTerms) :
+        children
+      }    
     </Tag>
   );
 };
