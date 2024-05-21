@@ -34,8 +34,6 @@ export type TypographyProps = {
   as?: TypographyTag;
   type?: TypographyType;
   size?: string;
-  highlightExperts?: boolean;
-  highlightTerms?: string[];
   color?:
     | keyof ThemeColors
     | keyof ComplementaryColors
@@ -62,13 +60,6 @@ const VARIANT_CLASSES: Record<TypographyTag, string> = {
   span: "",
 };
 
-const EXPERTS_NAMES = [
-  "Gabriel Chalita",
-  "Gabriel Chalita",
-  "Ludhmila Hajjar",
-  "Ludhmila Hajjar",
-];
-
 const WEIGHT_CLASS: Record<TypographyWeight, string> = {
   100: "font-thin",
   200: "font-extralight",
@@ -85,8 +76,6 @@ const TsTypography = ({
   as,
   type,
   size,
-  highlightExperts = false,
-  highlightTerms,
   color,
   weight,
   variant,
@@ -126,11 +115,7 @@ const TsTypography = ({
 
   return (
     <Tag class={mergeClasses()} style={{ fontSize: size }} {...rest}>
-      {highlightExperts
-        ? highlightNames(children, EXPERTS_NAMES)
-        : highlightTerms
-        ? highlightNames(children, highlightTerms)
-        : children}
+      {children}
     </Tag>
   );
 };

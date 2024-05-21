@@ -1,5 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
+import TsRichText from "../rich-text/TS-Rich-Text.tsx";
 import { useState } from "preact/hooks";
 import { AppContext } from "../../../apps/site.ts";
 import Icon from "../../../components/ui/Icon.tsx";
@@ -76,14 +77,12 @@ const TsExperts = ({
                 class="flex flex-col gap-y-3 overflow-y-auto max-h-[120px] md:max-h-[240px] pr-4 xl:pr-8"
               >
                 {description.map(({ text }) => (
-                  <TsTypography
+                  <TsRichText
                     key={text}
-                    type="body"
-                    class="md:max-w-[440px] text-xs sm:text-sm md:text-lg xl:text-xl break-normal"
-                    highlightExperts
+                    class="font-body md:max-w-[440px] text-xs sm:text-sm md:text-lg xl:text-xl break-normal"
                   >
                     {text}
-                  </TsTypography>
+                  </TsRichText>
                 ))}
               </div>
             </div>

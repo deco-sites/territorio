@@ -1,6 +1,7 @@
 import Image from "apps/website/components/Image.tsx";
 import TsCarouselBarIsland from "../../../islands/territorio/TS-Carousel.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
+import TsRichText from "../rich-text/TS-Rich-Text.tsx";
 import { TerritoriosCarouselItem } from "./types.ts";
 
 export interface Props {
@@ -39,14 +40,11 @@ const TsTerritoriosCarousel = ({ items, delay = 5000 }: Props) => {
                 </TsTypography>
               </div>
               <div class="text-left">
-                <TsTypography
-                  type="body"
-                  color="base-100"
-                  class="text-sm sm:text-lg"
-                  highlightExperts
+                <TsRichText
+                  class="text-base-100 font-body text-sm sm:text-lg"
                 >
                   {item.description}
-                </TsTypography>
+                </TsRichText>
               </div>
             </div>
           </div>

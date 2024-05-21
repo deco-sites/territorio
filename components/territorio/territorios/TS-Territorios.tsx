@@ -1,6 +1,7 @@
 import Image from "apps/website/components/Image.tsx";
 import { AppContext } from "../../../apps/site.ts";
 import TsTypography from "../typography/TS-Typography.tsx";
+import TsRichText from "../rich-text/TS-Rich-Text.tsx";
 import TsTerritoriosCarousel from "./TS-TerritoriosCarousel.tsx";
 import { BasicImage, TerritoriosCarouselItem } from "./types.ts";
 
@@ -97,14 +98,11 @@ function TsTerritorios({
                   <TsTypography weight="600">{item.title}</TsTypography>
                 </TsTypography>
               </div>
-              <TsTypography
-                type="body"
-                color="base-100"
-                class="md:text-sm lg:text-[16px]"
-                highlightExperts
+              <TsRichText
+                class="text-base-100 font-body md:text-sm lg:text-[16px]"
               >
                 {item.description}
-              </TsTypography>
+              </TsRichText>
             </div>
           ))}
         </div>

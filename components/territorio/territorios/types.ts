@@ -1,4 +1,5 @@
 import { ImageType } from "../types.ts";
+import type { HTMLWidget } from "apps/admin/widgets.ts";
 
 export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 
@@ -8,5 +9,5 @@ export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 export interface TerritoriosCarouselItem {
   image: BasicImage;
   title: string;
-  description: string;
+  description: HTMLWidget;
 }
