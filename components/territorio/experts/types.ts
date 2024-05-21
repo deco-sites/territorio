@@ -26,6 +26,9 @@ export interface Expert {
   fullName: string;
   image: BasicImage;
   thumbnail: BasicImage;
+  /**
+   * @title Paragraph
+   */
   description: Paragraph[];
   social: SocialItem[];
 }
