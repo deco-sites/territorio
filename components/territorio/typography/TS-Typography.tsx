@@ -63,10 +63,10 @@ const VARIANT_CLASSES: Record<TypographyTag, string> = {
 };
 
 const EXPERTS_NAMES = [
-  "Gabriel Chalita", 
-  "Gabriel Chalita", 
-  "Ludhmila Hajjar", 
-  "Ludhmila Hajjar"
+  "Gabriel Chalita",
+  "Gabriel Chalita",
+  "Ludhmila Hajjar",
+  "Ludhmila Hajjar",
 ];
 
 const WEIGHT_CLASS: Record<TypographyWeight, string> = {
@@ -97,7 +97,7 @@ const TsTypography = ({
   ...rest
 }: TypographyProps) => {
   const highlightNames = (text: string, names: string[]) => {
-    const parts = text.split(new RegExp(`(${names.join('|')})`, 'gi'));
+    const parts = text.split(new RegExp(`(${names.join("|")})`, "gi"));
     return parts.map((part, index) =>
       names.includes(part) ? <b key={index}>{part}</b> : part
     );
@@ -126,10 +126,11 @@ const TsTypography = ({
 
   return (
     <Tag class={mergeClasses()} style={{ fontSize: size }} {...rest}>
-      {highlightExperts ? highlightNames(children, EXPERTS_NAMES) :
-        highlightTerms ? highlightNames(children, highlightTerms) :
-        children
-      }    
+      {highlightExperts
+        ? highlightNames(children, EXPERTS_NAMES)
+        : highlightTerms
+        ? highlightNames(children, highlightTerms)
+        : children}
     </Tag>
   );
 };
