@@ -1,7 +1,9 @@
 import Image from "apps/website/components/Image.tsx";
 import TSAccordion from "deco-sites/territorio/components/territorio/faq/TS-Accordion.tsx";
 import { ImageType } from "deco-sites/territorio/components/territorio/types.ts";
-import TsActionButton from "../action-button/Ts-Action-Button.tsx";
+import TsActionButton, {
+  CTAButton,
+} from "../action-button/Ts-Action-Button.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
 
 /** @title Statistic: {{value}} */
@@ -39,14 +41,11 @@ export interface Props {
   /** @minItems 4 */
   /** @maxItems 4 */
   statistics: StatisticProps[];
-  cta: {
-    label: string;
-    url: string;
-  };
+  ctaButton: CTAButton;
 }
 
 export default function TsWhyLearnWithExpert({
-  cta,
+  ctaButton,
   title: { primary, secondary },
   statistics,
   expertBio,
@@ -129,8 +128,12 @@ export default function TsWhyLearnWithExpert({
         </div>
       </div>
 
-      <TsActionButton url={cta.url} linkContainerClass="block mx-auto">
-        {cta.label}
+      <TsActionButton
+        url={ctaButton.url}
+        linkContainerClass="block mx-auto"
+        class="text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl"
+      >
+        {ctaButton.text}
       </TsActionButton>
     </div>
   );

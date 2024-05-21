@@ -33,6 +33,7 @@ function TsSpecialConditions({
         class="w-full"
       />
       <TsImageLink
+        id="checkout"
         to={bottomBanner.url}
         openOnNewTab={bottomBanner.openOnNewTab}
         src={bottomBanner.desktopImage.src}
@@ -43,6 +44,7 @@ function TsSpecialConditions({
         class="w-[73.25rem]"
       />
       <TsImageLink
+        id="checkout"
         to={bottomBanner.url}
         openOnNewTab={bottomBanner.openOnNewTab}
         src={bottomBanner.mobileImage.src}

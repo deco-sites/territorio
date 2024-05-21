@@ -1,4 +1,6 @@
-import TsActionButton from "../action-button/Ts-Action-Button.tsx";
+import TsActionButton, {
+  CTAButton,
+} from "../action-button/Ts-Action-Button.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
 
 export interface Props {
@@ -10,15 +12,10 @@ export interface Props {
   video?: string;
   /** @format html */
   content: string;
-  ctaUrl?: string;
+  ctaButton: CTAButton;
 }
 
-export default function TsVideo({
-  title,
-  video,
-  content,
-  ctaUrl = "#",
-}: Props) {
+export default function TsVideo({ title, video, content, ctaButton }: Props) {
   return (
     <div class="ts-section ts-responsive py-[10%] sm:py-[7%] flex flex-col gap-[3.2rem] md:gap-8 bg-transparent">
       {!!video && (
@@ -46,10 +43,11 @@ export default function TsVideo({
         />
       </div>
       <TsActionButton
+        url={ctaButton.url}
         linkContainerClass="block mx-auto my-8 md:my-12"
-        url={ctaUrl}
+        class="text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl"
       >
-        Fazer minha inscrição
+        {ctaButton.text}
       </TsActionButton>
     </div>
   );
