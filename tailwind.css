@@ -13,6 +13,9 @@
     &:has(.ts-responsive) {
       @apply text-[9px] sm:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px];
     }
+
+    scroll-behavior: smooth;
+    scroll-padding-top: 20%;
   }
 
   mark {
