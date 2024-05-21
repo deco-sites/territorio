@@ -1,4 +1,5 @@
 import { ImageType } from "../types.ts";
+import type { HTMLWidget } from "apps/admin/widgets.ts";
 
 export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 
@@ -17,7 +18,7 @@ export interface SocialItem {
 
 /** @titleBy text */
 type Paragraph = {
-  text: string;
+  text: HTMLWidget;
 };
 
 /** @titleBy fullName */
