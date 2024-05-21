@@ -40,9 +40,7 @@ const TsTerritoriosCarousel = ({ items, delay = 5000 }: Props) => {
                 </TsTypography>
               </div>
               <div class="text-left">
-                <TsRichText
-                  class="text-base-100 font-body text-sm sm:text-lg"
-                >
+                <TsRichText class="text-base-100 font-body text-sm sm:text-lg">
                   {item.description}
                 </TsRichText>
               </div>
