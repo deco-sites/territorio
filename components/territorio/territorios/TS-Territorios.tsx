@@ -98,9 +98,7 @@ function TsTerritorios({
                   <TsTypography weight="600">{item.title}</TsTypography>
                 </TsTypography>
               </div>
-              <TsRichText
-                class="text-base-100 font-body md:text-sm lg:text-[16px]"
-              >
+              <TsRichText class="text-base-100 font-body md:text-sm lg:text-[16px]">
                 {item.description}
               </TsRichText>
             </div>
