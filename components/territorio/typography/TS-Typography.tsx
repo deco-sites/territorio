@@ -85,13 +85,6 @@ const TsTypography = ({
   children,
   ...rest
 }: TypographyProps) => {
-  const highlightNames = (text: string, names: string[]) => {
-    const parts = text.split(new RegExp(`(${names.join("|")})`, "gi"));
-    return parts.map((part, index) =>
-      names.includes(part) ? <b key={index}>{part}</b> : part
-    );
-  };
-
   const mergeClasses = () => {
     const typeClass = type === "body" ? "font-body" : "font-title";
     const variantClass = VARIANT_CLASSES[variant || "span"];
