@@ -1,5 +1,7 @@
 import Image from "apps/website/components/Image.tsx";
-import TsActionButton from "deco-sites/territorio/components/territorio/action-button/Ts-Action-Button.tsx";
+import TsActionButton, {
+  CTAButton,
+} from "deco-sites/territorio/components/territorio/action-button/Ts-Action-Button.tsx";
 import { ImageType } from "deco-sites/territorio/components/territorio/types.ts";
 import TsTypography from "../typography/TS-Typography.tsx";
 
@@ -53,14 +55,11 @@ export interface Props {
   /** @minItems 4 */
   /** @maxItems 4 */
   secondaryContent: CardProps[];
-  cta: {
-    label: string;
-    url: string;
-  };
+  ctaButton: CTAButton;
 }
 
 export default function TsCourseAccess({
-  cta,
+  ctaButton,
   mainContent,
   secondaryContent,
   title: { primary, secondary },
@@ -85,9 +84,12 @@ export default function TsCourseAccess({
           <SecondaryCard {...secondaryContent[3]} />
         </div>
       </div>
-
-      <TsActionButton url={cta.url} linkContainerClass="block mx-auto">
-        {cta.label}
+      <TsActionButton
+        url={ctaButton.url}
+        linkContainerClass="block mx-auto"
+        class="text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl"
+      >
+        {ctaButton.text}
       </TsActionButton>
     </div>
   );
