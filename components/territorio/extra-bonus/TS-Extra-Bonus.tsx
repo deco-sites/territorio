@@ -7,7 +7,7 @@ export interface TsExtraBonusProps {
 
 function TsExtraBonus({ banner }: TsExtraBonusProps) {
   return (
-    <div class="flex flex-col ts-section ts-responsive items-center my-[10%] sm:my-[7%]">
+    <div class="flex justify-center ts-section ts-responsive my-[10%] sm:my-[7%]">
       <TsImageLink
         to={banner.url}
         openOnNewTab={banner.openOnNewTab}
@@ -15,8 +15,8 @@ function TsExtraBonus({ banner }: TsExtraBonusProps) {
         alt={banner.desktopImage.alt}
         width={1168}
         height={1043}
-        containerClass="hidden sm:block w-full"
-        class="w-[73rem]"
+        containerClass="hidden sm:block"
+        class="w-[48rem] 2xl:w-[73rem]"
       />
       <TsImageLink
         to={banner.url}

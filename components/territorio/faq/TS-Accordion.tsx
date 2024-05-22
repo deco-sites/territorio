@@ -62,7 +62,7 @@ export default function TSAccordion({
                 <TsTypography variant="h4" class="hidden md:block" type="body">
                   {title}
                 </TsTypography>
-                <TsTypography variant="p" class="text-sm md:hidden" type="body">
+                <TsTypography variant="p" class="text-lg md:hidden" type="body">
                   {title}
                 </TsTypography>
                 <div
@@ -98,7 +98,7 @@ export default function TSAccordion({
               </div>
               <div className="collapse-content">
                 <TsTypography
-                  class="text-sm md:text-lg"
+                  class="text-lg sm:text-sm md:text-lg"
                   weight="400"
                   type="body"
                 >

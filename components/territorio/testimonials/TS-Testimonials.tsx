@@ -5,7 +5,6 @@ import TsActionButton, {
   CTAButton,
 } from "deco-sites/territorio/components/territorio/action-button/Ts-Action-Button.tsx";
 import TsRichText from "deco-sites/territorio/components/territorio/rich-text/TS-Rich-Text.tsx";
-import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
 import TsTestimonialsCarouselDesk from "../../../islands/territorio/TS-TestimonialsCarouselDesk.tsx";
 import TsTestimonialsCarouselMobile from "./TS-TestimonialsCarouselMobile.tsx";
 
@@ -14,9 +13,9 @@ interface Testimonial {
   /** @title Image */
   image: ImageWidget;
   /** @title Testimonial */
-  content: string;
+  content: HTMLWidget;
   /** @title Author */
-  author: string;
+  author: HTMLWidget;
 }
 
 interface SectionTitle {
@@ -59,19 +58,18 @@ export default function TsTestimonials({
   const items = itemsProp.map((item) => (
     <div class="flex flex-col md:flex-row justify-center text-black">
       <Image
-        class="w-2/3 md:w-full h-1/2 md:h-[400px] object-cover z-20 md:z-0 overflow-hidden rounded-lg rounded-tl-none"
+        class="w-[25.625rem] h-[25.625rem] object-cover z-20 md:z-0 rounded-lg rounded-tl-none"
         src={item.image}
         width={351}
         height={351}
       />
-
-      <div class="md:w-full flex flex-col gap-3 md:gap-10 bg-white z-10 overflow-hidden rounded-lg rounded-tl-none p-6 md:p-10 pt-[25%] md:pt-10 -mt-[20%] md:mt-[30%] ml-10 md:-ml-10">
-        <TsTypography class="text-sm md:text-2xl" type="body">
+      <div class="md:w-full flex flex-col gap-3 md:gap-10 bg-white z-10 rounded-lg rounded-tl-none py-10 px-12 md:p-10 pt-[25%] md:pt-10 -mt-[20%] md:mt-[30%] ml-20 md:-ml-10 max-w-[75%] sm:max-w-none">
+        <TsRichText class="text-3xl md:text-2xl font-body">
           {item.content}
-        </TsTypography>
-        <TsTypography class="text-sm md:text-xl" weight="600">
+        </TsRichText>
+        <TsRichText class="text-2xl md:text-xl font-body font-semibold">
           {item.author}
-        </TsTypography>
+        </TsRichText>
       </div>
     </div>
   ));
@@ -79,10 +77,10 @@ export default function TsTestimonials({
   const hasButton = !!ctaButton;
 
   return (
-    <div class="flex flex-col items-center ts-section ts-responsive px-0 md:px-8 py-[10%] sm:py-[7%]">
-      <div class="inline-block md:flex md:flex-col md:text-center px-8 mb-10 md:mb-0">
-        <TsRichText class="text-3xl md:text-6xl mb-2">{title.main}</TsRichText>
-        <TsRichText class="text-xl md:text-4xl">{title.sub}</TsRichText>
+    <div class="flex flex-col items-center ts-section ts-responsive md:px-8 py-[10%] sm:py-[7%] overflow-x-hidden">
+      <div class="inline-block max-w-[85%] sm:max-w-none md:flex md:flex-col self-start md:self-auto md:text-center mb-10 md:mb-0">
+        <TsRichText class="text-6xl mb-2">{title.main}</TsRichText>
+        <TsRichText class="hidden md:block text-4xl">{title.sub}</TsRichText>
       </div>
       <div class="hidden md:block">
         <TsTestimonialsCarouselDesk>{items}</TsTestimonialsCarouselDesk>
