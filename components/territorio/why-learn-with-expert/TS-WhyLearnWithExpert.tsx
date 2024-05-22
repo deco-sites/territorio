@@ -5,6 +5,8 @@ import TsActionButton, {
   CTAButton,
 } from "../action-button/Ts-Action-Button.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
+import { AppContext } from "../../../apps/site.ts";
+import useTsIsMobile from "deco-sites/territorio/hooks/useTsIsMobile.tsx";
 
 /** @title Statistic: {{value}} */
 export interface StatisticProps {
@@ -28,7 +30,7 @@ export interface Paragraph {
   content: string;
 }
 
-export interface Props {
+export interface WhyProps {
   title: {
     primary: string;
     secondary: string;
@@ -44,7 +46,7 @@ export interface Props {
   ctaButton: CTAButton;
 }
 
-export default function TsWhyLearnWithExpert({
+const TsWhyLearnWithExpert = ({
   ctaButton,
   title: { primary, secondary },
   statistics,
@@ -52,7 +54,9 @@ export default function TsWhyLearnWithExpert({
   expertName,
   additionalInfo,
   img,
-}: Props) {
+}: WhyProps) => {
+  const isMobile = useTsIsMobile();
+
   const ExpertMainInfo = (
     <div class="flex flex-col gap-5">
       <TsTypography
@@ -96,8 +100,12 @@ export default function TsWhyLearnWithExpert({
           <div class="col-span-2 row-span-2 row-start-3 sm:row-start-1 sm:col-start-2">
             <Image {...img} class="w-full" />
           </div>
-          <Statistic {...statistics[1]} />
-          <Statistic {...statistics[2]} />
+          {isMobile
+            ? <Statistic {...statistics[2]} />
+            : <Statistic {...statistics[1]} />}
+          {isMobile
+            ? <Statistic {...statistics[1]} />
+            : <Statistic {...statistics[2]} />}
           <Statistic {...statistics[3]} />
         </div>
 
@@ -137,4 +145,10 @@ export default function TsWhyLearnWithExpert({
       </TsActionButton>
     </div>
   );
-}
+};
+
+export const loader = (props: WhyProps, _req: Request, ctx: AppContext) => {
+  return { ...props, device: ctx.device };
+};
+
+export default TsWhyLearnWithExpert;
