@@ -31,8 +31,8 @@ const TsCursoDominar = ({
     >
       <div
         class={clx(
-          "flex flex-col my-[7%] gap-y-16", //common
-          "mx-20", //mobile
+          "flex flex-col gap-y-16", //common
+          "mx-20 mb-[7%]", //mobile
           "sm:px-0 sm:max-w-[60rem] sm:mx-0", //small
           "md:max-w-[65rem] lg:max-w-[75rem]", //larger
         )}
