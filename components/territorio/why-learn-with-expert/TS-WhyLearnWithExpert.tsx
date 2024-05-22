@@ -95,7 +95,7 @@ const TsWhyLearnWithExpert = ({
       </TsTypography>
 
       <div class="flex flex-col gap-[1.875rem] sm:gap-16">
-        <div class="grid grid-cols-2 sm:grid-cols-4 grid-flow-row gap-y-8 sm:gap-y-20 gap-x-4 sm:gap-x-0">
+        <div class="grid grid-cols-2 sm:grid-cols-4 grid-flow-row gap-y-8 gap-x-4 sm:gap-x-0">
           <Statistic {...statistics[0]} />
           <div class="col-span-2 row-span-2 row-start-3 sm:row-start-1 sm:col-start-2">
             <Image {...img} class="w-full" />
