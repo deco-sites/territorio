@@ -24,8 +24,8 @@ function TsSpecialConditions({
         alt={topBanner.desktopImage.alt}
         width={1172}
         height={443}
-        containerClass="hidden sm:block w-full"
-        class="w-[73.25rem]"
+        containerClass="hidden sm:block"
+        class="w-[52rem] 2xl:w-[73rem]"
       />
       <TsImageLink
         to={topBanner.url}
@@ -47,8 +47,8 @@ function TsSpecialConditions({
         alt={checkoutBanner.desktopImage.alt}
         width={1172}
         height={989}
-        containerClass="hidden sm:block w-full"
-        class="w-[73.25rem]"
+        containerClass="hidden sm:block"
+        class="w-[52rem] 2xl:w-[73rem]"
       />
       <TsCheckoutButton
         id="checkout"

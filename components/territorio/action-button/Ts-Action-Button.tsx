@@ -24,7 +24,7 @@ const TsActionButton = ({
       variant="action"
       {...buttonProps}
       class={clx(
-        "py-5 px-8 uppercase font-semibold hover:scale-110 transition-all tracking-wide",
+        "py-5 px-6 sm:px-8 uppercase font-semibold hover:scale-110 transition-all tracking-wide",
         _class as string,
       )}
     >
