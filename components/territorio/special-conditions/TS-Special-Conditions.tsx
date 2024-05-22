@@ -1,15 +1,20 @@
+import { VTexCheckoutProps } from "deco-sites/territorio/components/territorio/checkout-button/TS-Checkout-Button-Island.tsx";
 import TsImageLink from "deco-sites/territorio/components/territorio/image-link/TS-Image-Link.tsx";
 import { ImageBanner } from "deco-sites/territorio/components/territorio/types.ts";
+import TsCheckoutButton from "../../../islands/territorio/TS-CheckoutButton.tsx";
 
-export interface TsSpecialConditionsProps {
+export interface TsSpecialConditionsProps extends VTexCheckoutProps {
   topBanner: ImageBanner;
-  bottomBanner: ImageBanner;
+  checkoutBanner: ImageBanner;
 }
 
 function TsSpecialConditions({
   topBanner,
-  bottomBanner,
+  checkoutBanner,
+  productID,
+  seller,
 }: TsSpecialConditionsProps) {
+  console.log({ checkoutBanner });
   return (
     <div class="flex flex-col ts-section ts-responsive items-center my-[10%] gap-y-16 sm:my-[7%] sm:gap-y-56">
       <TsImageLink
@@ -32,23 +37,27 @@ function TsSpecialConditions({
         containerClass="sm:hidden w-full"
         class="w-full"
       />
-      <TsImageLink
+      <TsCheckoutButton
         id="checkout"
-        to={bottomBanner.url}
-        openOnNewTab={bottomBanner.openOnNewTab}
-        src={bottomBanner.desktopImage.src}
-        alt={bottomBanner.desktopImage.alt}
+        productID={productID}
+        seller={seller}
+        to={checkoutBanner.url}
+        openOnNewTab={checkoutBanner.openOnNewTab}
+        src={checkoutBanner.desktopImage.src}
+        alt={checkoutBanner.desktopImage.alt}
         width={1172}
         height={989}
         containerClass="hidden sm:block w-full"
         class="w-[73.25rem]"
       />
-      <TsImageLink
+      <TsCheckoutButton
         id="checkout"
-        to={bottomBanner.url}
-        openOnNewTab={bottomBanner.openOnNewTab}
-        src={bottomBanner.mobileImage.src}
-        alt={bottomBanner.mobileImage.alt}
+        productID={productID}
+        seller={seller}
+        to={checkoutBanner.url}
+        openOnNewTab={checkoutBanner.openOnNewTab}
+        src={checkoutBanner.mobileImage.src}
+        alt={checkoutBanner.mobileImage.alt}
         width={224}
         height={422}
         containerClass="sm:hidden w-full"
