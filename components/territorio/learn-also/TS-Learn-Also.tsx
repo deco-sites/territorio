@@ -23,7 +23,7 @@ export interface TsLearnAlsoProps {
 
 function TsLearnAlso({ title, items }: TsLearnAlsoProps) {
   return (
-    <div class="flex flex-col ts-section ts-responsive md:px-0 mb-[10%] sm:mb-[7%] items-center text-center md:border-t md:border-accent-content">
+    <div class="hidden flex flex-col ts-section ts-responsive md:px-0 mb-[10%] sm:mb-[7%] items-center text-center md:border-t md:border-accent-content">
       <div class="border-t border-base-100 w-full mx-48 md:hidden"></div>
       <TsRichText class="text-base-100 font-medium text-6xl sm:text-7xl my-16 sm:my-20">
         {title}
