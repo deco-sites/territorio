@@ -66,8 +66,8 @@ export default function TsCourseAccess({
 }: Props) {
   return (
     <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-16 my-16">
-      <TsTypography type="title" class="text-[3.3rem] sm:text-8xl">
-        {primary}{" "}
+      <TsTypography type="title" class="text-6xl sm:text-8xl">
+        {primary}<br/>
         <TsTypography color="accent-content">{secondary}</TsTypography>
       </TsTypography>
 
