@@ -29,7 +29,7 @@ const WhiteMainCard = ({ description, img, title }: CardProps) => {
 const SecondaryCard = ({ description, img, title }: CardProps) => {
   return (
     <div class="border border-accent-content rounded-xl py-8 px-1 flex flex-col items-center text-center">
-      <Image {...img} class="sm:w-20 sm:h-20"/>
+      <Image {...img} class="sm:w-20 sm:h-20" />
       <TsTypography
         class="text-[1.5rem] sm:text-[1.68rem] mt-4"
         color="accent-content"
