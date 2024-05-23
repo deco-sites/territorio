@@ -15,7 +15,7 @@ export interface CardProps {
 const WhiteMainCard = ({ description, img, title }: CardProps) => {
   return (
     <div class="rounded-2xl bg-white text-neutral w-full sm:aspect-[5/3] border border-accent-content p-10 flex flex-col justify-center items-center gap-4 text-center">
-      <Image {...img} class="mt-auto" />
+      <Image {...img} class="mt-auto sm:w-32 sm:h-32" />
       <TsTypography class="text-[1.5rem] sm:text-4xl mt-4" type="title">
         {title}
       </TsTypography>
@@ -29,7 +29,7 @@ const WhiteMainCard = ({ description, img, title }: CardProps) => {
 const SecondaryCard = ({ description, img, title }: CardProps) => {
   return (
     <div class="border border-accent-content rounded-xl py-8 px-1 flex flex-col items-center text-center">
-      <Image {...img} />
+      <Image {...img} class="sm:w-20 sm:h-20"/>
       <TsTypography
         class="text-[1.5rem] sm:text-[1.68rem] mt-4"
         color="accent-content"
@@ -65,13 +65,13 @@ export default function TsCourseAccess({
   title: { primary, secondary },
 }: Props) {
   return (
-    <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-16 my-16">
+    <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-11 my-16">
       <TsTypography type="title" class="text-[3.3rem] sm:text-8xl">
         {primary}{" "}
         <TsTypography color="accent-content">{secondary}</TsTypography>
       </TsTypography>
 
-      <div class="flex flex-col gap-[1.875rem] sm:gap-16">
+      <div class="flex flex-col gap-[1.875rem] sm:gap-11">
         <div class="flex gap-[1.875rem] sm:gap-16">
           <WhiteMainCard {...mainContent[0]} />
           <WhiteMainCard {...mainContent[1]} />
