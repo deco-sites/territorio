@@ -26,7 +26,7 @@ export default function TsPlatformDesktopContent({
         <TsPlatformCardContent content={content.section4} />
         <TsPlatformCardContent content={content.section5} />
       </div>
-      <div class="absolute flex max-w-[950px] w-[80vw] top-[18%] left-[9%] lg:top-[13%] lg:left-[12%] pr-2">
+      <div class="absolute flex max-w-[950px] top-[18%] left-[9%] lg:top-[13%] lg:left-[12%]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="73"
