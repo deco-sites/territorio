@@ -65,7 +65,7 @@ const TsHero = ({
         backgroundImage: `url("${visibleImage.src}")`,
       }}
       class={clx(
-        "flex justify-center bg-cover bg-no-repeat bg-right-top items-center h-screen px-8",
+        "flex justify-center ts-responsive bg-cover bg-no-repeat sm:bg-right-top items-center h-screen px-8",
         "transition-all ease-in-out duration-200 transform opacity-0",
         changedPosition.value === -1 && "translate-x-10",
         changedPosition.value === 1 && "-translate-x-10",
@@ -73,11 +73,11 @@ const TsHero = ({
         shouldShow.value && "opacity-100",
       )}
     >
-      <div class="flex items-center w-full max-w-[1200px]">
+      <div class="flex items-center w-full max-w-[75rem]">
         <TsTypography
           weight="400"
           color="base-100"
-          class="text-4xl max-w-[270px] sm:text-6xl md:text-7xl xl:text-8xl sm:max-w-[500px] xl:max-w-[700px] select-none"
+          class="text-[5rem] md:text-[6rem] max-w-[50%] md:max-w-[43.75rem] sm:pl-28 md:pl-8 lg:pl-0 select-none leading-none"
         >
           {text}
         </TsTypography>

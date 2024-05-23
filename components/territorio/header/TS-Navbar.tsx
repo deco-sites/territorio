@@ -17,7 +17,7 @@ const LOGO_ARIA_LABEL = "Logo Território Saber";
 function TsNavbar({ items, logo, buttons }: NavbarProps) {
   return (
     <div class="flex justify-center">
-      <div class="flex justify-between items-center gap-4 w-full max-w-[75rem] pt-10 px-11 md:px-8 lg:px-0 pointer-events-auto">
+      <div class="flex justify-between items-center gap-4 w-full max-w-[75rem] pt-10 px-8 sm:px-32 md:px-8 lg:px-0 pointer-events-auto">
         {logo && (
           <a class="block" href={logo.url} aria-label={LOGO_ARIA_LABEL}>
             <Image
