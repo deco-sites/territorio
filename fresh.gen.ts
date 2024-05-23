@@ -37,6 +37,7 @@ import * as $territorio_TS_HeaderButton from "./islands/territorio/TS-HeaderButt
 import * as $territorio_TS_Hero from "./islands/territorio/TS-Hero.tsx";
 import * as $territorio_TS_Newsletter from "./islands/territorio/TS-Newsletter.tsx";
 import * as $territorio_TS_TestimonialsCarouselDesk from "./islands/territorio/TS-TestimonialsCarouselDesk.tsx";
+import * as $territorio_TS_WhyLearnWithExpert from "./islands/territorio/TS-WhyLearnWithExpert.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -79,6 +80,8 @@ const manifest = {
     "./islands/territorio/TS-Newsletter.tsx": $territorio_TS_Newsletter,
     "./islands/territorio/TS-TestimonialsCarouselDesk.tsx":
       $territorio_TS_TestimonialsCarouselDesk,
+    "./islands/territorio/TS-WhyLearnWithExpert.tsx":
+      $territorio_TS_WhyLearnWithExpert,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
