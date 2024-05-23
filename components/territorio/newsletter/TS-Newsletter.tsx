@@ -91,7 +91,7 @@ export default function TsNewsletter({
   };
 
   return (
-    <div class="w-full px-8 mb-16">
+    <div class="hidden w-full px-8 mb-16">
       <div class="ts-section my-10 p-8 rounded-xl border border-accent-content">
         <div class="flex flex-col gap-3 md:gap-8">
           <TsTypography class="text-2xl md:text-4xl">{title}</TsTypography>

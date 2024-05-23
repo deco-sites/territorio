@@ -5,7 +5,7 @@ function TsNavItem({ item }: { item: SiteNavigationElementLeaf }) {
   const { url, name } = item;
 
   return (
-    <li class="group flex items-center text-center">
+    <li class="group items-center text-center" hidden={name === "Blog"}>
       <TsLink
         to={url || "/"}
         type="body"

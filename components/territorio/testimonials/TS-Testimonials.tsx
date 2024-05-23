@@ -77,7 +77,7 @@ export default function TsTestimonials({
   const hasButton = !!ctaButton;
 
   return (
-    <div class="flex flex-col items-center ts-section ts-responsive md:px-8 py-[10%] sm:py-[7%] overflow-x-hidden">
+    <div class="hidden flex flex-col items-center ts-section ts-responsive md:px-8 py-[10%] sm:py-[7%] overflow-x-hidden">
       <div class="inline-block max-w-[85%] sm:max-w-none md:flex md:flex-col self-start md:self-auto md:text-center mb-10 md:mb-0">
         <TsRichText class="text-6xl mb-2">{title.main}</TsRichText>
         <TsRichText class="hidden md:block text-4xl">{title.sub}</TsRichText>
