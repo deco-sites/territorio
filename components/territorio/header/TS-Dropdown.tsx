@@ -32,7 +32,7 @@ function TsDropdown({ menu, children }: Props) {
           {displayMenu.value && (
             <ul class="flex flex-col gap-y-6 px-5 pb-4">
               {menu?.items.map((item) => (
-                <li hidden={item.name === 'Blog'} key={item.name}>
+                <li hidden={item.name === "Blog"} key={item.name}>
                   <TsLink
                     size="16px"
                     color="base-100"
