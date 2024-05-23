@@ -91,7 +91,8 @@ const TsWhyLearnWithExpert = ({
   return (
     <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-16 my-16">
       <TsTypography type="title" class="text-6xl sm:text-8xl sm:w-[90%]">
-        {primary}<br/>
+        {primary}
+        <br />
         <TsTypography color="accent-content">{secondary}</TsTypography>
       </TsTypography>
 
