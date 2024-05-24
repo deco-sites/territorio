@@ -34,7 +34,7 @@ const ArrowButton = ({
 }) => (
   <button onClick={onClick}>
     <Icon
-      class="text-base-300 w-[8px] sm:w-[20px] lg:w-[25px] 2xl:w-[30px] h-[28px] sm:h-[60px] lg:h-[80px] 2xl:h-[100px]"
+      class="text-base-300 w-[1.2rem] sm:w-[1.875rem] h-[4rem] sm:h-[6.25rem]"
       id={icon}
       strokeWidth={5}
     />
@@ -71,7 +71,7 @@ const TsExpertCarousel = ({
   };
 
   return (
-    <div class="flex items-center gap-x-4 sm:gap-x-12 lg:gap-x-16 2xl:gap-x-20">
+    <div class="flex items-center gap-x-10 sm:gap-x-20 self-center">
       <ArrowButton onClick={onPrevious} icon="ChevronLeft" />
       <TsCarouselIsland
         ref={carouselRef}
@@ -79,11 +79,11 @@ const TsExpertCarousel = ({
         class="overflow-x-auto snap-x snap-mandatory scrollbar-hide"
       >
         <>
-          <ul class="flex gap-x-4 sm:gap-x-8 lg:gap-x-10 2xl:gap-x-12 max-w-[240px] sm:max-w-[326px] lg:max-w-[390px] 2xl:max-w-[554px]">
+          <ul class="flex gap-x-12 max-w-[34.625rem]">
             {experts.map((expert, index) => (
               <li
                 key={expert.fullName}
-                class="list-none border-[0.5px] border-base-300 hover:brightness-150"
+                class="list-none border border-base-300 hover:brightness-150 w-[6.5rem] h-[6.5rem] sm:w-[9.375rem] sm:h-[9.375rem]"
               >
                 <button onClick={() => updateExpertId(index)}>
                   <Image
@@ -91,7 +91,6 @@ const TsExpertCarousel = ({
                     alt={expert.thumbnail.alt}
                     width={150}
                     height={150}
-                    class="inline-block max-w-[66px] sm:max-w-[84px] lg:max-w-[100px] 2xl:max-w-[150px]"
                   />
                 </button>
               </li>

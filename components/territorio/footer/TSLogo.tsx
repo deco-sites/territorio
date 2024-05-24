@@ -1,5 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
+import { JSX } from "preact";
 
 export interface Props {
   logo?: {
@@ -8,9 +9,15 @@ export interface Props {
   };
   width?: number;
   height?: number;
+  class?: string | JSX.SignalLike<string | undefined>;
 }
 
-export default function TSLogo({ logo, width = 200, height = 200 }: Props) {
+export default function TSLogo({
+  logo,
+  width = 200,
+  height = 200,
+  class: _class,
+}: Props) {
   return (
     <>
       {logo?.image && (
@@ -20,6 +27,7 @@ export default function TSLogo({ logo, width = 200, height = 200 }: Props) {
           alt={logo?.description}
           width={width}
           height={height}
+          class={_class}
         />
       )}
     </>

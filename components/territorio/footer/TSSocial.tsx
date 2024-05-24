@@ -21,11 +21,11 @@ export default function TSSocial({
   return (
     <>
       {content && content.items && content.items.length > 0 && (
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-6">
           {content.title && (
-            <h3 class="font-medium text-sm md:text-2xl">{content.title}</h3>
+            <h3 class="font-semibold text-2xl">{content.title}</h3>
           )}
-          <ul class={`flex gap-2 flex-col items-start text-xs md:text-xl`}>
+          <ul class="flex gap-6 flex-col items-start text-xl">
             {content.items.map((item) => {
               return (
                 <li>
