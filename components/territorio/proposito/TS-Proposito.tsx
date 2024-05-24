@@ -28,7 +28,7 @@ const TsProposito = ({
     <div class="flex justify-center ts-responsive">
       <div
         id="proposito"
-        class="flex flex-col my-20 sm:my-40 max-w-[75rem] px-8 sm:px-32 md:px-8 xl:px-0"
+        class="flex flex-col my-20 sm:my-32 max-w-[75rem] px-8 sm:px-32 md:px-8 xl:px-0"
       >
         <TsTypography
           color="accent-content"
