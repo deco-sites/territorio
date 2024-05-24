@@ -20,12 +20,12 @@ export default function TSFooterItems({
   return (
     <>
       {sections.length > 0 && (
-        <ul class={clx(`flex flex-row gap-6`, justify && "lg:justify-between")}>
+        <ul class={clx("flex flex-row gap-6", justify && "lg:justify-between")}>
           {sections.map((section) => (
             <li>
-              <div class="flex flex-col gap-2">
-                <h3 class="font-medium text-sm md:text-2xl">{section.label}</h3>
-                <ul class={`flex flex-col gap-2 flex-wrap text-xs md:text-xl`}>
+              <div class="flex flex-col gap-6">
+                <h3 class="font-semibold text-2xl">{section.label}</h3>
+                <ul class="flex flex-col gap-6 flex-wrap text-xl">
                   {section.items?.map((item) => (
                     <li>
                       <a href={item.href} class="block link link-hover">

@@ -1,5 +1,4 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import { clx } from "../../../sdk/clx.ts";
 import TSFooterItems from "./TSFooterItems.tsx";
 import TSLogo from "./TSLogo.tsx";
 import TSSocial from "./TSSocial.tsx";
@@ -74,18 +73,28 @@ function Footer({
   },
 }: Props) {
   return (
-    <footer class={clx("w-full flex flex-col pb-10 md:pb-44 gap-10 font-body")}>
+    <footer class="flex flex-col ts-responsive w-full pb-10 sm:pb-44 gap-10 font-body">
       <div class="mx-auto ts-section">
-        <hr class="mx-4 md:mx-0 mb-10 md:mb-36 border-accent-content" />
-        <div class="flex flex-row justify-around md:justify-between flex-wrap gap-8">
-          <div class="hidden md:block">
-            <TSLogo logo={logo?.desktop} width={194} height={47} />
+        <hr class="mb-32 border-accent-content" />
+        <div class="flex flex-row justify-between flex-wrap gap-8">
+          <div class="hidden sm:block">
+            <TSLogo
+              logo={logo?.desktop}
+              width={194}
+              height={47}
+              class="w-[12.125rem] h-[2.9375rem]"
+            />
           </div>
           <TSFooterItems sections={sections} justify />
           <TSSocial content={social} />
         </div>
-        <div class="md:hidden flex justify-end mt-5">
-          <TSLogo logo={logo?.mobile} width={37} height={30} />
+        <div class="sm:hidden flex justify-end mt-5">
+          <TSLogo
+            logo={logo?.mobile}
+            width={37}
+            height={30}
+            class="w-[2.3125rem] h-[1.875rem]"
+          />
         </div>
       </div>
     </footer>
