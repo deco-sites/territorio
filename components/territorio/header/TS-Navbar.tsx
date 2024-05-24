@@ -17,39 +17,29 @@ const LOGO_ARIA_LABEL = "Logo Território Saber";
 function TsNavbar({ items, logo, buttons }: NavbarProps) {
   return (
     <div class="flex justify-center">
-      {/* Mobile header */}
-      <div class="md:hidden flex justify-between items-center w-full sm:pt-4 px-11 gap-4 pointer-events-auto">
+      <div class="flex justify-between items-center gap-4 w-full max-w-[75rem] pt-10 px-8 sm:px-32 md:px-8 lg:px-0 pointer-events-auto">
         {logo && (
-          <a class="block" href={logo.url || "/"} aria-label={LOGO_ARIA_LABEL}>
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 104}
-              height={logo.height || 26}
-            />
-          </a>
-        )}
-        <MenuButton />
-      </div>
-      {/* Desktop header */}
-      <div class="hidden md:flex justify-between items-center w-full max-w-[1200px] md:pt-6 xl:pt-10 px-8 xl:px-0 pointer-events-auto">
-        {logo && (
-          <a class="block" href={logo.url || "/"} aria-label={LOGO_ARIA_LABEL}>
+          <a class="block" href={logo.url} aria-label={LOGO_ARIA_LABEL}>
             <Image
               src={logo.src}
               alt={logo.alt}
               width={logo.width || 200}
               height={logo.height || 48}
+              class="w-[12.5rem] h-[3rem]"
             />
           </a>
         )}
-        <ul class="flex justify-center items-center gap-4 xl:gap-10">
+        {/* Mobile header items */}
+        <MenuButton />
+        {/* Desktop header items */}
+        <ul class="hidden md:flex justify-center items-center gap-10">
           {items.map((item) => <NavItem key={item.url} item={item} />)}
           {buttons?.map((button) => (
             <a key={button.name} href={button.url}>
               <Button
-                class="bg-accent-content px-4 xl:px-6 py-1 xl:py-2 text-[16px] xl:text-[20px]"
+                class="bg-accent-content px-6 py-2 text-[1.25rem]"
                 icon={button.icon as ButtonProps["icon"]}
+                iconClass="w-[2rem] h-[2rem]"
               >
                 {button.name}
               </Button>

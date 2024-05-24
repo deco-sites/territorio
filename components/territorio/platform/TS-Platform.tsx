@@ -44,17 +44,10 @@ export default function TsPlatform({
   },
 }: Props) {
   return (
-    <div class="ts-section p-0 mb-20">
-      <div class="inline-block text-center px-8 mb-10 md:mb-0">
-        <TsTypography
-          class="text-3xl md:text-6xl text-secondary-content"
-          type="title"
-        >
-          {title.main}
-          {" "}
-        </TsTypography>
-        <TsTypography class="text-3xl md:text-6xl" type="title">
-          {title.sub}
+    <div class="ts-section ts-responsive px-8 sm:px-32 md:px-8 lg:px-0 mb-20">
+      <div class="mb-10 md:mb-0 w-full text-center">
+        <TsTypography class="text-5xl md:text-6xl text-secondary-content">
+          {title.main} <TsTypography color="base-100">{title.sub}</TsTypography>
         </TsTypography>
       </div>
       <TsPlatformDesktopContent content={content} image={image} />

@@ -7,11 +7,11 @@ function TsNavItem({ item }: { item: SiteNavigationElementLeaf }) {
   return (
     <li class="group flex items-center text-center">
       <TsLink
-        to={url || "/"}
+        to={url}
         type="body"
         color="base-100"
         weight="500"
-        class="text-[16px] xl:text-[20px] hover:underline"
+        class="text-[1.25rem] hover:underline"
       >
         {name as string}
       </TsLink>

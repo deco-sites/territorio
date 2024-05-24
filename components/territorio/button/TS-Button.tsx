@@ -11,6 +11,7 @@ export type ButtonProps = Omit<JSX.IntrinsicElements["button"], "loading"> & {
   ariaLabel?: string;
   icon?: ImageType;
   variant?: ButtonVariant;
+  iconClass?: string | JSX.SignalLike<string | undefined>;
 };
 
 const VARIANT_COLORS: Record<ButtonVariant, string> = {
@@ -27,6 +28,7 @@ const TextContent = ({ children }: { children: ComponentChildren }) => (
 const Button = ({
   type = "button",
   class: _class = "",
+  iconClass,
   loading,
   disabled,
   ariaLabel,
@@ -53,6 +55,7 @@ const Button = ({
               alt={icon.alt}
               width={icon.width || 32}
               height={icon.height || 32}
+              class={iconClass}
             />
             <TextContent>{children}</TextContent>
           </div>

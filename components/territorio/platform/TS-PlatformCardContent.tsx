@@ -14,18 +14,21 @@ export default function TsPlatformCardContent({
   return (
     <div
       class={clx(
-        "text-center md:text-left md:w-1/4 flex flex-col gap-1",
+        "text-center md:text-left md:w-1/4 flex flex-col items-center gap-4",
         className,
       )}
     >
       <TsTypography
-        class="text-secondary-content text-xl md:text-3xl"
+        class="text-secondary-content text-3xl"
         weight="600"
         type="body"
       >
         {content.title}
       </TsTypography>
-      <TsTypography class="text-white text-sm md:text-base" type="body">
+      <TsTypography
+        class="text-white text-2xl md:text-base w-[75%] md:w-auto"
+        type="body"
+      >
         {content.content}
       </TsTypography>
     </div>

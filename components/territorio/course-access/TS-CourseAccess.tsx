@@ -14,8 +14,8 @@ export interface CardProps {
 
 const WhiteMainCard = ({ description, img, title }: CardProps) => {
   return (
-    <div class="rounded-2xl bg-white text-neutral w-full sm:aspect-[5/3] border border-accent-content p-10 flex flex-col justify-center items-center gap-4 text-center">
-      <Image {...img} class="mt-auto sm:w-32 sm:h-32" />
+    <div class="rounded-2xl bg-white text-neutral w-full sm:aspect-[5/3] border border-accent-content p-6 sm:p-10 flex flex-col justify-center items-center sm:gap-4 text-center">
+      <Image {...img} class="mt-auto" />
       <TsTypography class="text-[1.5rem] sm:text-4xl mt-4" type="title">
         {title}
       </TsTypography>
@@ -65,9 +65,10 @@ export default function TsCourseAccess({
   title: { primary, secondary },
 }: Props) {
   return (
-    <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-11 my-16">
-      <TsTypography type="title" class="text-[3.3rem] sm:text-8xl">
-        {primary}{" "}
+    <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-16 my-16">
+      <TsTypography type="title" class="text-6xl sm:text-8xl">
+        {primary}
+        <br />
         <TsTypography color="accent-content">{secondary}</TsTypography>
       </TsTypography>
 
