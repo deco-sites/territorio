@@ -15,7 +15,6 @@ export interface Props {
     expand: AvailableIcons;
     collapse: AvailableIcons;
   };
-  iconPosition?: "top" | "bottom";
 }
 
 /** @title {{{title}}} */
@@ -36,7 +35,6 @@ export default function TSAccordion({
     expand: "CustomArrowDown",
     collapse: "CustomArrowUp",
   },
-  iconPosition = "top",
 }: Props) {
   const children = Array.isArray(childrenProp) ? childrenProp : [childrenProp];
 
@@ -58,50 +56,37 @@ export default function TSAccordion({
                 name={name}
                 defaultChecked={defaultCheckedFirst && index === 0}
               />
-              <div className="relative collapse-title group">
-                <TsTypography variant="h4" class="hidden md:block" type="body">
-                  {title}
-                </TsTypography>
-                <TsTypography variant="p" class="text-lg md:hidden" type="body">
+              <div className="flex justify-between items-center relative collapse-title group">
+                <TsTypography class="text-2xl" type="body">
                   {title}
                 </TsTypography>
                 <div
                   className={clx(
-                    "absolute right-4 md:right-8 peer-checked:group-[]:block peer-[:not(:checked)]:group-[]:hidden",
-                    iconPosition === "bottom"
-                      ? "bottom-0 md:bottom-4"
-                      : "top-0 md:top-4",
-                  )}
-                >
-                  <Icon
-                    id={icon.collapse}
-                    class="invisible md:visible"
-                    size={18}
-                  />
-                  <Icon id={icon.collapse} class="md:invisible" size={9} />
-                </div>
-                <div
-                  className={clx(
-                    "absolute right-4 md:right-8 peer-checked:group-[]:hidden peer-[:not(:checked)]:group-[]:block",
-                    iconPosition === "bottom"
-                      ? "bottom-0 md:bottom-4"
-                      : "top-0 md:top-4",
+                    "peer-checked:group-[]:block peer-[:not(:checked)]:group-[]:hidden",
                   )}
                 >
                   <Icon
                     id={icon.expand}
-                    class="invisible md:visible"
+                    class="hidden md:inline-block"
                     size={20}
                   />
-                  <Icon id={icon.expand} class="md:invisible" size={10} />
+                  <Icon id={icon.expand} class="md:hidden" size={10} />
+                </div>
+                <div
+                  className={clx(
+                    "peer-checked:group-[]:hidden peer-[:not(:checked)]:group-[]:block",
+                  )}
+                >
+                  <Icon
+                    id={icon.collapse}
+                    class="hidden md:inline-block"
+                    size={18}
+                  />
+                  <Icon id={icon.collapse} class="md:hidden" size={9} />
                 </div>
               </div>
               <div className="collapse-content">
-                <TsTypography
-                  class="text-lg sm:text-sm md:text-lg"
-                  weight="400"
-                  type="body"
-                >
+                <TsTypography class="text-2xl" weight="400" type="body">
                   {subtitle}
                 </TsTypography>
               </div>

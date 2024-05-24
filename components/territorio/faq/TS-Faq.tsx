@@ -38,7 +38,7 @@ export default function TSFaq({
   const hasSupportDescription = !!ctaSupportDescription;
   return (
     <div className="ts-section ts-responsive py-[10%] sm:py-[7%]">
-      <TsTypography as="p" class="text-3xl md:text-6xl mb-8 md:mb-20">
+      <TsTypography as="p" class="text-6xl mb-8 md:mb-20">
         {titleWords.map((word, index) => {
           const isLast = index === titleWords.length - 1;
           return (
@@ -62,7 +62,7 @@ export default function TSFaq({
       {hasSupportDescription && (
         <TsTypography
           as="p"
-          class="text-center text-xl md:text-3xl mt-14 mb-14 md:mt-32 md:mb-36"
+          class="text-center text-4xl px-4 md:px-0 mt-14 mb-14 md:mt-32 md:mb-36"
         >
           {ctaParts?.[0]}{" "}
           <TsLink
