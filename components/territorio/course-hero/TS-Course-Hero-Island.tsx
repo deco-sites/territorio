@@ -62,7 +62,7 @@ const TsCourseHero = ({
     <div
       class={clx(
         "ts-responsive",
-        "sm:bg-gradient-to-b sm:from-base-200 sm:via-base-200 sm:via-90% sm:to-transparent", // parallax gradient starts
+        "sm:bg-gradient-to-b sm:from-base-200 sm:via-base-200 sm:via-80% sm:to-transparent", // parallax gradient starts
       )}
     >
       <div
@@ -78,7 +78,7 @@ const TsCourseHero = ({
       >
         <div
           class={clx(
-            "gap-24 my-[7%] mx-20", //common
+            "gap-24 mt-[7%] mb-[20%] mx-20", //common
             "flex flex-col", //mobile
             "sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:mx-auto sm:max-w-[60rem]", //small
             "md:max-w-[65rem] lg:max-w-[75rem]", //larger
