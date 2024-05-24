@@ -8,7 +8,7 @@ export default function TsPlatformDesktopContent({
   image,
 }: ContentProps) {
   return (
-    <div class="my-12 hidden px-8 md:flex flex-col gap-10 relative">
+    <div class="my-12 hidden md:flex flex-col gap-10 relative">
       <div class="flex justify-between">
         <TsPlatformCardContent content={content.section1} />
         <TsPlatformCardContent content={content.section2} />
@@ -22,18 +22,18 @@ export default function TsPlatformDesktopContent({
           content={content.section3}
         />
       </div>
-      <div class="flex justify-evenly">
+      <div class="flex justify-evenly mt-10 lg:mt-0">
         <TsPlatformCardContent content={content.section4} />
         <TsPlatformCardContent content={content.section5} />
       </div>
-      <div class="absolute flex max-w-[950px] top-[18%] left-[9%] lg:top-[13%] lg:left-[12%]">
+      <div class="absolute flex max-w-[59.375rem] top-[18%] left-[9%] lg:top-[13%] lg:left-[12%]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="73"
           height="73"
           viewBox="0 0 73 73"
           fill="none"
-          class="self-end mr-6"
+          class="self-end mr-6 w-[4.75rem] h-[4.75rem]"
         >
           <g clip-path="url(#clip0_1_586)">
             <path
@@ -44,8 +44,8 @@ export default function TsPlatformDesktopContent({
           <defs>
             <clipPath id="clip0_1_586">
               <rect
-                width="73"
-                height="73"
+                width="76"
+                height="76"
                 fill="white"
                 transform="matrix(1.19249e-08 1 1 -1.19249e-08 0 0)"
               />
@@ -59,7 +59,7 @@ export default function TsPlatformDesktopContent({
           height="76"
           viewBox="0 0 76 76"
           fill="none"
-          class="mt-[15%]"
+          class="mt-[12%] w-[4.75rem] h-[4.75rem]"
         >
           <g clip-path="url(#clip0_1_584)">
             <path
