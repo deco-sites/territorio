@@ -6,7 +6,7 @@ export default function TsMenuButton() {
   const { displayMenu } = useUI();
   return (
     <Button
-      class="btn btn-circle md:btn-sm btn-lg btn-ghost p-0"
+      class="md:hidden btn btn-circle md:btn-sm btn-lg btn-ghost p-0"
       aria-label="open menu"
       onClick={() => {
         displayMenu.value = !displayMenu.value;

@@ -9,7 +9,7 @@ type Props = {
 };
 
 const TsMenu = ({ onClose, children }: Props) => (
-  <div class="bg-accent-content rounded-l-md rounded-b-md absolute right-[47px] top-[8px]">
+  <div class="bg-accent-content rounded-l-md rounded-b-md absolute top-[27px] right-[20px]">
     <div class="flex justify-end mb-2">
       {onClose && (
         <Button

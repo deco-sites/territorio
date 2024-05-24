@@ -65,15 +65,15 @@ export default function TsPlatformMobileContent({
         </svg>
       </div>
       <TsCarouselBarIsland
-        class="flex max-w-full gap-[10vw] overflow-x-auto px-8 snap-x snap-mandatory scrollbar-hide"
         containerClassName="flex flex-col gap-8 items-center"
+        class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full"
         activeColor="secondary-content"
         autoChangeDelay={5000}
       >
         {Object.entries(content).map(([key, value]) => (
           <TsPlatformCardContent
             content={value}
-            class="min-w-[90vw] px-8 snap-center"
+            class="min-w-full snap-center"
           />
         ))}
       </TsCarouselBarIsland>
