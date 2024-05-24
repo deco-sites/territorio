@@ -28,7 +28,7 @@ export default function TSFooterItems({
                 <ul class={`flex flex-col gap-2 flex-wrap text-xs md:text-xl`}>
                   {section.items?.map((item) => (
                     <li>
-                      <a href={item.href} class="block link link-hover">
+                      <a href={item.href} target="_blank" class="block link link-hover">
                         {item.label}
                       </a>
                     </li>
