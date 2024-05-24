@@ -25,33 +25,39 @@ const TsProposito = ({
   const [regular, bold] = title.split(" ");
 
   return (
-    <div class="flex justify-center">
+    <div class="flex justify-center ts-responsive">
       <div
         id="proposito"
-        class="flex flex-col my-20 sm:my-40 max-w-[1200px] px-[44px] sm:px-8 xl:px-0"
+        class="flex flex-col my-20 sm:my-40 max-w-[75rem] px-8 sm:px-32 md:px-8 xl:px-0"
       >
         <TsTypography
           color="accent-content"
           weight="200"
-          class="text-3xl -mt-10 sm:mt-0 sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl max-w-[220px] md:max-w-[455px] absolute"
+          class="-mt-10 sm:mt-0 text-5xl sm:text-7xl md:text-8xl max-w-[13.75rem] md:max-w-[28.4375rem] absolute"
         >
           {regular} <TsTypography weight="600">{bold}</TsTypography>
         </TsTypography>
-        <Image src={image.src} alt={image.alt} width={1300} height={660} />
-        <div class="flex flex-col md:flex-row justify-center gap-y-5 md:gap-x-20 lg:gap-x-30 xl:gap-x-40 mt-10">
+        <Image
+          src={image.src}
+          alt={image.alt}
+          width={1386}
+          height={663}
+          class="md:w-[86.625rem] md:h-[41.4375rem]"
+        />
+        <div class="flex flex-col sm:flex-row justify-center gap-y-5 gap-x-40 mt-10">
           <TsTypography
             color="accent-content"
-            class="text-xl md:text-2xl xl:text-4xl md:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px]"
+            class="text-4xl max-w-[80%] sm:max-w-[22rem]"
           >
             {descriptionPrimary}{" "}
             <TsTypography color="base-100">{descriptionSecondary}</TsTypography>
           </TsTypography>
-          <div class="flex flex-col gap-5 md:max-w-[225px] lg:max-w-[300px] xl:max-w-[375px]">
+          <div class="flex flex-col gap-5 md:max-w-[24rem]">
             <TsTypography
               type="body"
               weight="600"
               color="base-100"
-              class="text-base sm:text-lg xl:text-xl"
+              class="text-2xl md:text-xl"
             >
               {listTitle}
             </TsTypography>
@@ -62,7 +68,7 @@ const TsProposito = ({
                   <TsTypography
                     type="body"
                     color="base-100"
-                    class="text-base md:text-lg xl:text-xl"
+                    class="text-2xl md:text-xl"
                   >
                     {item}
                   </TsTypography>
