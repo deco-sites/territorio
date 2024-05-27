@@ -1,63 +1,65 @@
-import { useId } from "../../../sdk/useId.ts";
+import { useId } from '../../../sdk/useId.ts'
 
 const script = (id: string) => {
   const callback = () => {
-    const KEY = "store-cookie-consent";
-    const ACCEPTED = "accepted";
-    const HIDDEN = "translate-y-[200%]";
+    const KEY = 'store-cookie-consent'
+    const ACCEPTED = 'accepted'
+    const HIDDEN = 'translate-y-[200%]'
 
-    const consent = localStorage.getItem(KEY);
-    const elem = document.getElementById(id);
+    const consent = localStorage.getItem(KEY)
+    const elem = document.getElementById(id)
 
     if (consent !== ACCEPTED && elem) {
-      const accept = elem.querySelector("[data-button-cc-accept]");
+      const accept = elem.querySelector('[data-button-cc-accept]')
       accept &&
-        accept.addEventListener("click", () => {
-          localStorage.setItem(KEY, ACCEPTED);
-          elem.classList.add(HIDDEN);
-        });
-      const close = elem.querySelector("[data-button-cc-close]");
-      close &&
-        close.addEventListener("click", () => elem.classList.add(HIDDEN));
-      elem.classList.remove(HIDDEN);
+        accept.addEventListener('click', () => {
+          localStorage.setItem(KEY, ACCEPTED)
+          elem.classList.add(HIDDEN)
+        })
+      const close = elem.querySelector('[data-button-cc-close]')
+      close && close.addEventListener('click', () => elem.classList.add(HIDDEN))
+      elem.classList.remove(HIDDEN)
     }
-  };
+  }
 
-  addEventListener("scroll", callback, { once: true });
-};
+  addEventListener('scroll', callback, { once: true })
+}
 
 export interface Props {
-  title?: string;
+  title?: string
   /** @format html */
-  text?: string;
+  text?: string
+  textSize: 'sm' | 'base' | 'lg'
+  buttonSize: 'sm' | 'base' | 'lg'
   buttons?: {
-    allowTextButton: string;
-  };
+    allowTextButton: string
+  }
   layout?: {
-    position?: "Expanded" | "Left" | "Center" | "Right";
-    content?: "Tiled" | "Piled up";
-  };
+    position?: 'Expanded' | 'Left' | 'Center' | 'Right'
+    content?: 'Tiled' | 'Piled up'
+  }
 }
 
 const DEFAULT_PROPS = {
   title: null,
-  text:
-    'Utilizamos cookies para garantir que você tenha uma melhor experiência em nosso site. <br>Ao continuar navegando você concorda com a nossa <a class="underline transition-all duration-300" href="../../../politica-de-privacidade" target="_blank" rel="noopener noreferrer">pol&iacute;tica de privacidade</a> e com nossos <a class="underline transition-all duration-300" href="../../../termos-de-uso" target="_blank" rel="noopener noreferrer">termos de uso</a>.',
+  text: 'Utilizamos cookies para garantir que você tenha uma melhor experiência em nosso site. <br>Ao continuar navegando você concorda com a nossa <a class="underline transition-all duration-300" href="../../../politica-de-privacidade" target="_blank" rel="noopener noreferrer">pol&iacute;tica de privacidade</a> e com nossos <a class="underline transition-all duration-300" href="../../../termos-de-uso" target="_blank" rel="noopener noreferrer">termos de uso</a>.',
+  textSize: 'base',
   buttons: {
-    allowTextButton: "Aceitar",
+    allowTextButton: 'Aceitar'
   },
+  buttonSize: 'base',
   layout: {
-    position: "Expanded",
-    content: "Tiled",
-  },
-};
+    position: 'Expanded',
+    content: 'Tiled'
+  }
+}
 
 function CookieConsent(props: Props) {
-  const id = useId();
-  const { title, text, buttons, layout } = {
+  const id = useId()
+  const { title, text, buttons, layout, textSize, buttonSize } = {
     ...DEFAULT_PROPS,
-    ...props,
-  };
+    ...props
+  }
 
   return (
     <>
@@ -65,55 +67,55 @@ function CookieConsent(props: Props) {
         id={id}
         class={`
           transform-gpu translate-y-[200%] transition fixed bottom-0 lg:bottom-2 w-screen z-50 lg:flex
-          ${layout?.position === "Left" ? "lg:justify-start" : ""}
-          ${layout?.position === "Center" ? "lg:justify-center" : ""}
-          ${layout?.position === "Right" ? "lg:justify-end" : ""}
+          ${layout?.position === 'Left' ? 'lg:justify-start' : ''}
+          ${layout?.position === 'Center' ? 'lg:justify-center' : ''}
+          ${layout?.position === 'Right' ? 'lg:justify-end' : ''}
         `}
       >
         <div
           class={`
           p-4 mx-4 my-2 flex flex-col gap-4 shadow bg-base-100 rounded border border-base-200 
           ${
-            !layout?.position || layout?.position === "Expanded"
-              ? "lg:container lg:mx-auto lg:max-w-[80%]"
+            !layout?.position || layout?.position === 'Expanded'
+              ? 'lg:container lg:mx-auto lg:max-w-[80%]'
               : `
-            ${layout?.content === "Piled up" ? "lg:w-[480px]" : ""}
+            ${layout?.content === 'Piled up' ? 'lg:w-[480px]' : ''}
             ${
-                !layout?.content || layout?.content === "Tiled"
-                  ? "lg:w-[520px]"
-                  : ""
-              }
+              !layout?.content || layout?.content === 'Tiled'
+                ? 'lg:w-[520px]'
+                : ''
+            }
           `
           }
           ${
-            !layout?.content || layout?.content === "Tiled"
-              ? "lg:flex-row lg:items-center"
-              : ""
+            !layout?.content || layout?.content === 'Tiled'
+              ? 'lg:flex-row lg:items-center'
+              : ''
           }
           
         `}
         >
           <div
             class={`flex-auto flex flex-col gap-4 ${
-              !layout?.content || layout?.content === "Tiled" ? "lg:gap-2" : ""
+              !layout?.content || layout?.content === 'Tiled' ? 'lg:gap-2' : ''
             }`}
           >
             {title && <h3 class="text-xl">{title}</h3>}
             <div
-              class="text-sm font-body"
+              class={`text-${textSize} font-body`}
               dangerouslySetInnerHTML={{ __html: text }}
             />
           </div>
 
           <div
             class={`flex flex-col gap-2 ${
-              !layout?.position || layout?.position === "Expanded"
-                ? "lg:flex-row"
-                : ""
+              !layout?.position || layout?.position === 'Expanded'
+                ? 'lg:flex-row'
+                : ''
             }`}
           >
             <button
-              class="btn bg-accent-content text-white border-0 cursor-pointer lg:w-48"
+              class={`btn bg-accent-content text-white border-0 cursor-pointer lg:w-48 text-${buttonSize}`}
               data-button-cc-accept
             >
               {buttons.allowTextButton}
@@ -126,7 +128,7 @@ function CookieConsent(props: Props) {
         dangerouslySetInnerHTML={{ __html: `(${script})("${id}");` }}
       />
     </>
-  );
+  )
 }
 
-export default CookieConsent;
+export default CookieConsent
