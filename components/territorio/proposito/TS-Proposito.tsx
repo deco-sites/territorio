@@ -7,7 +7,8 @@ type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 
 export interface Props {
   title: string;
-  image: BasicImage;
+  mobileImage: BasicImage;
+  dektopImage: BasicImage;
   descriptionPrimary: string;
   descriptionSecondary: string;
   listTitle: string;
@@ -16,7 +17,8 @@ export interface Props {
 
 const TsProposito = ({
   title,
-  image,
+  mobileImage,
+  dektopImage,
   descriptionPrimary,
   descriptionSecondary,
   listTitle,
@@ -28,47 +30,55 @@ const TsProposito = ({
     <div class="flex justify-center ts-responsive">
       <div
         id="proposito"
-        class="flex flex-col my-20 sm:my-32 max-w-[75rem] px-8 sm:px-32 md:px-8 xl:px-0"
+        class="flex flex-col my-20 sm:my-32 max-w-[75rem] px-[44px] md:px-8 lg:px-0"
       >
         <TsTypography
           color="accent-content"
           weight="200"
-          class="-mt-10 sm:mt-0 text-5xl sm:text-7xl md:text-8xl max-w-[13.75rem] md:max-w-[28.4375rem] absolute"
+          class="absolute text-[29px] leading-none sm:mt-4 sm:text-7xl md:text-8xl max-w-[13.75rem] md:max-w-[28.4375rem]"
         >
           {regular} <TsTypography weight="600">{bold}</TsTypography>
         </TsTypography>
         <Image
-          src={image.src}
-          alt={image.alt}
-          width={1386}
-          height={663}
-          class="md:w-[86.625rem] md:h-[41.4375rem]"
+          src={mobileImage.src}
+          alt={mobileImage.alt}
+          width={360}
+          height={217}
+          class="sm:hidden w-full h-full"
         />
-        <div class="flex flex-col sm:flex-row justify-center gap-y-5 gap-x-40 mt-10">
+        <Image
+          src={dektopImage.src}
+          alt={dektopImage.alt}
+          width={1306}
+          height={663}
+          class="hidden sm:block w-full md:w-[81.625rem] h-full"
+        />
+        <div class="flex flex-col sm:flex-row justify-center gap-[20px] sm:gap-y-6 gap-x-40 mt-10">
           <TsTypography
             color="accent-content"
-            class="text-4xl max-w-[80%] sm:max-w-[22rem]"
+            class="text-[20px] leading-tight sm:text-4xl sm:leading-normal max-w-[80%] sm:max-w-[22rem]"
           >
             {descriptionPrimary}{" "}
             <TsTypography color="base-100">{descriptionSecondary}</TsTypography>
           </TsTypography>
-          <div class="flex flex-col gap-5 md:max-w-[24rem]">
+          <div class="flex flex-col gap-[20px] sm:gap-6 md:max-w-[24rem]">
             <TsTypography
               type="body"
               weight="600"
               color="base-100"
-              class="text-2xl md:text-xl"
+              class="text-[16px] sm:text-2xl md:text-xl leading-[23px] ml-[12px]"
             >
               {listTitle}
             </TsTypography>
-            <ul class="flex flex-col gap-5">
+            <ul class="flex flex-col gap-[20px] sm:gap-6">
               {listItems.map((item) => (
-                <li key={item} class="flex">
-                  <div class="bg-accent-content w-1 h-full mr-2"></div>
+                <li key={item} class="flex items-center">
+                  <div class="bg-accent-content w-[2px] sm:w-[4px] h-[85%] mr-[10px]">
+                  </div>
                   <TsTypography
                     type="body"
                     color="base-100"
-                    class="text-2xl md:text-xl"
+                    class="text-[14px] sm:text-2xl md:text-xl leading-[19px] sm:leading-[23px] "
                   >
                     {item}
                   </TsTypography>
