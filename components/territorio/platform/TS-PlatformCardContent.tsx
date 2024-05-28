@@ -19,14 +19,14 @@ export default function TsPlatformCardContent({
       )}
     >
       <TsTypography
-        class="text-secondary-content text-3xl"
+        class="text-secondary-content text-4xl w-[70%]"
         weight="600"
         type="body"
       >
         {content.title}
       </TsTypography>
       <TsTypography
-        class="text-white text-2xl md:text-base w-[75%] md:w-auto"
+        class="text-white text-3xl md:text-base w-[85%] md:w-auto"
         type="body"
       >
         {content.content}

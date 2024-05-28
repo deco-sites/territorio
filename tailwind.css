@@ -57,7 +57,7 @@
   }
 
   .ts-section {
-    @apply md:max-w-[73.25rem] px-[3.2rem] md:px-8 md:mx-auto w-full text-white;
+    @apply md:max-w-[75rem] px-[3.2rem] md:px-8 md:mx-auto w-full text-white;
     background-color: #202020; /* fallback */
     background-color: oklch(var(--n) / 1);
   }

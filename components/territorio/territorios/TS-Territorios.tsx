@@ -28,16 +28,16 @@ function TsTerritorios({
       class="flex justify-center ts-responsive w-full mt-10 mb-28 md:mb-20 overflow-x-hidden"
     >
       {/* Mobile */}
-      <div class="md:hidden flex flex-col items-center w-full px-[44px] sm:px-32">
+      <div class="md:hidden flex flex-col items-center w-full px-[44px]">
         <div class="flex items-end mb-[24px] w-full">
           <TsTypography
             color="accent-content"
-            class="absolute sm:relative text-[27px] leading-normal sm:text-6xl sm:leading-[125%] -mb-[12px] w-full max-w-[20rem]"
+            class="absolute sm:relative text-[27px] leading-normal sm:text-6xl sm:leading-[125%] -mb-[12px] w-full max-w-[18rem]"
           >
             {titlePrimary}{" "}
             <TsTypography color="base-100">{titleSecondary}</TsTypography>
           </TsTypography>
-          <div class="w-full min-w-[160px] ml-[92px] sm:ml-auto">
+          <div class="w-full min-w-[160px] ml-[92px] sm:ml-0 sm:self-end">
             <Image src={image.src} alt={image.alt} width={380} height={522} />
           </div>
         </div>
@@ -52,7 +52,7 @@ function TsTerritorios({
         <TsTerritoriosCarousel items={carouselItems} />
       </div>
       {/* Desktop */}
-      <div class="hidden md:flex flex-col max-w-[75rem] w-full justify-center px-8 xl:px-0">
+      <div class="hidden md:flex flex-col max-w-[75rem] w-full justify-center md:px-8 lg:px-0">
         <div class="flex justify-between items-center">
           <div class="flex flex-col">
             <TsTypography color="accent-content" class="text-8xl mb-[4.375rem]">
@@ -96,7 +96,7 @@ function TsTerritorios({
                   <TsTypography weight="600">{item.title}</TsTypography>
                 </TsTypography>
               </div>
-              <TsRichText class="text-base-100 font-body text-base">
+              <TsRichText class="text-base-100 font-body md:text-lg">
                 {item.description}
               </TsRichText>
             </div>

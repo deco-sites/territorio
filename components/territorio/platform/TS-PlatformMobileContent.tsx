@@ -65,7 +65,7 @@ export default function TsPlatformMobileContent({
         </svg>
       </div>
       <TsCarouselBarIsland
-        containerClassName="flex flex-col gap-8 items-center"
+        containerClassName="flex flex-col gap-11 items-center"
         class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide w-full"
         activeColor="secondary-content"
         autoChangeDelay={5000}

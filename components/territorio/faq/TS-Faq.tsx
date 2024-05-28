@@ -37,7 +37,7 @@ export default function TSFaq({
 
   const hasSupportDescription = !!ctaSupportDescription;
   return (
-    <div className="ts-section ts-responsive md:px-8 py-[10%] sm:py-[7%]">
+    <div className="ts-section ts-responsive px-[44px] md:px-8 lg:px-0 py-[10%] sm:py-[7%]">
       <TsTypography as="p" class="text-6xl mb-8 md:mb-20">
         {titleWords.map((word, index) => {
           const isLast = index === titleWords.length - 1;
