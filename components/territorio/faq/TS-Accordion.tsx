@@ -56,8 +56,8 @@ export default function TSAccordion({
                 name={name}
                 defaultChecked={defaultCheckedFirst && index === 0}
               />
-              <div className="flex justify-between items-center relative collapse-title group">
-                <TsTypography class="text-2xl" type="body">
+              <div className="flex justify-between items-center relative collapse-title group py-7">
+                <TsTypography class="text-2xl font-bold w-[85%]" type="body">
                   {title}
                 </TsTypography>
                 <div
@@ -86,9 +86,11 @@ export default function TSAccordion({
                 </div>
               </div>
               <div className="collapse-content">
-                <TsTypography class="text-2xl" weight="400" type="body">
-                  {subtitle}
-                </TsTypography>
+                <div class="pb-6 w-[90%]">
+                  <TsTypography class="text-2xl" weight="400" type="body">
+                    {subtitle}
+                  </TsTypography>
+                </div>
               </div>
             </div>
           );
