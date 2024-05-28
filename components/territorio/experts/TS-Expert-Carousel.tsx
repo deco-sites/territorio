@@ -71,7 +71,7 @@ const TsExpertCarousel = ({
   };
 
   return (
-    <div class="flex items-center gap-x-10 sm:gap-x-20 self-center">
+    <div class="flex items-center gap-x-[14px] sm:gap-x-20 self-center">
       <ArrowButton onClick={onPrevious} icon="ChevronLeft" />
       <TsCarouselIsland
         ref={carouselRef}
@@ -79,11 +79,11 @@ const TsExpertCarousel = ({
         class="overflow-x-auto snap-x snap-mandatory scrollbar-hide"
       >
         <>
-          <ul class="flex gap-x-12 max-w-[34.625rem]">
+          <ul class="flex gap-x-[14px] sm:gap-x-12 max-w-[34.625rem]">
             {experts.map((expert, index) => (
               <li
                 key={expert.fullName}
-                class="list-none border border-base-300 hover:brightness-150 w-[6.5rem] h-[6.5rem] sm:w-[9.375rem] sm:h-[9.375rem]"
+                class="list-none border border-base-300 rounded-[5px] sm:rounded-none hover:brightness-150 w-[6.5rem] h-[6.5rem] sm:w-[9.375rem] sm:h-[9.375rem]"
               >
                 <button onClick={() => updateExpertId(index)}>
                   <Image
@@ -91,6 +91,7 @@ const TsExpertCarousel = ({
                     alt={expert.thumbnail.alt}
                     width={150}
                     height={150}
+                    class="rounded-[5px] sm:rounded-none"
                   />
                 </button>
               </li>
