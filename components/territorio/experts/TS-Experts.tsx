@@ -63,7 +63,7 @@ const TsExperts = ({
               alt={image.alt}
               width={423}
               height={502}
-              class="self-end w-[201px] h-[239px] object-contain -ml-[90px] sm:w-[26.4375rem] sm:-ml-[5.625rem] sm:h-[31.375rem]"
+              class="self-end w-[201px] h-[239px] object-cover -ml-[90px] sm:w-[26.4375rem] sm:-ml-[5.625rem] sm:h-[31.375rem]"
             />
             <div class="flex flex-col md:flex-row w-full mt-[18px] sm:mt-12 ml-[8px] mr-[12px] sm:mx-8">
               <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[85%]">
