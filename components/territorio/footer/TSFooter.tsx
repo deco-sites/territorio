@@ -73,8 +73,8 @@ function Footer({
   },
 }: Props) {
   return (
-    <footer class="flex flex-col ts-responsive w-full pb-10 sm:pb-44 gap-10 font-body">
-      <div class="mx-auto ts-section">
+    <footer class="flex flex-col ts-responsive w-full px-[44px] pb-10 sm:pb-44 gap-10 font-body">
+      <div class="mx-auto ts-footer-section">
         <hr class="mb-32 border-accent-content" />
         <div class="flex flex-row justify-between flex-wrap gap-8">
           <div class="hidden sm:block">
