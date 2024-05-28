@@ -44,7 +44,10 @@ const ArrowButton = ({
   icon: AvailableIcons;
   onClick: () => void;
 }) => (
-  <button class="hidden sm:inline-block h-[calc(100%-80px)]" onClick={onClick}>
+  <button
+    class="hidden sm:inline-block h-[calc(100%-80px)] px-2"
+    onClick={onClick}
+  >
     <Icon
       id={icon}
       class="text-accent-content sm:max-w-12 sm:max-h-12 lg:max-w-16 lg:max-h-16 xl:max-w-20 xl:max-h-20 2xl:max-w-24 2xl:max-h-24 sm:stroke-1"
@@ -81,7 +84,10 @@ const TsCursos = ({ courses }: CursosProps) => {
   return (
     <div
       id="cursos"
-      class="flex sm:justify-center items-center -mt-[130px] md:-mt-[140px] lg:-mt-[150px] 2xl:-mt-[160px] relative z-30 overflow-x-hidden sm:overflow-x-auto select-none"
+      class={clx(
+        "flex sm:justify-center items-center relative z-30 overflow-x-hidden sm:overflow-x-auto select-none",
+        "-mt-[118px] md:-mt-[146px] lg:-mt-[176px] xl:-mt-[231px] 2xl:-mt-[285px]", // offset
+      )}
     >
       <ArrowButton icon="ChevronLeft" onClick={onPrevious} />
       <TsCarouselIsland
@@ -93,8 +99,8 @@ const TsCursos = ({ courses }: CursosProps) => {
           <ul
             class={clx(
               "flex ",
-              "pl-8 gap-x-[0.875rem]",
-              "sm:px-1 sm:py-2 sm:max-w-[544px]",
+              "pl-[44px] gap-x-[14px]",
+              "sm:px-0 sm:py-2 sm:max-w-[544px]",
               "md:py-4 md:px-2 md:gap-x-4 md:max-w-[664px]",
               "lg:py-6 lg:gap-x-5 lg:max-w-[776px]",
               "xl:py-8 xl:px-3 xl:gap-x-6 xl:max-w-[996px]",
@@ -102,14 +108,14 @@ const TsCursos = ({ courses }: CursosProps) => {
             )}
           >
             {courses.map((course) => (
-              <li class="last:pr-8 md:last:pr-0">
+              <li class="last:pr-[60px] md:last:pr-0">
                 <a
                   href={course.url}
                   disabled={!course?.isActive}
                   class={clx(
                     "flex flex-col items-center",
                     course?.isActive
-                      ? "hover:scale-105"
+                      ? "md:hover:scale-105"
                       : "pointer-events-none",
                   )}
                 >
@@ -131,7 +137,7 @@ const TsCursos = ({ courses }: CursosProps) => {
                     height={486}
                     class={clx(
                       "max-w-[125px] md:max-w-[150px] lg:max-w-[175px] xl:max-w-[225px] 2xl:max-w-[271px]",
-                      !course?.isActive ? "-mt-7 2xl:-mt-8" : "",
+                      !course?.isActive ? "-mt-8" : "",
                     )}
                   />
                 </a>
