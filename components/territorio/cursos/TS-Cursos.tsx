@@ -44,7 +44,10 @@ const ArrowButton = ({
   icon: AvailableIcons;
   onClick: () => void;
 }) => (
-  <button class="hidden sm:inline-block h-[calc(100%-80px)]" onClick={onClick}>
+  <button
+    class="hidden sm:inline-block h-[calc(100%-80px)] px-2"
+    onClick={onClick}
+  >
     <Icon
       id={icon}
       class="text-accent-content sm:max-w-12 sm:max-h-12 lg:max-w-16 lg:max-h-16 xl:max-w-20 xl:max-h-20 2xl:max-w-24 2xl:max-h-24 sm:stroke-1"
@@ -97,7 +100,7 @@ const TsCursos = ({ courses }: CursosProps) => {
             class={clx(
               "flex ",
               "pl-[44px] gap-x-[14px]",
-              "sm:px-1 sm:py-2 sm:max-w-[544px]",
+              "sm:px-0 sm:py-2 sm:max-w-[544px]",
               "md:py-4 md:px-2 md:gap-x-4 md:max-w-[664px]",
               "lg:py-6 lg:gap-x-5 lg:max-w-[776px]",
               "xl:py-8 xl:px-3 xl:gap-x-6 xl:max-w-[996px]",
@@ -105,7 +108,7 @@ const TsCursos = ({ courses }: CursosProps) => {
             )}
           >
             {courses.map((course) => (
-              <li class="last:pr-[44px] sm:last:pr-[60px] md:last:pr-0">
+              <li class="last:pr-[60px] md:last:pr-0">
                 <a
                   href={course.url}
                   disabled={!course?.isActive}
