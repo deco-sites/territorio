@@ -62,6 +62,12 @@
     background-color: oklch(var(--n) / 1);
   }
 
+  .ts-footer-section {
+    @apply md:max-w-[73.25rem] md:px-8 md:mx-auto w-full text-white;
+    background-color: #202020; /* fallback */
+    background-color: oklch(var(--n) / 1);
+  }
+
   #scroll {
     scrollbar-width: thin;
     scrollbar-color: #202020 transparent;
