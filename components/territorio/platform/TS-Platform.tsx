@@ -44,7 +44,7 @@ export default function TsPlatform({
   },
 }: Props) {
   return (
-    <div class="ts-section ts-responsive px-8 sm:px-32 md:px-8 lg:px-0 mb-20">
+    <div class="ts-section ts-responsive px-[10vw] sm:px-32 md:px-8 lg:px-0 mb-20">
       <div class="mb-10 md:mb-0 w-full text-center">
         <TsTypography class="text-5xl md:text-6xl text-secondary-content">
           {title.main} <TsTypography color="base-100">{title.sub}</TsTypography>
