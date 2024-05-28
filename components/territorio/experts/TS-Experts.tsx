@@ -24,9 +24,9 @@ const TsExperts = ({
 }: ExpertProps) => {
   const [expertId, setExpertId] = useState(0);
   const { image, description, fullName, social } = experts[expertId];
-  const names = fullName.split(' ');
+  const names = fullName.split(" ");
   const lastName = names.pop();
-  const firstName = names.join(' ');
+  const firstName = names.join(" ");
 
   return (
     <div
