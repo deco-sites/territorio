@@ -56,36 +56,39 @@ export default function TSAccordion({
                 name={name}
                 defaultChecked={defaultCheckedFirst && index === 0}
               />
-              <div className="flex justify-between items-center relative collapse-title group py-7">
-                <TsTypography class="text-2xl font-bold w-[85%]" type="body">
+              <div className="flex justify-between relative collapse-title group py-7 px-0">
+                <TsTypography
+                  class="text-[14px] sm:text-2xl font-bold w-[85%]"
+                  type="body"
+                >
                   {title}
                 </TsTypography>
                 <div
                   className={clx(
-                    "peer-checked:group-[]:block peer-[:not(:checked)]:group-[]:hidden",
+                    "peer-checked:group-[]:block peer-[:not(:checked)]:group-[]:hidden mt-1",
                   )}
                 >
                   <Icon
                     id={icon.expand}
                     class="hidden md:inline-block"
-                    size={20}
+                    size={18}
                   />
-                  <Icon id={icon.expand} class="md:hidden" size={10} />
+                  <Icon id={icon.expand} class="md:hidden" size={14} />
                 </div>
                 <div
                   className={clx(
-                    "peer-checked:group-[]:hidden peer-[:not(:checked)]:group-[]:block",
+                    "peer-checked:group-[]:hidden peer-[:not(:checked)]:group-[]:block mt-1",
                   )}
                 >
                   <Icon
                     id={icon.collapse}
                     class="hidden md:inline-block"
-                    size={18}
+                    size={16}
                   />
-                  <Icon id={icon.collapse} class="md:hidden" size={9} />
+                  <Icon id={icon.collapse} class="md:hidden" size={12} />
                 </div>
               </div>
-              <div className="collapse-content">
+              <div className="collapse-content pl-0">
                 <div class="pb-6 w-[90%]">
                   <TsTypography class="text-2xl" weight="400" type="body">
                     {subtitle}

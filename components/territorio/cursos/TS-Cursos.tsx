@@ -86,7 +86,7 @@ const TsCursos = ({ courses }: CursosProps) => {
       id="cursos"
       class={clx(
         "flex sm:justify-center items-center relative z-30 overflow-x-hidden sm:overflow-x-auto select-none",
-        "-mt-[178px] md:-mt-[146px] lg:-mt-[176px] xl:-mt-[231px] 2xl:-mt-[285px]", // offset
+        "-mt-[162px] md:-mt-[146px] lg:-mt-[176px] xl:-mt-[231px] 2xl:-mt-[285px]", // offset
       )}
     >
       <ArrowButton icon="ChevronLeft" onClick={onPrevious} />
@@ -108,7 +108,7 @@ const TsCursos = ({ courses }: CursosProps) => {
             )}
           >
             {courses.map((course) => (
-              <li class="last:pr-[60px] md:last:pr-0">
+              <li class="last:pr-[44px] md:last:pr-0">
                 <a
                   href={course.url}
                   disabled={!course?.isActive}

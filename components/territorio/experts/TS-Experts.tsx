@@ -50,7 +50,7 @@ const TsExperts = ({
           </TsTypography>
         </div>
         <div class="flex sm:w-full xl:w-auto gap-x-8 my-8 md:my-14">
-          <div class="flex bg-base-300 w-full h-[248px] sm:h-[28rem] md:h-[25rem] xl:w-[85.625rem] md:ml-24 rounded-b-[10px] rounded-l-[10px]">
+          <div class="flex bg-base-300 w-full h-[248px] sm:h-[30rem] md:h-[25rem] xl:w-[85.625rem] md:ml-24 rounded-b-[10px] rounded-l-[10px]">
             <Image
               src={leftDecorator.src}
               alt={leftDecorator.alt}
@@ -63,9 +63,9 @@ const TsExperts = ({
               alt={image.alt}
               width={423}
               height={502}
-              class="self-end w-[201px] h-[239px] object-cover -ml-[90px] sm:w-[26.4375rem] sm:-ml-[5.625rem] sm:h-[31.375rem]"
+              class="self-end h-fit -ml-[90px] md:-ml-[5.625rem] min-w-[201px] max-w-[201px] max-h-[239px] sm:min-w-[26.4375rem] sm:max-w-[26.4375rem] sm:max-h-[31.375rem]"
             />
-            <div class="flex flex-col md:flex-row w-full mt-[18px] sm:mt-12 ml-[8px] mr-[12px] sm:mx-8">
+            <div class="flex flex-col justify-between md:flex-row w-full mt-[18px] sm:mt-12 ml-[8px] mr-[12px] sm:mx-8">
               <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[85%]">
                 <TsTypography
                   class="text-[22px] leading-tight sm:text-5xl w-[6.25rem] sm:w-auto"
@@ -76,7 +76,7 @@ const TsExperts = ({
                 </TsTypography>
                 <div
                   id="scroll"
-                  class="flex flex-col gap-y-3 overflow-y-auto max-h-[122px] sm:max-h-[15rem]"
+                  class="flex flex-col gap-y-3 overflow-y-auto max-h-[122px] sm:max-h-[164px] md:max-h-[15rem]"
                 >
                   {description.map(({ text }) => (
                     <TsRichText
@@ -88,7 +88,7 @@ const TsExperts = ({
                   ))}
                 </div>
               </div>
-              <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] md:my-0">
+              <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] sm:mb-[18px] md:my-0">
                 {social.map((item) => (
                   <li key={item.label}>
                     <a
