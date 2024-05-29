@@ -1,5 +1,5 @@
-import { ImageType } from "../types.ts";
 import type { HTMLWidget } from "apps/admin/widgets.ts";
+import { ImageType } from "../types.ts";
 
 export type BasicImage = Omit<ImageType, "url" | "width" | "height">;
 
@@ -24,7 +24,7 @@ type Paragraph = {
 /** @titleBy fullName */
 export interface Expert {
   fullName: string;
-  image: BasicImage;
+  image: ImageType;
   thumbnail: BasicImage;
   /**
    * @title Paragraph
