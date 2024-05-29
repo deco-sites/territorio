@@ -29,28 +29,30 @@ const TsHero = ({ banners }: HeroProps) => {
   const changedPosition = useSignal(0);
   const shouldShow = useSignal(true);
 
-  const { currentMediaQuery } = useTsMediaQuery();
-  let backgroundImages: BasicImage[];
-  switch (currentMediaQuery) {
-    case "xs":
-      backgroundImages = banners.map((banner) => banner.mobileBackgroundImage);
-      break;
-    case "sm":
-      backgroundImages = banners.map((banner) => banner.smallBackgroundImages);
-      break;
-    default:
-      backgroundImages = banners.map((banner) => banner.largeBackgroundImages);
-  }
-
-  const { visibleItems } = useTsCarrousel<BasicImage>({
-    items: backgroundImages,
+  const { visibleItems } = useTsCarrousel<Banner>({
+    items: banners,
     visibleItemsCountParam: 1,
     shouldCycle: true,
     autoChangeDelay: 5000,
     onChangeCallback: () => {
+      shouldShow.value = false;
       changedPosition.value = 1;
     },
   });
+
+  const visibleBanner = visibleItems[0];
+  const { currentMediaQuery } = useTsMediaQuery();
+  let backgroundImage: BasicImage;
+  switch (currentMediaQuery) {
+    case "xs":
+      backgroundImage = visibleBanner.mobileBackgroundImage;
+      break;
+    case "sm":
+      backgroundImage = visibleBanner.smallBackgroundImages;
+      break;
+    default:
+      backgroundImage = visibleBanner.largeBackgroundImages;
+  }
 
   useSignalEffect(() => {
     if (changedPosition.value !== 0) {
@@ -59,12 +61,11 @@ const TsHero = ({ banners }: HeroProps) => {
         changedPosition.value = 0;
         setTimeout(() => {
           shouldShow.value = true;
-        }, 100);
+        }, 0);
       }, 100);
     }
   });
-  const visibleImage = visibleItems[0];
-  const hasImage = !!banners[changedPosition.value].image;
+  const hasImage = !!visibleBanner.image;
 
   return (
     <a
@@ -73,7 +74,7 @@ const TsHero = ({ banners }: HeroProps) => {
     >
       <div
         style={{
-          backgroundImage: `url("${visibleImage.src}")`,
+          backgroundImage: `url("${backgroundImage.src}")`,
         }}
         class={clx(
           "flex justify-center ts-responsive bg-cover bg-no-repeat sm:bg-right-top items-center h-screen",
@@ -95,8 +96,8 @@ const TsHero = ({ banners }: HeroProps) => {
           {hasImage
             ? (
               <Image
-                src={banners[changedPosition.value].image?.src || ""}
-                alt={banners[changedPosition.value].image?.alt}
+                src={visibleBanner.image?.src || ""}
+                alt={visibleBanner.image?.alt}
                 width={226}
                 height={405}
                 class="min-w-[97px] max-w-[150px] sm:max-w-max sm:min-w-max sm:w-[14.125rem] sm:h-[25.3125rem] mr-[2.125rem]"
@@ -112,12 +113,12 @@ const TsHero = ({ banners }: HeroProps) => {
                   : "text-[34px] sm:text-[6rem] font-semibold sm:font-normal max-w-[50%]",
               )}
             >
-              {banners[changedPosition.value].title}
+              {visibleBanner.title}
             </TsRichText>
-            {banners[changedPosition.value].subtitle
+            {visibleBanner.subtitle
               ? (
                 <TsRichText class="select-none text-base-100 font-body text-[15px] sm:text-[18px] md:text-[2.3125rem] leading-[130%] sm:max-w-[75%] font-semibold md:max-w-[34rem]">
-                  {banners[changedPosition.value].subtitle as string}
+                  {visibleBanner.subtitle as string}
                 </TsRichText>
               )
               : null}
