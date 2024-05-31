@@ -23,7 +23,7 @@ type Paragraph = {
 
 /** @titleBy fullName */
 export interface Expert {
-  fullName: HTMLWidget;
+  fullName: Paragraph;
   image: ImageType;
   thumbnail: BasicImage;
   /**
