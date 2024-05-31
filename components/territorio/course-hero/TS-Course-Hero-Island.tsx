@@ -7,7 +7,7 @@ import TsActionButton, {
   CTAButton,
 } from "../action-button/Ts-Action-Button.tsx";
 import TsRichText from "../rich-text/TS-Rich-Text.tsx";
-import { BasicImage } from "../types.ts";
+import { BasicImage, ImageType } from "../types.ts";
 import TsTypography from "../typography/TS-Typography.tsx";
 
 /** @titleBy text */
@@ -21,7 +21,7 @@ export interface TsCourseHeroProps {
   backgroundDesktop: BasicImage;
   backgroundDesktopSmall: BasicImage;
   backgroundMobile: BasicImage;
-  logo: BasicImage;
+  logo: ImageType;
   decorator: BasicImage;
   titlePrimary: string;
   titleSecondary: string;
@@ -85,13 +85,15 @@ const TsCourseHero = ({
           )}
         >
           <div>
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={200}
-              height={48}
-              class="w-[12.5rem] h-[3rem] absolute md:-mt-12"
-            />
+            <a class="block" href={logo.url}>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 200}
+                height={logo.height || 48}
+                class="w-[12.5rem] h-[3rem] absolute md:-mt-12"
+              />
+            </a>
           </div>
           <div class="flex flex-col mt-[75%] sm:mt-0 sm:px-0 sm:self-end sm:ml-10">
             <Image
