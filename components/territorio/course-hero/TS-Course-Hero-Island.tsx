@@ -6,7 +6,6 @@ import { AppContext } from "../../../apps/site.ts";
 import TsActionButton, {
   CTAButton,
 } from "../action-button/Ts-Action-Button.tsx";
-import TsNavbar from "../header/TS-Navbar.tsx";
 import TsRichText from "../rich-text/TS-Rich-Text.tsx";
 import { BasicImage, ImageType } from "../types.ts";
 import TsTypography from "../typography/TS-Typography.tsx";
@@ -86,9 +85,15 @@ const TsCourseHero = ({
           )}
         >
           <div>
-            <div class="w-[12.5rem] h-[3rem] absolute md:-mt-12">
-              <TsNavbar items={[]} logo={logo} buttons={[]} />
-            </div>
+            <a class="block" href={logo.url}>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 200}
+                height={logo.height || 48}
+                class="w-[12.5rem] h-[3rem] absolute md:-mt-12"
+              />
+            </a>
           </div>
           <div class="flex flex-col mt-[75%] sm:mt-0 sm:px-0 sm:self-end sm:ml-10">
             <Image
