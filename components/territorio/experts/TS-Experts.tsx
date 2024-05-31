@@ -67,7 +67,7 @@ const TsExperts = ({
             <div class="flex flex-col justify-between md:flex-row w-full mt-[18px] sm:mt-12 ml-[8px] mr-[12px] sm:mx-8">
               <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[85%]">
                 <TsRichText class="text-[22px] leading-tight sm:text-5xl w-[6.25rem] sm:w-auto ">
-                  {fullName}
+                  {fullName.text}
                 </TsRichText>
                 <div
                   id="scroll"
