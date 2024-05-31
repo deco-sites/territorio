@@ -24,9 +24,6 @@ const TsExperts = ({
 }: ExpertProps) => {
   const [expertId, setExpertId] = useState(0);
   const { image, description, fullName, social } = experts[expertId];
-  const names = fullName.split(" ");
-  const lastName = names.pop();
-  const firstName = names.join(" ");
 
   return (
     <div
@@ -69,13 +66,11 @@ const TsExperts = ({
             />
             <div class="flex flex-col md:flex-row w-full mt-[18px] sm:mt-12 ml-[8px] mr-[12px] sm:mx-8">
               <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[85%]">
-                <TsTypography
-                  class="text-[22px] leading-tight sm:text-5xl w-[6.25rem] sm:w-auto"
-                  weight="400"
+                <TsRichText
+                  class="text-[22px] leading-tight sm:text-5xl w-[6.25rem] sm:w-auto "
                 >
-                  {firstName}{" "}
-                  <TsTypography weight="600">{lastName}</TsTypography>
-                </TsTypography>
+                  {fullName}
+                </TsRichText>
                 <div
                   id="scroll"
                   class="flex flex-col gap-y-3 overflow-y-auto max-h-[122px] sm:max-h-[15rem]"
