@@ -64,9 +64,9 @@ const TsExperts = ({
               height={image.height as number}
               class="self-end h-fit -ml-[90px] md:-ml-[5.625rem] min-w-[201px] max-w-[201px] min-h-[239px] max-h-[239px] sm:min-w-max sm:max-w-max sm:min-h-[31.375rem] sm:max-h-[31.375rem]"
             />
-            <div class="flex flex-col justify-between md:flex-row w-full mt-[18px] sm:mt-12 ml-[8px] mr-[12px] sm:mx-8">
+            <div class="flex flex-col justify-between md:flex-row w-full my-[18px] sm:my-12 ml-[8px] mr-[12px] sm:mx-8">
               <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[85%]">
-                <TsRichText class="text-[22px] leading-tight sm:text-5xl w-[6.25rem] sm:w-auto ">
+                <TsRichText class="text-[22px] leading-tight sm:text-5xl w-[90%] sm:w-auto h-auto">
                   {fullName.text}
                 </TsRichText>
                 <div
