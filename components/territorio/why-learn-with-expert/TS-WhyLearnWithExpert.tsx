@@ -122,8 +122,8 @@ const TsWhyLearnWithExpert = ({
             defaultCheckedFirst={false}
             name="expert-info"
             icon={{
-              collapse: "Less",
-              expand: "More",
+              collapse: "More",
+              expand: "Less",
             }}
             iconPosition="bottom"
           >
