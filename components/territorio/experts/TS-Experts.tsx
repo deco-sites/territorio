@@ -65,10 +65,11 @@ const TsExperts = ({
               class="self-end h-fit -ml-[90px] md:-ml-[5.625rem] min-w-[201px] max-w-[201px] min-h-[239px] max-h-[239px] sm:min-w-max sm:max-w-max sm:min-h-[31.375rem] sm:max-h-[31.375rem]"
             />
             <div class="flex flex-col justify-between md:flex-row w-full my-[18px] sm:my-12 ml-[8px] mr-[12px] sm:mx-8">
-              <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[85%]">
-                <TsRichText class="text-[22px] leading-tight sm:text-5xl w-[90%] sm:w-auto h-auto">
+              <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[90%] h-[100%]">
+                <TsRichText class="text-[22px] leading-tight sm:text-5xl w-[90%] sm:w-auto h-[40%]">
                   {fullName.text}
                 </TsRichText>
+
                 <div
                   id="scroll"
                   class="flex flex-col gap-y-3 overflow-y-auto max-h-[122px] sm:max-h-[164px] md:max-h-[15rem]"
@@ -82,24 +83,25 @@ const TsExperts = ({
                     </TsRichText>
                   ))}
                 </div>
+
+                <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] sm:mb-[18px] md:my-0 h-[10%]">
+                  {social.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${item.label} Logo`}
+                      >
+                        <Icon
+                          class="text-black w-[2.25rem] h-[2.25rem]"
+                          id={item.label}
+                        />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] sm:mb-[18px] md:my-0">
-                {social.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${item.label} Logo`}
-                    >
-                      <Icon
-                        class="text-black w-[2.25rem] h-[2.25rem]"
-                        id={item.label}
-                      />
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
           <Image
