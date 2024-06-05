@@ -15,7 +15,7 @@ export interface CardProps {
 const WhiteMainCard = ({ description, img, title }: CardProps) => {
   return (
     <div class="rounded-2xl bg-white text-neutral w-full sm:aspect-[5/3] border border-accent-content p-6 sm:p-10 flex flex-col justify-center items-center sm:gap-4 text-center">
-      <Image {...img} class="mt-auto" />
+      <Image {...img} class="mt-auto w-[150px] h-[100px]" />
       <TsTypography class="text-[1.5rem] sm:text-4xl mt-4" type="title">
         {title}
       </TsTypography>
