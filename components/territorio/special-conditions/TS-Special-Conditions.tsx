@@ -40,7 +40,7 @@ function TsSpecialConditions({
         productID={productID}
         seller={seller}
         checkoutBanner={checkoutBanner}
-        containerClass="w-full"
+        containerClass="w-full sm:w-auto"
       />
     </div>
   );
