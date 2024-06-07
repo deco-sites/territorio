@@ -1,6 +1,7 @@
 import { useCart } from "apps/vtex/hooks/useCart.ts";
 import Image from "apps/website/components/Image.tsx";
-import { TsImageLinkProps } from "deco-sites/territorio/components/territorio/image-link/TS-Image-Link.tsx";
+import { ImageBanner } from "deco-sites/territorio/components/territorio/types.ts";
+import useTsIsMobile from "deco-sites/territorio/hooks/useTsIsMobile.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 
 export interface VTexCheckoutProps {
@@ -15,19 +16,22 @@ export interface VTexCheckoutProps {
   seller?: string;
 }
 
-export interface TsCheckoutButtonIslandProps
-  extends TsImageLinkProps, VTexCheckoutProps {}
+export interface TsCheckoutButtonIslandProps extends VTexCheckoutProps {
+  containerClass: string;
+  checkoutBanner: ImageBanner;
+}
 
 function TsCheckoutButtonIsland({
-  to,
-  openOnNewTab,
-  hover = true,
-  containerClass,
   productID,
   seller = "1",
-  ...imageProps
+  containerClass,
+  checkoutBanner,
 }: TsCheckoutButtonIslandProps) {
   const { addItems } = useCart();
+  const isMobile = useTsIsMobile();
+  const image = isMobile
+    ? checkoutBanner.mobileImage
+    : checkoutBanner.desktopImage;
 
   const onAddItem = () =>
     addItems({
@@ -39,20 +43,27 @@ function TsCheckoutButtonIsland({
         },
       ],
     }).then(() => {
-      window.location.href = to;
+      window.location.href = checkoutBanner.url;
     });
 
   return (
     <a
+      id="checkout"
+      name="checkout"
       onClick={onAddItem}
-      target={openOnNewTab ? "_blank" : "_self"}
+      target={checkoutBanner.openOnNewTab ? "_blank" : "_self"}
       class={clx(
-        "transition-all w-fit h-fit p-0 cursor-pointer",
-        hover ? "hover:scale-105" : "",
+        "transition-all w-fit h-fit p-0 cursor-pointer md:hover:scale-105",
         containerClass as string,
       )}
     >
-      <Image {...imageProps} />
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={isMobile ? 224 : 1172}
+        height={isMobile ? 422 : 989}
+        class={clx(isMobile ? "w-full px-7" : "w-[52rem] 2xl:w-[73rem]")}
+      />
     </a>
   );
 }
