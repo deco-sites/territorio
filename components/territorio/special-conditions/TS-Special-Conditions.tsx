@@ -37,30 +37,10 @@ function TsSpecialConditions({
         class="w-full"
       />
       <TsCheckoutButton
-        id="checkout"
         productID={productID}
         seller={seller}
-        to={checkoutBanner.url}
-        openOnNewTab={checkoutBanner.openOnNewTab}
-        src={checkoutBanner.desktopImage.src}
-        alt={checkoutBanner.desktopImage.alt}
-        width={1172}
-        height={989}
-        containerClass="hidden sm:block"
-        class="w-[52rem] 2xl:w-[73rem]"
-      />
-      <TsCheckoutButton
-        id="checkout"
-        productID={productID}
-        seller={seller}
-        to={checkoutBanner.url}
-        openOnNewTab={checkoutBanner.openOnNewTab}
-        src={checkoutBanner.mobileImage.src}
-        alt={checkoutBanner.mobileImage.alt}
-        width={224}
-        height={422}
-        containerClass="sm:hidden w-full"
-        class="w-full px-7"
+        checkoutBanner={checkoutBanner}
+        containerClass="w-full"
       />
     </div>
   );
