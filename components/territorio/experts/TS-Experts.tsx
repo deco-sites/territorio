@@ -7,6 +7,7 @@ import Icon from "../../../components/ui/Icon.tsx";
 import TsRichText from "../rich-text/TS-Rich-Text.tsx";
 import TsExpertCarousel from "./TS-Expert-Carousel.tsx";
 import type { BasicImage, Expert } from "./types.ts";
+import useTsIsMobile from "deco-sites/territorio/hooks/useTsIsMobile.tsx";
 
 export interface ExpertProps {
   titlePrimary: string;
@@ -23,6 +24,7 @@ const TsExperts = ({
   rightDecorator,
   experts,
 }: ExpertProps) => {
+  const isMobile = useTsIsMobile();
   const [expertId, setExpertId] = useState(0);
   const { image, description, fullName, social } = experts[expertId];
 
@@ -70,7 +72,7 @@ const TsExperts = ({
               )}
             />
             <div class="flex flex-col justify-between md:flex-row w-full my-[18px] sm:my-12 ml-[8px] mr-[12px] sm:mx-8">
-              <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[90%] h-[100%]">
+              <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[85%] h-[100%]">
                 <TsRichText class="text-[22px] leading-tight sm:text-5xl w-[90%] sm:w-auto h-[40%]">
                   {fullName.text}
                 </TsRichText>
@@ -89,24 +91,47 @@ const TsExperts = ({
                   ))}
                 </div>
 
-                <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] sm:mb-[18px] md:my-0 h-[10%]">
-                  {social.map((item) => (
-                    <li key={item.label}>
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${item.label} Logo`}
-                      >
-                        <Icon
-                          class="text-black w-[2.25rem] h-[2.25rem]"
-                          id={item.label}
-                        />
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                {isMobile &&
+                  (
+                    <ul class="flex gap-4 my-[12px] h-[10%]">
+                      {social.map((item) => (
+                        <li key={item.label}>
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`${item.label} Logo`}
+                          >
+                            <Icon
+                              class="text-black w-[2.25rem] h-[2.25rem]"
+                              id={item.label}
+                            />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
               </div>
+              {!isMobile &&
+                (
+                  <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] sm:mb-[18px] md:my-0">
+                    {social.map((item) => (
+                      <li key={item.label}>
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${item.label} Logo`}
+                        >
+                          <Icon
+                            class="text-black w-[2.25rem] h-[2.25rem]"
+                            id={item.label}
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
             </div>
           </div>
           <Image
