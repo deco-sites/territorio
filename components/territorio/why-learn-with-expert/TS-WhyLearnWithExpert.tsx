@@ -5,7 +5,6 @@ import TsActionButton, {
   CTAButton,
 } from "../action-button/Ts-Action-Button.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
-import TsRichText from "deco-sites/territorio/components/territorio/rich-text/TS-Rich-Text.tsx";
 import { AppContext } from "../../../apps/site.ts";
 import useTsIsMobile from "deco-sites/territorio/hooks/useTsIsMobile.tsx";
 
