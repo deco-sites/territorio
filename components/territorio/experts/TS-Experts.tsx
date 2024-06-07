@@ -1,5 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
+import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import { useState } from "preact/hooks";
 import { AppContext } from "../../../apps/site.ts";
 import Icon from "../../../components/ui/Icon.tsx";
@@ -62,7 +63,11 @@ const TsExperts = ({
               alt={image.alt}
               width={image.width as number}
               height={image.height as number}
-              class="self-end h-fit -ml-[90px] md:-ml-[5.625rem] min-w-[201px] max-w-[201px] min-h-[239px] max-h-[239px] sm:min-w-max sm:max-w-max sm:min-h-[31.375rem] sm:max-h-[31.375rem]"
+              class={clx(
+                "self-end w-fit h-fit", //common
+                "-ml-[90px] min-w-[201px] max-w-[201px] min-h-[239px] max-h-[239px]", //small
+                "md:-ml-[5.625rem] sm:min-w-[26.4375rem] sm:max-w-[26.4375rem] sm:min-h-[31.375rem] sm:max-h-[31.375rem]", //large
+              )}
             />
             <div class="flex flex-col justify-between md:flex-row w-full my-[18px] sm:my-12 ml-[8px] mr-[12px] sm:mx-8">
               <div class="flex flex-col gap-y-[8px] sm:gap-y-7 md:max-w-[90%] h-[100%]">
