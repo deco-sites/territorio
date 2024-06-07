@@ -71,8 +71,8 @@ function TsCourseFit({
             <Image
               src={item.image.src}
               alt={item.image.alt}
-              width={74}
-              height={74}
+              width={125}
+              height={100}
               class="w-[4.625rem] h-[4.625rem] mr-8 sm:mb-2 sm:mr-0"
             />
             <TsTypography
