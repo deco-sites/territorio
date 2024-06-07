@@ -113,24 +113,25 @@ const TsExperts = ({
                   )}
               </div>
               {!isMobile &&
-                <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] sm:mb-[18px] md:my-0">
-                {social.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${item.label} Logo`}
-                    >
-                      <Icon
-                        class="text-black w-[2.25rem] h-[2.25rem]"
-                        id={item.label}
-                      />
-                    </a>
-                  </li>
-                ))}
-              </ul>    
-              }
+                (
+                  <ul class="flex md:flex-col gap-4 md:ml-2 my-[12px] sm:mb-[18px] md:my-0">
+                    {social.map((item) => (
+                      <li key={item.label}>
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${item.label} Logo`}
+                        >
+                          <Icon
+                            class="text-black w-[2.25rem] h-[2.25rem]"
+                            id={item.label}
+                          />
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
             </div>
           </div>
           <Image
