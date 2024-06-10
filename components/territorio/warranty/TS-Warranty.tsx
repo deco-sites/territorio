@@ -28,7 +28,7 @@ const ItemsList = ({ items }: { items: Item[] }) => (
           alt={image.alt}
           width={125}
           height={100}
-          class="w-[4.5rem] h-[4.5rem] sm:w-[4rem] md:w-[5.5rem] sm:h-[4rem] md:h-[5.5rem]"
+          class="w-[125px] h-[100px]"
         />
         <TsTypography
           color="accent-content"
