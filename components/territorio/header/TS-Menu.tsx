@@ -9,12 +9,12 @@ type Props = {
 };
 
 const TsMenu = ({ onClose, children }: Props) => (
-  <div class="bg-accent-content rounded-l-md rounded-b-md absolute top-[27px] right-[20px]">
-    <div class="flex justify-end mb-2">
+  <div className="bg-accent-content rounded-2xl absolute top-[27px] w-[100vw] h-fit pt-8 pr-8">
+    <div className="flex justify-end mb-2">
       {onClose && (
         <Button
           aria-label="menu-toggle"
-          class="btn btn-ghost"
+          className="btn btn-ghost"
           onClick={onClose}
         >
           <HamburgerIcon />
@@ -23,8 +23,8 @@ const TsMenu = ({ onClose, children }: Props) => (
     </div>
     <Suspense
       fallback={
-        <div class="w-screen flex items-center justify-center">
-          <span class="loading loading-ring" />
+        <div className="w-screen flex items-center justify-center">
+          <span className="loading loading-ring" />
         </div>
       }
     >
