@@ -17,6 +17,10 @@ export interface Props {
 function TsDropdown({ menu, children }: Props) {
   const { displayMenu } = useUI();
 
+  const handleLinkClick = () => {
+    displayMenu.value = false;
+  };
+
   return (
     <Drawer
       open={displayMenu.value}
@@ -39,6 +43,7 @@ function TsDropdown({ menu, children }: Props) {
                     weight="500"
                     type="body"
                     to={item.url}
+                    onClick={handleLinkClick}
                   >
                     {item.name}
                   </TsLink>
