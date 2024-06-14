@@ -34,7 +34,7 @@ function TsDropdown({ menu, children }: Props) {
               {menu?.items.map((item) => (
                 <li key={item.name}>
                   <TsLink
-                    size="1rem"
+                    size="2.2rem"
                     color="base-100"
                     weight="500"
                     type="body"
