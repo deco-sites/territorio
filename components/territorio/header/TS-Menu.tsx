@@ -34,7 +34,12 @@ const TsMenu = ({ onClose, logo, children }: Props) => (
             class="btn btn-ghost bg-base-200"
             onClick={onClose}
           >
-            <Icon class="pl-[0.4rem] pb-4" style="color: white" size={36} id={"Close"} />
+            <Icon
+              class="pl-[0.4rem] pb-4"
+              style="color: white"
+              size={36}
+              id={"Close"}
+            />
           </Button>
         )}
       </div>

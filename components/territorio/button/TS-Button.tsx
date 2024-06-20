@@ -50,7 +50,10 @@ const Button = ({
     >
       {icon
         ? (
-          <div className={"flex gap-x-3 items-center justify-center " + divIconClass}>
+          <div
+            className={"flex gap-x-3 items-center justify-center " +
+              divIconClass}
+          >
             <Image
               src={icon.src}
               alt={icon.alt}

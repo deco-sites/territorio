@@ -19,7 +19,7 @@ export interface Props {
     width?: number;
     height?: number;
   };
-  
+
   /**
    * @ignore_gen true
    */
@@ -69,7 +69,7 @@ function TsDropdown({ menu, buttons, logo, children }: Props) {
               {buttons?.map((button) => (
                 <a key={button.name} href={button.url}>
                   <Button
-                    class="flex w-full justify-left bg-accent-content px-6 py-4 pl-[4.5rem] text-[2.5rem]"
+                    class="flex w-full justify-left bg-accent-content px-6 py-4 pl-[7rem] text-[2.5rem]"
                     icon={button.icon as ButtonProps["icon"]}
                     iconClass="w-[4rem] h-[4rem]"
                     divIconClass="gap-x-8"
