@@ -29,6 +29,7 @@ const Button = ({
   type = "button",
   class: _class = "",
   iconClass,
+  divIconClass,
   loading,
   disabled,
   ariaLabel,
@@ -49,7 +50,7 @@ const Button = ({
     >
       {icon
         ? (
-          <div class="flex gap-x-3 items-center justify-center">
+          <div className={"flex gap-x-3 items-center justify-center " + divIconClass}>
             <Image
               src={icon.src}
               alt={icon.alt}

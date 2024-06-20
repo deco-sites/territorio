@@ -26,7 +26,7 @@ function Header({
 }: SectionProps<typeof loader>) {
   return (
     <header class="flex ts-responsive justify-center items-start fixed w-full z-50 pointer-events-none h-[16rem] header-gradient">
-      <Dropdown menu={{ items: [...buttons, ...navItems] }}>
+      <Dropdown menu={{ items: [...navItems] }} buttons={buttons} logo={logo}>
         <TsNavbar items={navItems} logo={logo} buttons={buttons} />
       </Dropdown>
     </header>
