@@ -69,8 +69,8 @@ const TsHero = ({ banners }: HeroProps) => {
 
   return (
     <a
-      href={banners[changedPosition.value].url}
-      disabled={!banners[changedPosition.value].url}
+      href={visibleBanner.url}
+      disabled={!visibleBanner.url}
     >
       <div
         style={{
