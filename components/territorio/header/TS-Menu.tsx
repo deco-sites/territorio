@@ -1,6 +1,5 @@
-import Image from "apps/website/components/Image.tsx";
 import Button from "deco-sites/territorio/components/territorio/button/TS-Button.tsx";
-import Icon, { AvailableIcons } from "../../../components/ui/Icon.tsx";
+import Icon from "../../../components/ui/Icon.tsx";
 import type { ComponentChildren } from "preact";
 import { Suspense } from "preact/compat";
 
@@ -9,13 +8,14 @@ type Props = {
   children: ComponentChildren;
 };
 
-const LOGO_ARIA_LABEL = "Logo Território Saber";
+/* const LOGO_ARIA_LABEL = "Logo Território Saber"; */
 
-const TsMenu = ({ onClose, logo, children }: Props) => (
+const TsMenu = ({ onClose, children }: Props) => (
   <div class="bg-base-200 absolute w-screen h-screen pt-12 pr-[4rem] pl-16">
     <div class="flex mb-16">
       <div class="ml-[0.9rem] justify-left w-full">
-        {logo && (
+        {
+          /*   {logo && (
           <a class="block" href={logo.url} aria-label={LOGO_ARIA_LABEL}>
             <Image
               src={logo.src}
@@ -25,7 +25,8 @@ const TsMenu = ({ onClose, logo, children }: Props) => (
               class="w-[12.5rem] h-[3rem]"
             />
           </a>
-        )}
+        )} */
+        }
       </div>
       <div class="justify-end">
         {onClose && (

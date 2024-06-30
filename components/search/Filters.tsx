@@ -35,7 +35,7 @@ function FilterValues({ key, values }: FilterToggle) {
   return (
     <ul class={`flex flex-wrap gap-2 ${flexDirection}`}>
       {values.map((item) => {
-        const { url, selected, value, quantity } = item;
+        const { url, selected, value } = item;
 
         if (key === "cor" || key === "tamanho") {
           return (
