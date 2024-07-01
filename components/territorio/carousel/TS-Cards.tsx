@@ -84,9 +84,22 @@ const TsCards = ({ cards, title }: TSCardsProps) => {
     <div>
       {title && (
         <div
-          class="text-center pt-7"
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
+          class={clx(
+            "flex justify-center",
+          )}
+        >
+          <div
+            class={clx(
+              "sm:max-w-[544px]",
+              "md:max-w-[664px]",
+              "lg:max-w-[776px]",
+              "xl:max-w-[996px]",
+              "2xl:max-w-[1212px]",
+              "pt-7 w-full",
+            )}
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+        </div>
       )}
       <div
         id="cursos"
