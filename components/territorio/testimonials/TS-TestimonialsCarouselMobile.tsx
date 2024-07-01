@@ -15,9 +15,7 @@ const TsTestimonialsCarouselMobile = ({ children }: Props) => {
       activeColor="base-300"
       autoChangeDelay={5000}
     >
-      {items.map((item, index) => (
-        <div class="min-w-full snap-center">{item}</div>
-      ))}
+      {items.map((item) => <div class="min-w-full snap-center">{item}</div>)}
     </TsCarouselBarIsland>
   );
 };

@@ -9,7 +9,6 @@ import {
   borderWidthClasses,
   colorClasses,
   Colors,
-  flex,
 } from "../../constants.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 

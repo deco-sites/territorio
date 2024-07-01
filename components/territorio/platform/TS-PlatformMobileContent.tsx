@@ -70,7 +70,7 @@ export default function TsPlatformMobileContent({
         activeColor="secondary-content"
         autoChangeDelay={5000}
       >
-        {Object.entries(content).map(([key, value]) => (
+        {Object.entries(content).map(([_, value]) => (
           <TsPlatformCardContent
             content={value}
             class="min-w-full snap-center"
