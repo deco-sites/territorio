@@ -18,6 +18,8 @@ type Statistic = {
 };
 
 export interface TsCourseHeroProps {
+  /** @title Desabilitar margem inferior */
+  disableBottomMargin?: boolean;
   backgroundDesktop: BasicImage;
   backgroundDesktopSmall: BasicImage;
   backgroundMobile: BasicImage;
@@ -44,6 +46,7 @@ const TsCourseHero = ({
   subTitle,
   statistics,
   listItems,
+  disableBottomMargin,
 }: TsCourseHeroProps) => {
   const { currentMediaQuery } = useTsMediaQuery();
   let backgroundImage: BasicImage;
@@ -78,7 +81,8 @@ const TsCourseHero = ({
       >
         <div
           class={clx(
-            "gap-24 mt-[7%] mb-[20%] mx-20", //common
+            `${!disableBottomMargin && "mb-[20%]"}`,
+            "gap-24 mt-[7%]  mx-20", //common
             "flex flex-col", //mobile
             "sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:mx-auto sm:max-w-[60rem]", //small
             "md:max-w-[65rem] lg:max-w-[75rem]", //larger
