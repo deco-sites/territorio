@@ -4,6 +4,8 @@ import TsActionButton, {
 import TsTypography from "../typography/TS-Typography.tsx";
 
 export interface Props {
+  /** @title Desabilitar offset superior */
+  disableTopOffset?: boolean;
   title: {
     primary: string;
     secondary: string;
@@ -15,9 +17,15 @@ export interface Props {
   ctaButton: CTAButton;
 }
 
-export default function TsVideo({ title, video, content, ctaButton }: Props) {
+export default function TsVideo(
+  { title, video, content, ctaButton, disableTopOffset }: Props,
+) {
   return (
-    <div class="ts-section ts-responsive py-4 sm:pb-[7%] sm:mt-[-6%] flex flex-col gap-[3.2rem] md:gap-8 bg-transparent">
+    <div
+      class={`ts-section ts-responsive py-4 sm:pb-[7%] ${
+        !disableTopOffset && "sm:mt-[-6%]"
+      } flex flex-col gap-[3.2rem] md:gap-8 bg-transparent`}
+    >
       {!!video && (
         <div
           class="flex w-full aspect-video [&_iframe]:w-full [&_iframe]:h-full"
