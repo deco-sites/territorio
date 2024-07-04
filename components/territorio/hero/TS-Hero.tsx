@@ -37,7 +37,7 @@ const TsHero = ({ banners }: HeroProps) => {
     onNext,
     onPrevious,
     hasNext,
-    hasPrevious
+    hasPrevious,
   } = useTsCarrousel<Banner>({
     items: banners,
     visibleItemsCountParam: 1,
@@ -76,7 +76,7 @@ const TsHero = ({ banners }: HeroProps) => {
 
   let touchStartX = 0;
   let touchEndX = 0;
-  
+
   const handleTouchStart = (e: TouchEvent) => {
     touchStartX = e.changedTouches[0].screenX;
   };
@@ -111,40 +111,45 @@ const TsHero = ({ banners }: HeroProps) => {
           activeColor="base-300"
         />
       </div>
-      <div class="absolute left-[10%] top-1/2 transform -translate-y-1/2 z-10 hidden lg:block">
-        <button onClick={onPrevious} disabled={!hasPrevious}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="33"
-            height="107"
-            viewBox="0 0 33 107"
-            fill="none"
-          >
-            <path
-              d="M31.975 1L1 53.7598L31.975 106.52"
-              stroke={getColorFromVar("base-100")}
-              stroke-width="4"
-            />
-          </svg>
-        </button>
-      </div>
-      <div class="absolute right-[10%] top-1/2 transform -translate-y-1/2 z-10 hidden lg:block">
-        <button onClick={onNext} disabled={!hasNext}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="33"
-            height="107"
-            viewBox="0 0 33 107"
-            fill="none"
-          >
-            <path
-              d="M0.852051 1L31.8221 53.7598L0.852051 106.52"
-              stroke={getColorFromVar("base-100")}
-              stroke-width="4"
-            />
-          </svg>
-        </button>
-      </div>
+<div class="absolute top-0 left-0 w-[15%] h-full bg-gradient-to-r from-black via-black to-transparent z-10 group opacity-0 hover:opacity-70 transition-opacity duration-300">
+  <div class="absolute left-[40%] top-1/2 transform -translate-y-1/2 z-10 hidden group-hover:block">
+    <button onClick={onPrevious} disabled={!hasPrevious}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="33"
+        height="107"
+        viewBox="0 0 33 107"
+        fill="none"
+      >
+        <path
+          d="M31.975 1L1 53.7598L31.975 106.52"
+          stroke={getColorFromVar("base-100")}
+          stroke-width="4"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+<div class="absolute top-0 right-0 w-[15%] h-full bg-gradient-to-l from-black via-black to-transparent z-10 group opacity-0 hover:opacity-70 transition-opacity duration-300">
+  <div class="absolute right-[40%] top-1/2 transform -translate-y-1/2 z-10 hidden group-hover:block">
+    <button onClick={onNext} disabled={!hasNext}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="33"
+        height="107"
+        viewBox="0 0 33 107"
+        fill="none"
+      >
+        <path
+          d="M0.852051 1L31.8221 53.7598L0.852051 106.52"
+          stroke={getColorFromVar("base-100")}
+          stroke-width="4"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+
       <a
         href={visibleBanner.url}
         disabled={!visibleBanner.url}
@@ -171,15 +176,17 @@ const TsHero = ({ banners }: HeroProps) => {
               "flex items-center w-full max-w-[75rem] pl-[44px] pr-[35px] md:px-8 lg:px-0",
             )}
           >
-            {hasImage ? (
-              <Image
-                src={visibleBanner.image?.src || ""}
-                alt={visibleBanner.image?.alt}
-                width={226}
-                height={405}
-                class="min-w-[97px] max-w-[150px] sm:max-w-max sm:min-w-max sm:w-[14.125rem] sm:h-[25.3125rem] mr-[2.125rem]"
-              />
-            ) : null}
+            {hasImage
+              ? (
+                <Image
+                  src={visibleBanner.image?.src || ""}
+                  alt={visibleBanner.image?.alt}
+                  width={226}
+                  height={405}
+                  class="min-w-[97px] max-w-[150px] sm:max-w-max sm:min-w-max sm:w-[14.125rem] sm:h-[25.3125rem] mr-[2.125rem]"
+                />
+              )
+              : null}
             <div class="flex flex-col gap-y-4">
               <TsRichText
                 class={clx(
@@ -191,11 +198,13 @@ const TsHero = ({ banners }: HeroProps) => {
               >
                 {visibleBanner.title}
               </TsRichText>
-              {visibleBanner.subtitle ? (
-                <TsRichText class="select-none text-base-100 font-body text-[15px] sm:text-[18px] md:text-[2.3125rem] leading-[130%] sm:max-w-[75%] font-semibold md:max-w-[34rem]">
-                  {visibleBanner.subtitle as string}
-                </TsRichText>
-              ) : null}
+              {visibleBanner.subtitle
+                ? (
+                  <TsRichText class="select-none text-base-100 font-body text-[15px] sm:text-[18px] md:text-[2.3125rem] leading-[130%] sm:max-w-[75%] font-semibold md:max-w-[34rem]">
+                    {visibleBanner.subtitle as string}
+                  </TsRichText>
+                )
+                : null}
             </div>
           </div>
           <div class="w-full h-[10rem] absolute bottom-0 bg-gradient-to-t from-base-200 via-base-200 to-transparent" />
