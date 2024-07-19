@@ -3,9 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import TsRichText from "deco-sites/territorio/components/territorio/rich-text/TS-Rich-Text.tsx";
 import TsTypography from "deco-sites/territorio/components/territorio/typography/TS-Typography.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
-import TsActionButton, {
-  CTAButton,
-} from "../action-button/Ts-Action-Button.tsx";
+
 import { BasicImage } from "../types.ts";
 
 /** @titleBy text */
@@ -22,7 +20,6 @@ export interface TsCourseFitProps {
   /** @description Rich text field */
   textItems: HTMLWidget[];
   summary: string;
-  ctaButton: CTAButton;
 }
 
 function TsCourseFit({
@@ -32,14 +29,13 @@ function TsCourseFit({
   subHeadline,
   textItems,
   summary,
-  ctaButton,
 }: TsCourseFitProps) {
   return (
     <div
       class={clx(
-        "flex flex-col ts-section ts-responsive overflow-x-hidden", //common
-        "my-[10%]", //mobile
-        "sm:my-[7%]", //desktop
+        "flex flex-col ts-section ts-responsive", //common
+        "mt-[10%]", //mobile
+        "sm:mt-[7%]", //desktop
       )}
     >
       <TsRichText
@@ -105,13 +101,6 @@ function TsCourseFit({
       >
         {summary}
       </TsTypography>
-      <TsActionButton
-        url={ctaButton.url}
-        linkContainerClass="self-center mt-16 mb-1"
-        class="text-2xl sm:text-xl lg:text-2xl"
-      >
-        {ctaButton.text}
-      </TsActionButton>
     </div>
   );
 }

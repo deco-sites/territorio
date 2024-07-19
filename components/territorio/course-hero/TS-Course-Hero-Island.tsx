@@ -3,12 +3,12 @@ import Image from "apps/website/components/Image.tsx";
 import useTsMediaQuery from "deco-sites/territorio/hooks/useTsMediaQuery.tsx";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
 import { AppContext } from "../../../apps/site.ts";
-import TsActionButton, {
-  CTAButton,
-} from "../action-button/Ts-Action-Button.tsx";
 import TsRichText from "../rich-text/TS-Rich-Text.tsx";
 import { BasicImage, ImageType } from "../types.ts";
 import TsTypography from "../typography/TS-Typography.tsx";
+import TsCTAButton, {
+  CTAButtonProps,
+} from "deco-sites/territorio/components/territorio/CTA-button/Ts-CTA-Button.tsx";
 
 /** @titleBy text */
 type Statistic = {
@@ -27,7 +27,7 @@ export interface TsCourseHeroProps {
   decorator: BasicImage;
   titlePrimary: string;
   titleSecondary: string;
-  ctaButton: CTAButton;
+  ctaButton: CTAButtonProps;
   subTitle: string;
   statistics: Statistic[];
   /** @description Rich text field */
@@ -124,12 +124,10 @@ const TsCourseHero = ({
                 {titleSecondary}
               </TsTypography>
             </div>
-            <TsActionButton
-              url={ctaButton.url}
-              class="text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl"
-            >
-              {ctaButton.text}
-            </TsActionButton>
+            <TsCTAButton
+              {...ctaButton}
+              class="!text-2xl !w-full sm:!w-auto sm:!text-xl lg:!text-2xl !justify-normal !py-0"
+            />
           </div>
           <div class="flex flex-col gap-y-7">
             <TsTypography color="accent-content" class="text-6xl">

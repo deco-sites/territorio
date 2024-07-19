@@ -80,21 +80,23 @@ const TsCTAButton = ({
 
   return (
     <div
-      class={`${
-        background && "ts-block-section"
-      } w-full flex justify-center py-4`}
+      class={clx(
+        `${
+          background && "ts-block-section"
+        } w-full flex justify-center py-12 md:py-16`,
+        _class as string,
+      )}
     >
       <a
         href={url}
         onClick={handleClick}
-        class="block my-8 md:my-12"
+        class="block "
       >
         <TsButton
           variant="action"
           {...buttonProps}
           class={clx(
             "py-5 px-6 sm:px-8 uppercase font-semibold md:hover:scale-110 transition-all tracking-wide text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl",
-            _class as string,
           )}
           style={{ backgroundColor: buttonColor }}
         >

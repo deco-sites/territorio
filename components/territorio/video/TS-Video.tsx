@@ -1,6 +1,3 @@
-import TsActionButton, {
-  CTAButton,
-} from "../action-button/Ts-Action-Button.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
 
 export interface Props {
@@ -14,15 +11,14 @@ export interface Props {
   video?: string;
   /** @format html */
   content: string;
-  ctaButton: CTAButton;
 }
 
 export default function TsVideo(
-  { title, video, content, ctaButton, disableTopOffset }: Props,
+  { title, video, content, disableTopOffset }: Props,
 ) {
   return (
     <div
-      class={`ts-section ts-responsive py-4 sm:pb-[7%] ${
+      class={`ts-section ts-responsive py-4 ${
         !disableTopOffset && "sm:mt-[-6%]"
       } flex flex-col gap-[3.2rem] md:gap-8 bg-transparent`}
     >
@@ -50,13 +46,6 @@ export default function TsVideo(
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>
-      <TsActionButton
-        url={ctaButton.url}
-        linkContainerClass="block mx-auto my-8 md:my-12"
-        class="text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl"
-      >
-        {ctaButton.text}
-      </TsActionButton>
     </div>
   );
 }
