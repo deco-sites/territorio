@@ -10,6 +10,13 @@ export interface CTAButtonProps {
    * @description  Caso passe um id de produto, essa URL será ignorada
    */
   url?: string;
+  /**
+   * @title Abrir em nova aba
+   */
+  openNewTab?: boolean;
+  /**
+   * @title Texto
+   */
   text: string;
   /**
    * @title Cor do texto
@@ -49,6 +56,7 @@ const TsCTAButton = ({
   buttonColor,
   textColor,
   background,
+  openNewTab,
   ...buttonProps
 }: Props) => {
   const { addItems } = useCart();
@@ -66,7 +74,9 @@ const TsCTAButton = ({
           },
         ],
       }).then(() => {
-        window.location.href = "/checkout";
+        const target = openNewTab ? "_blank" : "_self";
+
+        globalThis.open("/checkout", target);
       });
     }
   };
@@ -89,6 +99,7 @@ const TsCTAButton = ({
     >
       <a
         href={url}
+        target={openNewTab ? "_blank" : "_self"}
         onClick={handleClick}
         class="block "
       >
