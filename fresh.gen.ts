@@ -27,6 +27,7 @@ import * as $ShowMore from "./islands/ShowMore.tsx";
 import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
 import * as $WishlistButton_wake from "./islands/WishlistButton/wake.tsx";
+import * as $territorio_TS_CTA_Banner from "./islands/territorio/TS-CTA-Banner.tsx";
 import * as $territorio_TS_CTA_Button from "./islands/territorio/TS-CTA-Button.tsx";
 import * as $territorio_TS_Cards from "./islands/territorio/TS-Cards.tsx";
 import * as $territorio_TS_Carousel from "./islands/territorio/TS-Carousel.tsx";
@@ -71,6 +72,7 @@ const manifest = {
     "./islands/SliderJS.tsx": $SliderJS,
     "./islands/WishlistButton/vtex.tsx": $WishlistButton_vtex,
     "./islands/WishlistButton/wake.tsx": $WishlistButton_wake,
+    "./islands/territorio/TS-CTA-Banner.tsx": $territorio_TS_CTA_Banner,
     "./islands/territorio/TS-CTA-Button.tsx": $territorio_TS_CTA_Button,
     "./islands/territorio/TS-Cards.tsx": $territorio_TS_Cards,
     "./islands/territorio/TS-Carousel.tsx": $territorio_TS_Carousel,
