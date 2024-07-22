@@ -1,8 +1,5 @@
 import { HTMLWidget } from "apps/admin/widgets.ts";
 import { clx } from "deco-sites/territorio/sdk/clx.ts";
-import TsActionButton, {
-  CTAButton,
-} from "../action-button/Ts-Action-Button.tsx";
 import TsRichText from "../rich-text/TS-Rich-Text.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
 import TsCursoAccordion, { Modules } from "./TS-Curso-Accordion.tsx";
@@ -12,12 +9,10 @@ export interface TsCursoDominarProps {
   titleSecondary: string;
   description: HTMLWidget;
   modules: Modules;
-  ctaButton: CTAButton;
 }
 
 const TsCursoDominar = ({
   modules,
-  ctaButton,
   description,
   titlePrimary,
   titleSecondary,
@@ -32,7 +27,7 @@ const TsCursoDominar = ({
       <div
         class={clx(
           "flex flex-col gap-y-16", //common
-          "mx-20 mb-[7%]", //mobile
+          "mx-20", //mobile
           "sm:px-0 sm:max-w-[60rem] sm:mx-0", //small
           "md:max-w-[65rem] lg:max-w-[75rem]", //larger
         )}
@@ -51,14 +46,6 @@ const TsCursoDominar = ({
           {description}
         </TsRichText>
         <TsCursoAccordion name="accordion-item" modules={modules} />
-        <div class="self-center">
-          <TsActionButton
-            url={ctaButton.url}
-            class="text-2xl sm:text-xl lg:text-2xl"
-          >
-            {ctaButton.text}
-          </TsActionButton>
-        </div>
       </div>
     </div>
   );

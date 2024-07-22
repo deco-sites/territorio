@@ -111,44 +111,44 @@ const TsHero = ({ banners }: HeroProps) => {
           activeColor="base-300"
         />
       </div>
-<div class="absolute top-0 left-0 w-[15%] h-full bg-gradient-to-r from-black via-black to-transparent z-10 group opacity-0 hover:opacity-70 transition-opacity duration-300">
-  <div class="absolute left-[40%] top-1/2 transform -translate-y-1/2 z-10 hidden group-hover:block">
-    <button onClick={onPrevious} disabled={!hasPrevious}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="33"
-        height="107"
-        viewBox="0 0 33 107"
-        fill="none"
-      >
-        <path
-          d="M31.975 1L1 53.7598L31.975 106.52"
-          stroke={getColorFromVar("base-100")}
-          stroke-width="4"
-        />
-      </svg>
-    </button>
-  </div>
-</div>
-<div class="absolute top-0 right-0 w-[15%] h-full bg-gradient-to-l from-black via-black to-transparent z-10 group opacity-0 hover:opacity-70 transition-opacity duration-300">
-  <div class="absolute right-[40%] top-1/2 transform -translate-y-1/2 z-10 hidden group-hover:block">
-    <button onClick={onNext} disabled={!hasNext}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="33"
-        height="107"
-        viewBox="0 0 33 107"
-        fill="none"
-      >
-        <path
-          d="M0.852051 1L31.8221 53.7598L0.852051 106.52"
-          stroke={getColorFromVar("base-100")}
-          stroke-width="4"
-        />
-      </svg>
-    </button>
-  </div>
-</div>
+      <div class="absolute top-0 left-0 w-[15%] h-full bg-gradient-to-r from-black via-black to-transparent z-10 group opacity-0 hover:opacity-70 transition-opacity duration-300">
+        <div class="absolute left-[40%] top-1/2 transform -translate-y-1/2 z-10 hidden group-hover:block">
+          <button onClick={onPrevious} disabled={!hasPrevious}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="107"
+              viewBox="0 0 33 107"
+              fill="none"
+            >
+              <path
+                d="M31.975 1L1 53.7598L31.975 106.52"
+                stroke={getColorFromVar("base-100")}
+                stroke-width="4"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="absolute top-0 right-0 w-[15%] h-full bg-gradient-to-l from-black via-black to-transparent z-10 group opacity-0 hover:opacity-70 transition-opacity duration-300">
+        <div class="absolute right-[40%] top-1/2 transform -translate-y-1/2 z-10 hidden group-hover:block">
+          <button onClick={onNext} disabled={!hasNext}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="107"
+              viewBox="0 0 33 107"
+              fill="none"
+            >
+              <path
+                d="M0.852051 1L31.8221 53.7598L0.852051 106.52"
+                stroke={getColorFromVar("base-100")}
+                stroke-width="4"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
 
       <a
         href={visibleBanner.url}

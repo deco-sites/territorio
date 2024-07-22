@@ -1,7 +1,7 @@
-import { VTexCheckoutProps } from "deco-sites/territorio/components/territorio/checkout-button/TS-Checkout-Button-Island.tsx";
+import { VTexCheckoutProps } from "deco-sites/territorio/components/territorio/checkout-banner/TS-Checkout-Banner-Island.tsx";
 import TsImageLink from "deco-sites/territorio/components/territorio/image-link/TS-Image-Link.tsx";
 import { ImageBanner } from "deco-sites/territorio/components/territorio/types.ts";
-import TsCheckoutButton from "../../../islands/territorio/TS-CheckoutButton.tsx";
+import TsCheckoutButton from "../../../islands/territorio/TS-CheckoutBanner.tsx";
 
 export interface TsSpecialConditionsProps extends VTexCheckoutProps {
   topBanner: ImageBanner;

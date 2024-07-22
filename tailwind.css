@@ -62,6 +62,11 @@
     background-color: oklch(var(--n) / 1);
   }
 
+  .ts-block-section {
+    background-color: #202020; /* fallback */
+    background-color: oklch(var(--n) / 1);
+  }
+
   #scroll {
     scrollbar-width: thin;
     scrollbar-color: #202020 transparent;

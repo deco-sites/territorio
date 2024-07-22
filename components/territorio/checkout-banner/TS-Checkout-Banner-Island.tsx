@@ -16,17 +16,17 @@ export interface VTexCheckoutProps {
   seller?: string;
 }
 
-export interface TsCheckoutButtonIslandProps extends VTexCheckoutProps {
+export interface TsCheckoutBannerIslandProps extends VTexCheckoutProps {
   containerClass: string;
   checkoutBanner: ImageBanner;
 }
 
-function TsCheckoutButtonIsland({
+function TsCheckoutBannerIsland({
   productID,
   seller = "1",
   containerClass,
   checkoutBanner,
-}: TsCheckoutButtonIslandProps) {
+}: TsCheckoutBannerIslandProps) {
   const { addItems } = useCart();
   const isMobile = useTsIsMobile();
   const image = isMobile
@@ -68,4 +68,4 @@ function TsCheckoutButtonIsland({
   );
 }
 
-export default TsCheckoutButtonIsland;
+export default TsCheckoutBannerIsland;

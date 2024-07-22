@@ -1,9 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import TSAccordion from "deco-sites/territorio/components/territorio/faq/TS-Accordion.tsx";
 import { ImageType } from "deco-sites/territorio/components/territorio/types.ts";
-import TsActionButton, {
-  CTAButton,
-} from "../action-button/Ts-Action-Button.tsx";
 import TsTypography from "../typography/TS-Typography.tsx";
 import { AppContext } from "../../../apps/site.ts";
 import useTsIsMobile from "deco-sites/territorio/hooks/useTsIsMobile.tsx";
@@ -43,11 +40,9 @@ export interface WhyProps {
   /** @minItems 4 */
   /** @maxItems 4 */
   statistics: StatisticProps[];
-  ctaButton: CTAButton;
 }
 
 const TsWhyLearnWithExpert = ({
-  ctaButton,
   title: { primary, secondary },
   statistics,
   expertBio,
@@ -88,7 +83,7 @@ const TsWhyLearnWithExpert = ({
   );
 
   return (
-    <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-16 my-16">
+    <div class="ts-section flex flex-col gap-[4.4rem] sm:gap-16 mt-16">
       <TsTypography type="title" class="text-6xl sm:text-8xl sm:w-[90%]">
         {primary}
         <br />
@@ -124,7 +119,6 @@ const TsWhyLearnWithExpert = ({
               collapse: "More",
               expand: "Less",
             }}
-            iconPosition="bottom"
           >
             {[
               {
@@ -136,14 +130,6 @@ const TsWhyLearnWithExpert = ({
           </TSAccordion>
         </div>
       </div>
-
-      <TsActionButton
-        url={ctaButton.url}
-        linkContainerClass="block mx-auto"
-        class="text-2xl w-full sm:w-auto sm:text-xl lg:text-2xl"
-      >
-        {ctaButton.text}
-      </TsActionButton>
     </div>
   );
 };
