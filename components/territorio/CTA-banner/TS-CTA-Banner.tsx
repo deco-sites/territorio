@@ -29,14 +29,6 @@ export interface CTABannerProps {
    */
   openNewTab?: boolean;
   /**
-   * @title Imagem Desktop
-   */
-  desktopImage: BannerImage;
-  /**
-   * @title Imagem Mobile
-   */
-  mobileImage: BannerImage;
-  /**
    * @title ID do Curso
    * @description  Ao passar um ID de produto, o botão levará o usuário a página de checkout quando o botão for clicado
    */
@@ -46,6 +38,14 @@ export interface CTABannerProps {
    * @description Deixar em branco para usar padrão (1)
    */
   seller?: string;
+  /**
+   * @title Imagem Desktop
+   */
+  desktopImage: BannerImage;
+  /**
+   * @title Imagem Mobile
+   */
+  mobileImage: BannerImage;
   /**
    * @title ID da seção
    */

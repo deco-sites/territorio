@@ -15,6 +15,16 @@ export interface CTAButtonProps {
    */
   openNewTab?: boolean;
   /**
+   * @title ID do Curso
+   * @description  Ao passar um ID de produto, o botão levará o usuário a página de checkout quando o botão for clicado
+   */
+  productID?: string;
+  /**
+   * @title Vendedor
+   * @description Deixar em branco para usar padrão (1)
+   */
+  seller?: string;
+  /**
    * @title Texto
    */
   text: string;
@@ -28,16 +38,6 @@ export interface CTAButtonProps {
    * @format  color-input
    */
   buttonColor?: string;
-  /**
-   * @title ID do Curso
-   * @description  Ao passar um ID de produto, o botão levará o usuário a página de checkout quando o botão for clicado
-   */
-  productID?: string;
-  /**
-   * @title Vendedor
-   * @description Deixar em branco para usar padrão (1)
-   */
-  seller?: string;
   /**
    * @title Habilitar background
    */
