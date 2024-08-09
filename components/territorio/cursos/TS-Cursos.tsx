@@ -86,7 +86,7 @@ const TsCursos = ({ courses }: CursosProps) => {
       id="cursos"
       class={clx(
         "flex sm:justify-center items-center relative z-30 overflow-x-hidden sm:overflow-x-auto select-none",
-        "-mt-[212px] md:-mt-[146px] lg:-mt-[176px] xl:-mt-[231px] 2xl:-mt-[285px]", // offset
+        "-mt-[212px] md:-mt-[146px] lg:-mt-[176px] xl:-mt-[231px] 2xl:-mt-[251px]", // offset
       )}
     >
       <ArrowButton icon="ChevronLeft" onClick={onPrevious} />
