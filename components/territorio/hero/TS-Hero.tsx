@@ -174,6 +174,7 @@ const TsHero = ({ banners }: HeroProps) => {
                 ? "-mt-[220px] lg:-mt-[180px] xl:-mt-[150px] 2xl:-mt-[120px]"
                 : "",
               "flex items-center w-full max-w-[75rem] pl-[44px] pr-[35px] md:px-8 lg:px-0",
+              "lg:mb-[20px]"
             )}
           >
             {hasImage
